@@ -6,7 +6,7 @@
 
 To have a local copy of the project to work on clone the repository using the command `git clone https://github.com/aldaineclarke/Amber-Eats-Group25.git` in the terminal.
 
-This will create a folder called `Angular-group-crud` in the directory specified in the terminal. Use the command ` cd Amber-Eats-Group25` to change the directory into the project folder.
+This will create a folder called `Amber-Eats-Group25` in the directory specified in the terminal. Use the command ` cd Amber-Eats-Group25` to change the directory into the project folder.
 
 ### Installing the Dependencies.
 
