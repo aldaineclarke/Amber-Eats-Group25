@@ -1,0 +1,64 @@
+.container {
+  /* border: 1px solid red; */
+  padding-top: 4%;
+  /* background-color: #303030; */
+}
+* {
+  color: white;
+}
+
+/* form--------------------------------- */
+mat-card {
+  width: 50%;
+  margin: auto;
+  padding: 2% 5%;
+}
+
+form input {
+  width: 100%;
+  height: 30px;
+  color: black;
+  letter-spacing: 1px;
+  outline: none;
+  padding: 0% 1%;
+  /* caret-color: #7b1fa2; */
+  caret-color: #429a70;
+}
+
+form textarea {
+  width: 100%;
+  outline: none;
+  color: black;
+  letter-spacing: 1px;
+  padding: 1%;
+  caret-color: #69f0ae;
+}
+
+/* map--------------------------------- */
+.map {
+  /* border: 1px solid red; */
+  width: 80%;
+  text-align: center;
+  margin: 0 auto 5% auto;
+}
+
+/* footer--------------------------------- */
+.footer_container {
+  /* border: 1px solid red; */
+  background: #295e44;
+  padding: 2%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+footer a {
+  text-decoration: none;
+  padding: 3% 0%;
+}
+footer a:hover {
+  text-decoration: underline;
+}
