@@ -13,7 +13,7 @@ export class RatingsService {
   constructor(private RatingsClient: HttpClient) {}
 
 
-  public sendGetRequest_ratings():Observable<ProductInterface[]>{
+  public sendGetRequestRatings():Observable<ProductInterface[]>{
     return this.RatingsClient.get<ProductInterface[]>(this.REST_API_SERVER);
   }
 
@@ -21,7 +21,7 @@ export class RatingsService {
     return this.RatingsClient.patch<ProductInterface>(this.REST_API_SERVER+"/"+id, data);
   }
 
-  public fetchItem_ratings(id: number):Observable<ProductInterface> { //declare id as a number
+  public fetchItemRatings(id: number):Observable<ProductInterface> { //declare id as a number
     // const url = `${this.REST_API_SERVER}/${id}`
     return this.RatingsClient.get<ProductInterface>(`${this.REST_API_SERVER}/${id}`)
   }   
