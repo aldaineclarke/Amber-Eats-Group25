@@ -43,3 +43,6 @@ Since we are using the main branch to house the complete project. You can view t
 ### Seeing all the changes in the project from your branch.
 
 This is done by doing a merge to your local branch. This can be done by either using `git merge main`, or using `git merge origin main` from your branch.
+
+## Being Assigned Issues
+Throughout the lifecycle of this application you may be assigned issues to have complete. These issues may or may not be assigned to individuals. If an issue is assigned to you. You would simply follow the regular procedures of making the necessary updates as per described by the issues. Then commit those changes. For each commit towards the completion of the issue, it is recommended that you specify the issue number/ID in the commit message. An example video demonstrating this can be found here **[Working with Issues](https://youtu.be/TKJ4RdhyB5Y)**
