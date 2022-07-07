@@ -8,6 +8,10 @@ import { OrderCompletedComponent } from './order-completed/order-completed.compo
 import { MenuComponent } from './menu/menu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
+import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
+import { OrderPayComponent } from './order-pay/order-pay.component';
+import { OrderCartComponent } from './order-cart/order-cart.component';
+
 
 //Routing Setup -----------------------------------------
 const routes: Routes = [
@@ -19,7 +23,10 @@ const routes: Routes = [
   {path: 'order-completed', component: OrderCompletedComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'menuDetail/:id' , component: MenuDetailsComponent},
-  {path: 'update', component:UpdateMenuComponent}
+  {path: 'update', component:UpdateMenuComponent},
+  {path: 'checkout', component: OrderCheckoutComponent},
+  {path: 'pay', component: OrderPayComponent},
+  {path: 'cart', component: OrderCartComponent},
 ];
 
 @NgModule({

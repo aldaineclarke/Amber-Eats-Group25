@@ -25,6 +25,12 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OrderCartComponent } from './order-cart/order-cart.component';
+import { OrderPayComponent } from './order-pay/order-pay.component';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -38,6 +44,9 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
+    OrderCheckoutComponent,
+    OrderCartComponent,
+    OrderPayComponent,
     // FooterComponent,
   ],
   imports: [
@@ -55,7 +64,9 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatTableModule,
     MatSortModule,
-  
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
