@@ -13,5 +13,5 @@ export interface Order{
     items: OrderItem[];
     totalPrice:number;
     name: string;
-    delivery_option: string;
+    deliveryOption: string;
   }
