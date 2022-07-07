@@ -14,7 +14,9 @@
     </div>
   </div>
 </div>
-
+<app-rating
+  [meal]="{ productName: 'Penny', tot_stars: 256, tot_users: 55 }"
+></app-rating>
 <!-- section-------------------------------------------------- -->
 <section>
   <h1>
@@ -53,14 +55,13 @@
   </mat-card>
 </div>
 
-
 <!-- gallery------------------------------------------ -->
 <div class="gallery_container" id="card_container">
-    <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-    <h1 style="text-align: center; color: white;">Gallery</h1>
+  <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
+  <h1 style="text-align: center; color: white">Gallery</h1>
   <div class="content">
     <mat-card
-      style="background: #424242;"
+      style="background: #424242"
       *ngFor="let product of footerItems"
       routerLink="/details/{{ product.id }}"
       class="card"
