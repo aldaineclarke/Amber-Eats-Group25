@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MenuInterface } from './interfaces/menu';
+import { ProductInterface } from './interfaces/product';
 import { Observable, observable } from 'rxjs';
 
 @Injectable({
@@ -9,6 +10,7 @@ import { Observable, observable } from 'rxjs';
 export class DataService {
   private REST_API_SERVER = 'http://localhost:3000/products'; //JSON Server
   private REST_API_SERVER_MENU = 'http://localhost:3000/menu'; //JSON Server for menu
+  private REST_API_SERVER_SIDES = 'http://localhost:3000/sides'; //JSON Server for sides
   constructor(private httpClient: HttpClient) {}
   
   public sendGetRequest() {
@@ -20,6 +22,13 @@ export class DataService {
     const url = `${this.REST_API_SERVER}/${id}`
     return this.httpClient.get<any[]>(url); 
   }               
+
+
+  //Update products post request--------------------------------
+  public postProductUpdate(id: number, data: any):Observable<ProductInterface>{
+    const url = `${this.REST_API_SERVER}/${id}`;
+    return this.httpClient.patch<ProductInterface>(url,data)
+  }
   
 
   //menu data get request-------------------------------------
@@ -49,4 +58,9 @@ export class DataService {
     return this.httpClient.put<MenuInterface>(url , data )
   }
   
+
+  //sides data get request---------------
+  public getSidesRequest() {
+    return this.httpClient.get<any[]>(this.REST_API_SERVER_SIDES);
+  }
 }
