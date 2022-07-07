@@ -25,6 +25,9 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { SliderComponent } from './slider/slider.component';
+import { NextDirective } from './next.directive';
+import { PreviousDirective } from './previous.directive';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -38,6 +41,9 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
+    SliderComponent,
+    NextDirective,
+    PreviousDirective,
     // FooterComponent,
   ],
   imports: [
