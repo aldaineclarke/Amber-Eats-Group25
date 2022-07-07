@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderCartComponent implements OnInit {
 
+  // value:any = 0;
+
   formatLabel(value: number) {
     if (value >= 8) {
       return Math.round(value / 7);
     }
-
     return value;
   }
 

@@ -54,14 +54,15 @@
                                 <td>(order.name)</td>
                                 <td>
                                     <form action="" method="post">
+                                        <label class="example-value-label">(order.quantity)</label><br>
                                         <mat-slider
                                             thumbLabel
                                             [displayWith]="formatLabel"
+                                            value="4"
                                             tickInterval="7"
                                             step="1"
                                             min="1"
-                                            max="7"
-                                            value="4">
+                                            max="7">
                                         </mat-slider>
                                     </form>
                                 </td>
