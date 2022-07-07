@@ -1,1 +1,128 @@
-<p>order-cart works!</p>
+<div class="cart-container">
+    <div class="cart-header">
+        <div class="header-left">
+            <span class="secure-icon"><mat-icon>lock</mat-icon></span>
+            <h3>Secure Checkout</h3>
+        </div>
+        <div class="header-right">
+            <a routerLink="/home">
+                <h3>Continue Shopping</h3>
+            </a>
+            <a routerLink="/home"><span class="secure-icon"><mat-icon>chevron_right</mat-icon></span></a>
+        </div>
+    </div>
+    <!-- Start of Process Track -->
+    <div class="cart-track">
+        <div class="sections">
+            <span class='cart-active'>Cart</span>
+            >
+            <span>Place Order</span>
+            >
+            <span>Pay</span>
+            >
+            <span>Order Complete</span>
+        </div>
+    </div>
+    <!-- Start of Site Body -->
+    <div class="content">
+        <div class="cart-left-sections">
+            <!-- Delivery Banner -->
+            <div class="delivery-banner">
+                <div class="banner-content">
+                    <p>Spend JMD $1200 or more for <span>free delivery</span>!! (Coming Soon)</p>
+                </div>
+            </div>
+            <!-- Start of Cart Listing -->
+            <div class="cart-summary">
+                <h1>Cart Summary(put amount of items in cart!!!)</h1>
+                <div class="cart-summary-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let order of "> -->
+                            <br>
+                            <tr>
+                                <td><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt="Meal Image" width="130vw" height="100vw"></td>
+                                <td>(order.name)</td>
+                                <td>
+                                    <form action="" method="post">
+                                        <mat-slider
+                                            thumbLabel
+                                            [displayWith]="formatLabel"
+                                            tickInterval="7"
+                                            step="1"
+                                            min="1"
+                                            max="7"
+                                            value="4">
+                                        </mat-slider>
+                                    </form>
+                                </td>
+                                <td>(order.price)</td>
+                                <td ><button mat-button>Remove</button></td>
+                                <br>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Start of right section -->
+        <div class="cart-right-sections">
+            <!-- Order Summary -->
+            <div class="cart-total">
+                <div class="total-header">
+                    <h4>Order Summary</h4>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let order of "> -->
+                        <br>
+                        <tr>
+                            <td>(order.name)</td>
+                            <td>(order.total)</td>
+                            <br>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Email Validation -->
+                <div class="check-email">
+                    <form action="" method="post">
+                        <input type="email" name="email" id="cheackEmail" placeholder="email@email.com">
+                        <div class="email-button">
+                            <button type="submit">CheckOut Securely</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Start of Accepted Payments Info -->
+            <div class="accepted-payments">
+                <div class="payment-header">
+                    <h4>Payments We Accept</h4>
+                </div>
+                <div class="payment-container">
+                    <mat-grid-list cols="4" rowHeight="2:2" [style.background]="'skyblue'">
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,153 @@
+.cart-container a {
+    text-decoration: none;
+}
+.cart-header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem;  
+    border-bottom: 1px white solid; 
+}
+
+.cart-header h3 {
+    height: 96%;
+}
+
+.header-left,
+.header-right{
+    display: flex;
+    width: 16.5vw;
+}
+
+.cart-header span, 
+.cart-header h3 {
+    display: flex;
+    align-items: center;
+}
+
+.cart-header span {
+    border: none;
+    background-color: #64EFAB;
+    border-radius: 50%;
+    padding: 0.7rem;
+}
+
+.cart-header h3 {
+    color: #64EFAB;
+    padding: 0 1vw;
+}
+
+.cart-track {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.3vw;
+    
+}
+
+.sections {
+    color: white;
+    font-size: 1.8vw;
+    padding: 1vw;
+}
+
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delivery-banner,
+.cart-summary,
+.cart-total,
+.accepted-payments {
+    background-color: grey;
+    padding: 1vw;
+    border-radius: 5px;
+    margin: 1.5vw;
+}
+
+.banner-content {
+    background-color: #303030;
+    padding: 1% 2%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.banner-content p{
+    font-size: large;
+    color: white;
+    margin-top: 1.5vw;
+}
+
+.cart-left-sections {
+    width: 68vw;
+    height: auto;
+}
+
+.cart-summary-content {
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+table {
+    padding: 2vw;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+tbody {
+    font-size: large;
+    text-align: center;
+}
+
+thead {
+    background-color: #303030;
+    font-size: 1.4vw;
+    color: white;
+}
+
+.cart-right-sections {
+    width: 32vw;
+}
+
+.total-header h4,
+.payment-header h4{
+    padding: 0.6vw;
+    border-bottom: 1px solid white;
+    font-size: x-large;
+}
+
+.check-email {
+    padding: 2vw 0 0;
+}
+
+.check-email input {
+    border: 1px solid white;
+    background-color: #303030;
+    padding: 0.4vw;
+    width: 18vw;
+    border-radius: 7px
+}
+
+.check-email input[type=email] {
+    color: White;
+}
+
+.email-button button {
+    padding: 0.9vw 6.5vw;
+    width: 25vw;
+    margin: 2vw 1vw;
+    border: none;
+    border-radius: 8px;
+    background-color: #64EFAB;
+    transition: 0.5s ease-in-out;
+    font-weight: 700;
+}
+
+.email-button button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+

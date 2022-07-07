@@ -31,6 +31,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrderCartComponent } from './order-cart/order-cart.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
+import {MatSliderModule} from '@angular/material/slider';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -66,7 +67,8 @@ import { OrderPayComponent } from './order-pay/order-pay.component';
     MatSortModule,
     MatStepperModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
