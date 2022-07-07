@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MenuInterface } from './interfaces/menu';
 import { ProductInterface } from './interfaces/product';
+import { SidesInterface } from './interfaces/sides';
 import { Observable} from 'rxjs';
 
 @Injectable({
@@ -63,4 +64,17 @@ export class DataService {
   public getSidesRequest() {
     return this.httpClient.get<any[]>(this.REST_API_SERVER_SIDES);
   }
+
+
+  //Get side by id------------------------
+  public getSidesById(id:number):Observable<SidesInterface>{
+    const url = `${this.REST_API_SERVER_SIDES}/${id}`;
+    return this.httpClient.get<SidesInterface>(url)
+  }
+
+  public UpdateSides(id:number, data:any):Observable<SidesInterface>{
+    const url = `${this.REST_API_SERVER_SIDES}/${id}`;
+    return this.httpClient.patch<SidesInterface>(url, data)
+  }
+
 }
