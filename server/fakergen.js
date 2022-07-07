@@ -9,7 +9,9 @@ for (var i = 1; i <= 50; i++) {
         description: faker.lorem.sentences(),
         price: faker.commerce.price(),
         imageUrl: "https://source.unsplash.com/1600x900/?food=" + Math.floor(Math.random() * 1000),
-        quantity: faker.datatype.number()
+        quantity: faker.datatype.number(),
+        totalRatings:Math.floor(Math.random() * 10) + 1,
+        ratingCount:Math.floor(Math.random() * 10) + 1
     })
 }
 
@@ -31,7 +33,9 @@ for (var i = 1; i <= 50; i++) {
         description: faker.lorem.sentences(),
         price: faker.commerce.price(),
         imageUrl: "https://source.unsplash.com/1600x900/?food=" + Math.floor(Math.random() * 1000),
-        quantity: faker.datatype.number()
+        quantity: faker.datatype.number(),
+        totalRatings:Math.floor(Math.random() * 10) + 1,
+        ratingCount:Math.floor(Math.random() * 10) + 1,
     })
 }
 
