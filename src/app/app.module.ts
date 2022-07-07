@@ -25,7 +25,6 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
-import { SidesComponent } from './sides/sides.component';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -39,7 +38,6 @@ import { SidesComponent } from './sides/sides.component';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
-    SidesComponent,
     // FooterComponent,
   ],
   imports: [
