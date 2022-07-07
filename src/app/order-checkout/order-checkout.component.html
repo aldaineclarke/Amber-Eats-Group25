@@ -1,41 +1,177 @@
-<mat-stepper [linear]="isLinear" #stepper>
+<!-- links--------------------- -->
+<link rel="stylesheet" href="./order-checkout.component.css" />
 
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-
-
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+<div class="form_container">
+  <form action="" method="post">
+    <!-- sub-header--------------------- -->
+    <div class="cart-header">
+      <div class="header-left">
+        <span class="secure-icon"><mat-icon>lock</mat-icon></span>
+        <h3>Secure Checkout</h3>
       </div>
-    </mat-step>
-</mat-stepper>
-  
+      <div class="header-right">
+        <h3>Continue Shopping</h3>
+        <span class="secure-icon"><mat-icon>chevron_right</mat-icon></span>
+      </div>
+    </div>
+
+    <!-- Process Track--------------------- -->
+    <div class="cart-track">
+      <div class="sections">
+        <span>Cart</span>
+        >
+        <span class="cart-active">Place Order</span>
+        >
+        <span>Pay</span>
+        >
+        <span>Order Complete</span>
+      </div>
+    </div>
+
+    <!-- section--------------------- -->
+    <div class="order_summary">
+      <!-- left--------------------- -->
+      <div class="left">
+        <h2>User Information</h2>
+
+        <!-- section with user info and map--------------------- -->
+        <section>
+          <article>
+            <h3><b>Name:</b> Jane Doe</h3>
+            <p>
+              <b>Address:</b> Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Mollitia, enim asperiores. Incidunt rem nemo
+              atque.
+            </p>
+            <p class="edit">
+              <b>Default Payment Method: Paypal</b> <a href="#">Edit</a>
+            </p>
+          </article>
+          <article>
+            <div style="width: 100%">
+              <iframe
+                width="100%"
+                height="600"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gotham+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                ><a href="https://www.gps.ie/farm-gps/"
+                  >gps for tractors</a
+                ></iframe
+              >
+            </div>
+          </article>
+        </section>
+        <br /><br />
+
+        <!-- order summary table--------------------- -->
+        <table>
+          <h2>Order Summary</h2>
+
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Retail Price</td>
+              <td>US$ 232.00</td>
+            </tr>
+            <tr>
+              <td>Sun Total</td>
+              <td>US$ 229.00</td>
+            </tr>
+            <tr>
+              <td>Delivery Fee</td>
+              <td>US$ 50.00</td>
+            </tr>
+            <tr>
+              <td>Sales Tax</td>
+              <td>US$ 34.80</td>
+            </tr>
+            <tr>
+              <td>Grand Total</td>
+              <td><h2>US$ 313.80</h2></td>
+            </tr>
+          </tbody>
+        </table>
+        <br /><br />
+
+        <div class="sub_btn">
+          <button type="submit">P L A C E O R D E R</button>
+        </div>
+      </div>
+
+      <!-- right--------------------- -->
+      <div class="right">
+        <h2>Cart Summary (2)</h2>
+
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img
+            src="https://images.pexels.com/photos/2116094/pexels-photo-2116094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt=""
+          />
+          <div class="info">
+            <p>Food Name</p>
+            <h2>US$ 97.00</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

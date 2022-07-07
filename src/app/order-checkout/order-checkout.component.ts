@@ -8,13 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class OrderCheckoutComponent implements OnInit {
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isLinear = false;
+  
 
   constructor(private _formBuilder: FormBuilder) { }
 
