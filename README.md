@@ -33,16 +33,31 @@ Before you make a change ensure that you the most updated version of the project
 After you make the necessary changes to the project, run the command `git add .` which adds all the changes to the staging area to signal that its ready to be committed. After which run the command `git commit -m "<message that describes the changes>"` to make changes to that branch.
 
 ### Publishing the change for review.
+If it is your first time making changes, you should first run the command `git pull origin Damian` or `git pull origin Aldaine` to retrieve the latest code from the Team. 
+<br>
 
-Before you propose a change, run the command `git pull` to check for change again. After you have confirmed that you have the most latest version, run the command `git push origin --set-upstream <your branch name>` to push the branch with the changes to the project repository.
+If there is any merge conflicts you would need to first resolve them by accepting your changes or incomming changes from the Team's github branch. 
+After you have resolved the issues, commit the changes. This would therefore fix the merge conflict. When you have completed the merge you should then run the command `git push origin --set-upstream <your branch name here>` which will push the changes you have made to github in the branch that you defined in the command.
+
+<br>
+
+Any Subsequent changes that you make you just need to first pull from the Team's repository, fix any merge conflicts, then commit and push to your branch on github. 
+
+### Creating a Pull Request
+
+Once you push to the github branch, A prompt will be shown in the repository telling you that you have changes on your branch and if you wish to create a pull request. 
+Additionally you could also go to the **Pull Request** Tab then select the option to create a pull request. 
+
+When creating the pull request, ensure that the branch that you are making the pull request to is your Team's branch , `Damian` or`Aldaine`. Once you select the branch you want to make the request to then go ahead and select the option to create pull request.
+
 
 ### Viewing the complete project.
 
 Since we are using the main branch to house the complete project. You can view this by simply going to the main branch using the command `git checkout main`. After which do a git pull which will get all the updated information from the remote repository, <em>Github</em>, to your local main repository.
 
-### Seeing all the changes in the project from your branch.
+### Seeing all the changes in the project.
 
-This is done by doing a merge to your local branch. This can be done by either using `git merge main`, or using `git merge origin main` from your branch.
+This can be done by first running the command `git checkout main` to switch to the main branch, then using `git pull main`. This will pull all the updated data from the github main branch to your local main branch. **DO NOT MAKE ANY CHANGES TO THE MAIN BRANCH**. 
 
 ## Being Assigned Issues
 Throughout the lifecycle of this application you may be assigned issues to have complete. These issues may or may not be assigned to individuals. If an issue is assigned to you. You would simply follow the regular procedures of making the necessary updates as per described by the issues. Then commit those changes. For each commit towards the completion of the issue, it is recommended that you specify the issue number/ID in the commit message. An example video demonstrating this can be found here **[Working with Issues](https://youtu.be/TKJ4RdhyB5Y)**
