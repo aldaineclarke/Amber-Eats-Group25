@@ -1,8 +1,9 @@
 
 export interface User{
-    id:string;
-    name:string;
+    id:number;
+    firstName:string;
+    lastName:string;
     email:string;
-    payment_method: string
+    paymentMethod: string
   
   }
