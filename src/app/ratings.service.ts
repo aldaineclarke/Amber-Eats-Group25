@@ -17,7 +17,7 @@ export class RatingsService {
     return this.RatingsClient.get<ProductInterface[]>(this.REST_API_SERVER);
   }
 
-  public updateratings(data:any, id:number ):Observable<ProductInterface> {
+  public updateRatings(data:any, id:number ):Observable<ProductInterface> {
     return this.RatingsClient.patch<ProductInterface>(this.REST_API_SERVER+"/"+id, data);
   }
 
