@@ -15,11 +15,11 @@ export class OrderService {
     return this.http.get<Order[]>(this.orderEndpoint)
   }
 
-  addOrder(data:any):Observable<Order[]>{
-    return this.http.post<Order[]>(this.orderEndpoint, data);
+  addOrder(data:any):Observable<Order>{
+    return this.http.post<Order>(this.orderEndpoint, data);
     
   }
-  trackOrder(id:number): Observable<Order[]>{
-    return this.http.get<Order[]>(this.orderEndpoint + '/' + id);
+  trackOrder(id:number): Observable<Order>{
+    return this.http.get<Order>(this.orderEndpoint + '/' + id);
   }
 }
