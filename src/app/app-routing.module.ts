@@ -8,6 +8,7 @@ import { OrderCompletedComponent } from './order-completed/order-completed.compo
 import { MenuComponent } from './menu/menu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
+import { SideDishesComponent } from './side-dishes/side-dishes.component';
 
 //Routing Setup -----------------------------------------
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'order-completed', component: OrderCompletedComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'menuDetail/:id' , component: MenuDetailsComponent},
-  {path: 'update', component:UpdateMenuComponent}
+  {path: 'update', component:UpdateMenuComponent},
+  {path: 'sideDishes', component:SideDishesComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,16 @@
+.sides {
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    background: #fff;
+    transform: translate(950px, -350px);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sides form .sidesCon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

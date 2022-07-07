@@ -22,9 +22,18 @@
         <br>
       <mat-card-actions>
         <button mat-stroked-button color="accent" routerLink="/order-completed">Order Now</button> 
+        <button mat-stroked-button color="accent"(click)="toggleShowHide()">Add Side</button> 
       </mat-card-actions> 
     </mat-card-header>
 
   </mat-card>
 </div>
+<div class="sides" *ngIf="isVisible">
+  <app-side-dishes></app-side-dishes>,
+</div>
+<!-- to push selected side dishes
+<div *ngIf="categoryAdd.length != 0" style="background-color: red;">
+  <p style="border: 5px solid yellow; padding: 10px; font-size: 30px;">{{this.categoryAdd}}hello world</p>
+  </div> -->
+
 

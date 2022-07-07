@@ -9,11 +9,12 @@ import { Observable, observable } from 'rxjs';
 export class DataService {
   private REST_API_SERVER = 'http://localhost:3000/products'; //JSON Server
   private REST_API_SERVER_MENU = 'http://localhost:3000/menu'; //JSON Server for menu
+  private REST_API_SERVER_SIDES = 'http://localhost:3000/sideDishes'; //JSON Server for menu
   constructor(private httpClient: HttpClient) {}
   
   public sendGetRequest() {
     return this.httpClient.get<any[]>(this.REST_API_SERVER); //invokes the GET method of the httpClient so it
-                                                             //request to the REST_API_SERVER can send a GET
+                                                          //request to the REST_API_SERVER can send a GET
   }                                                   
   
   public sendGetDetails(id: number) { //declare id as a number
@@ -27,6 +28,11 @@ export class DataService {
     return this.httpClient.get<any[]>(this.REST_API_SERVER_MENU); 
   }         
   
+    //Sides data get request-------------------------------------
+    public getSidesRequest() { 
+      return this.httpClient.get<any[]>(this.REST_API_SERVER_SIDES); 
+    }         
+    
   public getMenuDetailsId(id:any):Observable<MenuInterface> { 
     const url = `${this.REST_API_SERVER_MENU}/${id}`;
     return this.httpClient.get<MenuInterface>(url); 

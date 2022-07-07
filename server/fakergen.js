@@ -1,6 +1,6 @@
 var faker = require('faker');
 
-var database = { products: [] , menu:[] };
+var database = { products: [] , menu:[] , sideDishes:[]};
 for (var i = 1; i <= 50; i++) {
     database.products.push({
         id: i,
@@ -20,6 +20,14 @@ for (var i = 1; i <= 20; i++) {
         menu_size:  faker.datatype.number(),
         imageUrl: "https://source.unsplash.com/1600x900/?food=" + Math.floor(Math.random() * 1000),
         cost: faker.commerce.price(),
+    })
+}
+
+for (var i = 1; i <= 8; i++) {
+    database.sideDishes.push({
+        id: i,
+        name: faker.commerce.productName(),
+        price: faker.commerce.price(),
     })
 }
 
