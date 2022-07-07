@@ -1,61 +1,112 @@
 /* gallery--------------------------------- */
+
 .card_container {
-  /* background-color: #fff; */
-  background-color: #fff;
-  height: 100vh;
-  /* border-top: 10px solid; */
-  /* bottom: 0; */
-  /* position: relative; */
-  /* padding-top: 80px; */
-  padding-top: 10%;
+    /* background-color: #fff; */
+    background-color: #fff;
+    height: 100vh;
+    /* border-top: 10px solid; */
+    /* bottom: 0; */
+    /* position: relative; */
+    /* padding-top: 80px; */
+    padding-top: 10%;
 }
 
 .content {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  height: 400px;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
 }
 
 .contentImg {
-  overflow: hidden;
-  border-radius: 12px;
+    overflow: hidden;
+    border-radius: 12px;
 }
-.contentImg img {
-  height: 100%;
-  width: 100%;
-  border-radius: 12px;
 
-  transition: all ease-in-out 0.5s;
+.contentImg img {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    transition: all ease-in-out 0.5s;
 }
 
 .card:hover img {
-  transform: scale(1.04);
+    transform: scale(1.04);
 }
+
 .card {
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  word-wrap: break-word;
-  margin: 5px 10px;
-  background: transparent;
-  transition: all ease-in-out 0.5s;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    word-wrap: break-word;
+    margin: 5px 10px;
+    background: transparent;
+    transition: all ease-in-out 0.5s;
 }
 
 .card img {
-  width: 200px;
-  height: 150px;
+    width: 200px;
+    height: 150px;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 8px 5px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 8px 5px 25px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  color: grey;
+    color: grey;
 }
 
+.footer-container {
+    padding: 50px 40px;
+    text-align: center;
+    color: black;
+}
 
+.footer-container p {
+    max-width: 600px;
+    margin: 40px auto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.email-box {
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    /*its better to use inline-flex*/
+}
+
+.email-box i {
+    background: #2f3542;
+    width: 40px;
+    line-height: 40px;
+}
+
+.tbox,
+.btn {
+    border: none;
+    outline: none;
+}
+
+.tbox {
+    width: 0px;
+    transition: 0.6s;
+}
+
+.email-box:hover>.tbox,
+.tbox:focus {
+    width: 260px;
+    padding: 0 10px;
+}
+
+.btn {
+    background: #2f3542;
+    color: white;
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}

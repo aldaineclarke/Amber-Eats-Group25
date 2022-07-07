@@ -1,22 +1,28 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
 <!-- gallery------------------------------------------ -->
-<!-- <div class="card_container" id="card_container">
+<div class="card_container" id="card_container">
     <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-  <div class="content">
-    <mat-card
-      *ngFor="let product of footerItems"
-      routerLink="/details/{{ product.id }}"
-      class="card"
-    >
-      <mat-card-content class="contentImg">
-        <img src="{{ product.imageUrl }}" alt="" />
-      </mat-card-content>
+    <!-- <div class="content">
+        <mat-card *ngFor="let product of footerItems" routerLink="/details/{{ product.id }}" class="card">
+            <mat-card-content class="contentImg">
+                <img src="{{ product.imageUrl }}" alt="" />
+            </mat-card-content>
 
-      <mat-card-header>
-        <mat-card-title class="title">{{ product.name }}</mat-card-title>
-      </mat-card-header>
-    </mat-card>
-  </div>
-</div> -->
-
-
+            <mat-card-header>
+                <mat-card-title class="title">{{ product.name }}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div> -->
+    <div class="footer-container">
+        <form action="">
+            <h1>Join Our Newsletter</h1>
+            <p>Join to get first hand views on our new and upcoming dishes</p>
+            <div class="email-box">
+                <i class="fas fa-envelope"></i>
+                <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
+                <button class="btn" type="button" name="button">Subscribe</button>
+            </div>
+        </form>
+    </div>
+</div>

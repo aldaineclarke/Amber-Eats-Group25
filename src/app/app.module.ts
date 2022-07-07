@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
-// import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
-    // FooterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
