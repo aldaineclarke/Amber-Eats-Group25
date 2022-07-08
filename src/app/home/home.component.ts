@@ -50,4 +50,7 @@ export class HomeComponent implements OnInit {
       this.footerItems.push(data);
     });
   }
+
+
+  
 }
