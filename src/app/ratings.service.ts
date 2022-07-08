@@ -34,7 +34,7 @@ export interface ProductInterface{
   price: number;
   imageUrl:string;
   quantity:number;
-  ratingsAvg: number;
+  totalRatings: number;
   ratingCount: number;
 
 }
