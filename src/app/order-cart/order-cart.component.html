@@ -102,10 +102,10 @@
                 </table>
                 <!-- Email Validation -->
                 <div class="check-email">
-                    <form action="" method="post">
-                        <input type="email" name="email" id="cheackEmail" placeholder="email@email.com">
+                    <form action="" method="post" (submit)="checkUser(email)">
+                        <input type="email" name="email" id="checkEmail" #email placeholder="email@email.com">
                         <div class="email-button">
-                            <button type="submit" routerLink="/checkout">CheckOut Securely</button>
+                            <button type="submit">CheckOut Securely</button>
                         </div>
                     </form>
                 </div>

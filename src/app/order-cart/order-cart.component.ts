@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { UserCreationComponent } from '../user-creation/user-creation.component';
+import { PaymentService } from '../payment.service';
 
 @Component({
   selector: 'app-order-cart',
@@ -9,7 +12,9 @@ import { Router } from '@angular/router';
 export class OrderCartComponent implements OnInit {
 
   // value:any = 0;
-  constructor(private router: Router) { }
+
+
+  constructor(private router: Router, public dialog: MatDialog, private paymentService: PaymentService) { }
 
   next() {
     this.router.navigate(['/', 'checkout'])
@@ -27,7 +32,30 @@ export class OrderCartComponent implements OnInit {
     return value;
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(UserCreationComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  checkUser(email:HTMLInputElement) {
+    let userEmail = email.value
+
+    this.paymentService.getEmail(userEmail).subscribe(result => {
+      if (result == false) {
+        console.log(result)
+        this.openDialog()
+      } else {
+        this.next()
+      }
+    })
+  } 
+
   ngOnInit(): void {
   }
 
 }
+
+

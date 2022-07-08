@@ -37,6 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserCreationComponent } from './user-creation/user-creation.component';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -53,6 +55,7 @@ import { MatDividerModule } from '@angular/material/divider';
     OrderCheckoutComponent,
     OrderCartComponent,
     OrderPayComponent,
+    UserCreationComponent,
     // FooterComponent,
   ],
   imports: [
@@ -78,7 +81,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
