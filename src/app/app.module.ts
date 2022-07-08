@@ -32,6 +32,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OrderCartComponent } from './order-cart/order-cart.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -68,7 +73,12 @@ import {MatSliderModule} from '@angular/material/slider';
     MatStepperModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
