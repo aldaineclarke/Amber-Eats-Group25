@@ -61,3 +61,6 @@ This can be done by first running the command `git checkout main` to switch to t
 
 ## Being Assigned Issues
 Throughout the lifecycle of this application you may be assigned issues to have complete. These issues may or may not be assigned to individuals. If an issue is assigned to you. You would simply follow the regular procedures of making the necessary updates as per described by the issues. Then commit those changes. For each commit towards the completion of the issue, it is recommended that you specify the issue number/ID in the commit message. An example video demonstrating this can be found here **[Working with Issues](https://youtu.be/TKJ4RdhyB5Y)**
+
+## Requesting a Review
+It is good practice to request a review whenever you make a pull request. To do this, In the list of pull requests, click the pull request that you'd like to ask a specific person or a team to review. Navigate to Reviewers in the right sidebar. To request a review from a suggested person under Reviewers, next to their username, click Request.
