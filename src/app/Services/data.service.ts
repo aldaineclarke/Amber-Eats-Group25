@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductInterface } from '../interfaces/product';
 import { SidesInterface } from '../interfaces/sides';
-import { Observable} from 'rxjs';
+import { Observable, shareReplay} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class DataService {
   constructor(private httpClient: HttpClient) {}
   
   public getAllProducts():Observable<ProductInterface[]> {
-    return this.httpClient.get<ProductInterface[]>(this.REST_API_SERVER); //invokes the GET method of the httpClient so it
+    return this.httpClient.get<ProductInterface[]>(this.REST_API_SERVER).pipe(shareReplay()); //invokes the GET method of the httpClient so it
                                                              //request to the REST_API_SERVER can send a GET
   }                                                   
   
@@ -32,7 +32,7 @@ export class DataService {
 
   //sides data get request---------------
   public getAllSides():Observable<SidesInterface[]> {
-    return this.httpClient.get<SidesInterface[]>(this.REST_API_SERVER_SIDES);
+    return this.httpClient.get<SidesInterface[]>(this.REST_API_SERVER_SIDES).pipe(shareReplay());
   }
 
 
