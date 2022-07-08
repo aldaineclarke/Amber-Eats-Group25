@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component'; //import created components\/
-import { AboutComponent } from './about/about.component';
-import { DetailsComponent } from './details/details.component';
-import { ContactComponent } from './contact/contact.component';
-import { OrderCompletedComponent } from './order-completed/order-completed.component';
-import { MenuComponent } from './menu/menu.component';
-import { MenuDetailsComponent } from './menu-details/menu-details.component';
-import { UpdateMenuComponent } from './update-menu/update-menu.component';
+import { HomeComponent } from './Pages/home/home.component'; //import created components\/
+import { AboutComponent } from './Pages/about/about.component';
+import { DetailsComponent } from './Pages/details/details.component';
+import { ContactComponent } from './Pages/contact/contact.component';
+import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
+import { MenuComponent } from './Pages/menu/menu.component';
+import { MenuDetailsComponent } from './Pages/menu-details/menu-details.component';
+import { UpdateMenuComponent } from './Pages/update-menu/update-menu.component';
 import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
 import { OrderCartComponent } from './order-cart/order-cart.component';
-
 
 //Routing Setup -----------------------------------------
 const routes: Routes = [

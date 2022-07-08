@@ -6,7 +6,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
 .cart-active {
     color: #64EFAB;
     text-decoration: underline #64EFAB;
