@@ -1,28 +1,65 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<!-- 
+<div ngclass="card_container" id="card_container">
+    <div class="content"></div>
+</div> -->
 
-<!-- gallery------------------------------------------ -->
+
+
+
+
+
+
+
 <div class="card_container" id="card_container">
-    <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-    <!-- <div class="content">
-        <mat-card *ngFor="let product of footerItems" routerLink="/details/{{ product.id }}" class="card">
-            <mat-card-content class="contentImg">
-                <img src="{{ product.imageUrl }}" alt="" />
-            </mat-card-content>
+    <div class="container">
+        <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
+        <div class="third-section">
+            <div class="contact-section">
+                <h4><b>Get in touch</b></h4>
+                <p>+1 305-420-6361 amber.eateries@mail.com <br>Suite B11, Pinnacle Pointe, <br>53 Lady Musgrave Rd, Kingston</p>
+            </div>
+        </div>
 
-            <mat-card-header>
-                <mat-card-title class="title">{{ product.name }}</mat-card-title>
-            </mat-card-header>
-        </mat-card>
-    </div> -->
+        <div class="about-container">
+            <h4><b>About Us</b></h4>
+            <p>Amber Eateries Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi a necessitatibus illo molestiae repudiandae nisi dolores eius molestias mollitia dolorum maiores. <a href="/about">Read More...</a>
+
+            </p>
+        </div>
+
+        <div class="content">
+            <mat-card *ngFor="let product of footerItems" routerLink="/details/{{ product.id }}" class="card">
+                <img src="{{ product.imageUrl }}" alt="" />
+            </mat-card>
+        </div>
+
+    </div>
     <div class="footer-container">
         <form action="">
-            <h1>Join Our Newsletter</h1>
-            <p>Join to get first hand views on our new and upcoming dishes</p>
+            <h2>Join Our Newsletter</h2>
             <div class="email-box">
                 <i class="fas fa-envelope"></i>
                 <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
                 <button class="btn" type="button" name="button">Subscribe</button>
             </div>
         </form>
+    </div>
+    <div class="list">
+        <div class="item">
+            <a href="/">Home</a>
+        </div>
+        <div class="item">
+            <a href="/about">About Us</a>
+        </div>
+        <div class="item">
+            <a href="/contact">Contact Us</a>
+        </div>
+        <div class="item">
+            <a href="/menu">Menu</a>
+        </div>
+        <div class="item">
+            <a href="/update">Inventory</a>
+        </div>
     </div>
 </div>
