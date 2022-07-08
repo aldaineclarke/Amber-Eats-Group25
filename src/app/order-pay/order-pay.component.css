@@ -1,3 +1,7 @@
+.flex {
+  display: flex;
+}
+
 .container {
   color: #fff;
   margin: 20px;
@@ -77,18 +81,18 @@
 }
 
 .right-side {
-  width: 36%;
+  /* width: 36%; */
   position: relative;
-  bottom: 36rem;
-  left: 50rem;
+  top: 13rem;
+  left: 7rem;
   color: #fff;
 }
 
-.order {
+/* .order {
   position: relative;
   left: -28rem;
   width: 25rem;
-}
+} */
 
 .order-info {
   display: flex;
