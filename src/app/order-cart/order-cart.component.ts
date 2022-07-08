@@ -16,7 +16,7 @@ export class OrderCartComponent implements OnInit {
 
   constructor(private router: Router, public dialog: MatDialog, private paymentService: PaymentService) { }
 
-  next() {
+  next() { 
     this.router.navigate(['/', 'checkout'])
       .then(nav => {
         console.log(nav); // true if navigation is successful
@@ -51,7 +51,9 @@ export class OrderCartComponent implements OnInit {
         this.next()
       }
     })
-  } 
+  }
+  
+  
 
   ngOnInit(): void {
   }

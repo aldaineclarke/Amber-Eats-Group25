@@ -18,56 +18,49 @@
                 <mat-card-title>Create Account</mat-card-title>
                 <mat-card-subtitle>End</mat-card-subtitle>
                 <mat-card-content>
-                    <form class="example-form" #createFrom name="createForm">
-                                              
-                        
+                    <form #createForm="ngForm" name="createForm" (ngSubmit)="getUserInformation(createForm.value)">
+                                 
                           <table cellspacing="0">
                             <tr>
                                 <td>
-                                    <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-form-field  appearance="fill">
                                         <mat-label>First name</mat-label>
-                                        <input matInput>
+                                        <input matInput type="text" name="firstName" ngModel>
                                       </mat-form-field>
                                 </td>
                                 <td>
-                                    <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-form-field  appearance="fill">
                                         <mat-label>Last Name</mat-label>
-                                        <input matInput>
+                                        <input matInput type="text" name="lastName" ngModel>
                                     </mat-form-field>
                                 </td> 
                             </tr>
                           </table>
 
-                          <table cellspacing="0">
+                          <!-- <table cellspacing="0">
                             <tr>
                                 <td>
-                                    <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-form-field  appearance="fill">
                                         <mat-label>Address 1</mat-label>
-                                        <input matInput placeholder="Ex. 100 Main St">
+                                        <input matInput type="text" placeholder="Ex. 100 Main St">
                                       </mat-form-field>
                                 </td>
                                 <td>
-                                    <mat-form-field class="example-full-width" appearance="fill">
+                                    <mat-form-field  appearance="fill">
                                         <mat-label>Address 2</mat-label>
-                                        <input matInput placeholder="Kingston">
-                                      </mat-form-field>
-                                </td><br>
-                                <td>
-                                    <mat-form-field appearance="fill" style="width: 58vw;">
-                                        <mat-label>Address 3</mat-label>
-                                        <input matInput placeholder="Kingston">
+                                        <input matInput type="text" placeholder="Kingston">
                                       </mat-form-field>
                                 </td>
                             </tr>
                             
-                          </table>
+                          </table> -->
 
                           <table>
                             <tr>
                                 <td>
                                     <mat-form-field appearance="fill" style="width: 58vw;">
                                         <mat-label>Email</mat-label>
-                                        <input matInput placeholder="name@mail.com">
+                                        <input matInput type="email" name="email" placeholder="name@mail.com" ngModel>
                                     </mat-form-field>
                                 </td>
                             </tr>
@@ -75,18 +68,19 @@
                           <table>
                             <tr>
                                 <td>
+                                    
                                     <mat-form-field appearance="fill" style="width: 58vw;">
-                                        <mat-label>Email</mat-label>
-                                        <input matInput placeholder="name@mail.com">
+                                        <mat-label>Payment Type</mat-label>
+                                        <input matInput type="text" name="paymentMethod" placeholder="Visa, MasterCard" ngModel>
                                     </mat-form-field>
                                 </td>
                             </tr>
                           </table>                
-                      </form>                      
+                          <mat-card-actions align="end">
+                            <input type="submit" mat-raised-button value="Create Account">
+                          </mat-card-actions>
+                    </form>                      
                 </mat-card-content>
-                <mat-card-actions align="end">
-                  <button type="submit" form="createForm" mat-raised-button mat-button color="primary">Created Account</button>
-                </mat-card-actions>
               </mat-card>
         </mat-dialog-content>
     </div>

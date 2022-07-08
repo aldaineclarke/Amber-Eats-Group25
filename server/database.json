@@ -1216,7 +1216,14 @@
     }
   ],
   "users": [
-    {}
+    {},
+    {
+      "id": 1,
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "user@email.com",
+      "paymentMethod": "Visa"
+    }
   ],
   "orders": [
     {}
