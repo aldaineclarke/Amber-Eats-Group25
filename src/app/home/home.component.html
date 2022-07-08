@@ -14,9 +14,9 @@
     </div>
   </div>
 </div>
-<app-rating
+<!-- <app-rating
   [meal]="{ productName: 'Penny', tot_stars: 256, tot_users: 55 }"
-></app-rating>
+></app-rating> -->
 <!-- section-------------------------------------------------- -->
 <section>
   <h1>
@@ -51,6 +51,7 @@
       >
         Buy Meal
       </button>
+      <app-rating class="ratings" [meal]="product"> </app-rating>
     </mat-card-actions>
   </mat-card>
 </div>

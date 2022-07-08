@@ -1,3 +1,4 @@
+import { RatingComponent } from './Components/rating/rating.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,7 +26,6 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
-import { RatingComponent } from './Components/rating/rating.component';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -35,12 +35,11 @@ import { RatingComponent } from './Components/rating/rating.component';
     AboutComponent,
     DetailsComponent,
     ContactComponent,
+    RatingComponent,
     OrderCompletedComponent,
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
-    RatingComponent,
-    // FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +56,6 @@ import { RatingComponent } from './Components/rating/rating.component';
     MatInputModule,
     MatTableModule,
     MatSortModule,
-  
   ],
   providers: [],
   bootstrap: [AppComponent],
