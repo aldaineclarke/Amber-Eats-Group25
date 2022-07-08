@@ -63,8 +63,8 @@
       "price": "153.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=427",
       "quantity": 91041,
-      "totalRatings": null,
-      "ratingCount": 1
+      "totalRatings": 0,
+      "ratingCount": 0
     },
     {
       "id": 7,
