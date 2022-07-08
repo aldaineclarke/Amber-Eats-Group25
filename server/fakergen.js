@@ -4,7 +4,7 @@ var database = { products: [] , menu:[], sides:[] };
 for (var i = 1; i <= 50; i++) {
     database.products.push({
         id: i,
-        sideId:Math.floor(Math.random() * 50) + 1,
+        sideId:Math.floor(Math.random() * 10) + 1,
         name: faker.commerce.productName(),
         description: faker.lorem.sentences(),
         price: faker.commerce.price(),
@@ -26,7 +26,7 @@ for (var i = 1; i <= 20; i++) {
     })
 }
 
-for (var i = 1; i <= 50; i++) {
+for (var i = 1; i <= 10; i++) {
     database.sides.push({
         id: i,
         name: faker.commerce.productName(),
