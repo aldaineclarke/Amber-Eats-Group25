@@ -34,7 +34,7 @@
             </div>
             <!-- Start of Cart Listing -->
             <div class="cart-summary">
-                <h1>Cart Summary(put amount of items in cart!!!)</h1>
+                <h4>Cart Summary(put amount of items in cart!!!)</h4>
                 <div class="cart-summary-content">
                     <table>
                         <thead>
@@ -56,9 +56,10 @@
                                     <form action="" method="post">
                                         <label class="example-value-label">(order.quantity)</label><br>
                                         <mat-slider
+                                            [disabled]="true"
                                             thumbLabel
                                             [displayWith]="formatLabel"
-                                            value="4"
+                                            value="5"
                                             tickInterval="7"
                                             step="1"
                                             min="1"
@@ -90,8 +91,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <tr *ngFor="let order of "> -->
                         <br>
+                        <!-- <tr *ngFor="let order of "> -->
                         <tr>
                             <td>(order.name)</td>
                             <td>(order.total)</td>
@@ -104,7 +105,7 @@
                     <form action="" method="post">
                         <input type="email" name="email" id="cheackEmail" placeholder="email@email.com">
                         <div class="email-button">
-                            <button type="submit">CheckOut Securely</button>
+                            <button type="submit" routerLink="/checkout">CheckOut Securely</button>
                         </div>
                     </form>
                 </div>

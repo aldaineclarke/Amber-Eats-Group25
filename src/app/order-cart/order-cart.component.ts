@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-cart',
@@ -8,6 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class OrderCartComponent implements OnInit {
 
   // value:any = 0;
+  constructor(private router: Router) { }
+
+  next() {
+    this.router.navigate(['/', 'checkout'])
+      .then(nav => {
+        console.log(nav); // true if navigation is successful
+      }, err => {
+        console.log(err) // when there's an error
+      });
+  }
 
   formatLabel(value: number) {
     if (value >= 8) {
@@ -15,8 +26,6 @@ export class OrderCartComponent implements OnInit {
     }
     return value;
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }
