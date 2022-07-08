@@ -1,23 +1,23 @@
 <link rel="stylesheet" href="./details.component.css" />
 
 <div class="card_container">
-    <!-- <mat-spinner *ngIf="products.length === 0"></mat-spinner> -->
+    <!-- <mat-spinner *ngIf="product.length === 0"></mat-spinner> -->
   <mat-card>
     
     <mat-card-content>
       <img
-        src="{{ products.imageUrl }}"
+        src="{{ product?.imageUrl }}"
         alt=""
       />
     </mat-card-content>
     
     <mat-card-header>
-        <mat-card-title>{{ products.name }}</mat-card-title>
+        <mat-card-title>{{ product?.name }}</mat-card-title>
             <br>
-        <p>{{ products.description }}</p>
+        <p>{{ product?.description }}</p>
             <br>
         <mat-card-subtitle> 
-            $/{{ products.price }} {{ products.quantity }}
+            $/{{ product?.price }} {{ product?.quantity }}
         </mat-card-subtitle>
         <br>
       <mat-card-actions>

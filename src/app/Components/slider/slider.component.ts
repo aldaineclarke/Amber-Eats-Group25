@@ -1,5 +1,5 @@
-import { DataService } from './../data.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from 'src/app/Services/data.service';
 
 interface sliderImages {
   imageAlt: string;
@@ -32,7 +32,7 @@ export class SliderComponent implements OnInit {
       this.autoSlideImages();
     }
 
-    this.dataservice.sendGetRequest().subscribe((data: any[]) => {
+    this.dataservice.getAllProducts().subscribe((data: any[]) => {
       this.products = data;
     });
 

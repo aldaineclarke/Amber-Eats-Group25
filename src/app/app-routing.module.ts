@@ -5,9 +5,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
-import { MenuComponent } from './Pages/menu/menu.component';
-import { MenuDetailsComponent } from './Pages/menu-details/menu-details.component';
-import { UpdateMenuComponent } from './Pages/update-menu/update-menu.component';
+
 
 //Routing Setup -----------------------------------------
 const routes: Routes = [
@@ -17,9 +15,7 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'order-completed', component: OrderCompletedComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'menuDetail/:id' , component: MenuDetailsComponent},
-  {path: 'update', component:UpdateMenuComponent}
+
 ];
 
 @NgModule({

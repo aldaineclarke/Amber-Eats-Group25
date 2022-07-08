@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductInterface } from 'src/app/ratings.service';
-import { RatingsService } from 'src/app/ratings.service';
 import { Injectable } from '@angular/core';
 import { ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DataService } from 'src/app/Services/data.service';
+import { ProductInterface } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-rating',
@@ -17,7 +17,7 @@ export class RatingComponent implements OnInit {
   @ViewChild('addMenuForm') creationForm!: ElementRef;
 
   constructor(
-    private ratingsService: RatingsService,
+    private dataService: DataService,
     private activatedroute: ActivatedRoute,
     private router: Router
   ) {}
@@ -58,16 +58,15 @@ export class RatingComponent implements OnInit {
       // totalRatings: this.meal.totalRatings + parseInt(ratingResult.value),
     };
 
-    this.ratingsService
-      .updateRatings(updatedProduct, this.meal.id)
+    this.dataService
+      .updateProduct(this.meal.id,updatedProduct )
       .subscribe(() => this.calculateReviews());
   }
 
   getAllProducts() {
-    this.ratingsService
-      .sendGetRequestRatings()
+    this.dataService
+      .getAllProducts()
       .subscribe((data: ProductInterface[]) => {
-        console.log(data);
         this.ratingsProduct = data;
       });
   }
