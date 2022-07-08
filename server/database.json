@@ -8,8 +8,8 @@
       "price": "130.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=907",
       "quantity": 1566,
-      "totalRatings": 76,
-      "ratingCount": 14
+      "totalRatings": 0,
+      "ratingCount": 0
     },
     {
       "id": 2,
@@ -19,8 +19,8 @@
       "price": "62.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=847",
       "quantity": 66237,
-      "totalRatings": 9,
-      "ratingCount": 3
+      "totalRatings": 0,
+      "ratingCount": 0
     },
     {
       "id": 3,
