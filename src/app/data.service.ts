@@ -28,7 +28,7 @@ export class DataService {
   //Update products post request--------------------------------
   public postProductUpdate(id: number, data: any):Observable<ProductInterface>{
     const url = `${this.REST_API_SERVER}/${id}`;
-    return this.httpClient.patch<ProductInterface>(url,data)
+    return this.httpClient.put<ProductInterface>(url,data)
   }
   
 
@@ -74,7 +74,7 @@ export class DataService {
 
   public UpdateSides(id:number, data:any):Observable<SidesInterface>{
     const url = `${this.REST_API_SERVER_SIDES}/${id}`;
-    return this.httpClient.patch<SidesInterface>(url, data)
+    return this.httpClient.put<SidesInterface>(url, data)
   }
 
 }
