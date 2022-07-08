@@ -1,0 +1,12 @@
+<div class="menuContainer">
+   <h1>Menu</h1>
+
+   <div class="contentContainer">
+        <div class="content" *ngFor="let item of menu">
+            <h2 class="name">{{item.menu_name}}</h2>
+            <h2 class="cost">{{item.cost | currency}}</h2>
+            <button class="view-more" routerLink="/menuDetail/{{ item.id }}">More Details</button>
+        </div>
+   </div>
+  </div>
+
