@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="./home.component.css" />
 
+<app-slider [products]="products" [autoSlide]="true" [controls]="true"></app-slider>
+
 <!-- slider-------------------------------------------------- -->
 <div class="Marquee">
   <div class="Marquee-content" *ngFor="let product of products.slice(0, 5)">
@@ -14,9 +16,7 @@
     </div>
   </div>
 </div>
-<!-- <app-rating
-  [meal]="{ productName: 'Penny', tot_stars: 256, tot_users: 55 }"
-></app-rating> -->
+
 <!-- section-------------------------------------------------- -->
 <section>
   <h1>
@@ -51,18 +51,18 @@
       >
         Buy Meal
       </button>
-      <!-- <app-rating class="ratings" [meal]="product"> </app-rating> -->
     </mat-card-actions>
   </mat-card>
 </div>
 
+
 <!-- gallery------------------------------------------ -->
 <div class="gallery_container" id="card_container">
-  <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-  <h1 style="text-align: center; color: white">Gallery</h1>
+    <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
+    <h1 style="text-align: center; color: white;">Gallery</h1>
   <div class="content">
     <mat-card
-      style="background: #424242"
+      style="background: #424242;"
       *ngFor="let product of footerItems"
       routerLink="/details/{{ product.id }}"
       class="card"
