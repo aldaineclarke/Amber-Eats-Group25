@@ -6,18 +6,18 @@
     
     <mat-card-content>
       <img
-        src="{{ product.imageUrl }}"
+        src="{{ product?.imageUrl }}"
         alt=""
       />
     </mat-card-content>
     
     <mat-card-header>
-        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-title>{{ product?.name }}</mat-card-title>
             <br>
-        <p>{{ product.description }}</p>
+        <p>{{ product?.description }}</p>
             <br>
         <mat-card-subtitle> 
-            $/{{ product.price }} {{ product.quantity }}
+            $/{{ product?.price }} {{ product?.quantity }}
         </mat-card-subtitle>
         <br>
       <mat-card-actions>
