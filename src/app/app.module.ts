@@ -35,7 +35,7 @@ import { HomeComponent } from './Pages/home/home.component';
     AboutComponent,
     DetailsComponent,
     ContactComponent,
-    RatingComponent,
+    // RatingComponent,
     OrderCompletedComponent,
     SliderComponent,
     NextDirective,
