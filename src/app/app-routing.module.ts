@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'order-completed', component: OrderCompletedComponent},
-
 ];
 
 @NgModule({

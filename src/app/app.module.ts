@@ -2,6 +2,7 @@ import { RatingComponent } from './Components/rating/rating.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,7 @@ import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
@@ -52,6 +53,7 @@ import { HomeComponent } from './Pages/home/home.component';
     MatProgressSpinnerModule,
     MatGridListModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
     MatSortModule,
