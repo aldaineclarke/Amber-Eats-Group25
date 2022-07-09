@@ -22,6 +22,7 @@ export class UserService {
   getUser(id: number): Observable<User> {
     return this.http.get<User>(this.userEndpoint + '/' + id);
   }
+
   findEmail(email: string):Observable<User |boolean>{
     
     return this.getAllUsers()
@@ -30,9 +31,8 @@ export class UserService {
       return (emailCheck.length === 0) ? false :emailCheck[0] ;
     }))
   }
+  
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.userEndpoint);
   }
-
-  
 }

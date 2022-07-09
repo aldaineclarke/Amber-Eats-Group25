@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { UserCreationComponent } from '../user-creation/user-creation.component';
-import { PaymentService } from '../payment.service';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-order-cart',
@@ -14,7 +14,7 @@ export class OrderCartComponent implements OnInit {
   // value:any = 0;
 
 
-  constructor(private router: Router, public dialog: MatDialog, private paymentService: PaymentService) { }
+  constructor(private router: Router, public dialog: MatDialog, private userService: UserService) { }
 
   next() { 
     this.router.navigate(['/', 'checkout'])
@@ -43,7 +43,7 @@ export class OrderCartComponent implements OnInit {
   checkUser(email:HTMLInputElement) {
     let userEmail = email.value
 
-    this.paymentService.getEmail(userEmail).subscribe(result => {
+    this.userService.findEmail(userEmail).subscribe(result => {
       if (result == false) {
         console.log(result)
         this.openDialog()

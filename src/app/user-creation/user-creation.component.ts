@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild , ElementRef } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from '../Services/user.service';
 import { User } from '../interfaces/users';
 import { ActivatedRoute, Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
