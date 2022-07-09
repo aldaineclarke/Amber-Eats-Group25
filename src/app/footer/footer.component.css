@@ -158,3 +158,8 @@ a {
 .item a {
     color: white;
 }
+
+.blue {
+    color: blue;
+    text-decoration: underline;
+}
