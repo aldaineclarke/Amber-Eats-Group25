@@ -26,8 +26,17 @@ export class RatingComponent implements OnInit {
   ) {}
 
   openDialog() {
-    this.dialog.open(RatingDialogComponent, {
+    const dialogRef = this.dialog.open(RatingDialogComponent, {
       data: { total_users: this.total_users },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result.value) {
+        this.total_users++;
+        const rating = parseInt(result.value);
+        console.log(rating);
+        this.createRatings(rating);
+      }
     });
   }
   stars: star[] = [];
@@ -83,11 +92,10 @@ export class RatingComponent implements OnInit {
     }
   }
 
-  createRatings(ratingResult: HTMLInputElement) {
-    console.log(ratingResult.value);
+  createRatings(rating: number) {
     const updatedProduct = {
       ratingCount: this.meal.ratingCount + 1,
-      totalRatings: this.meal.totalRatings + parseInt(ratingResult.value),
+      totalRatings: this.meal.totalRatings + rating,
     };
 
     this.ratingsService

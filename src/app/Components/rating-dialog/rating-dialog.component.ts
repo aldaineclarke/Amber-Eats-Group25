@@ -4,10 +4,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   template: `<h1 mat-dialog-title>Amber Eats Review</h1>
     <div mat-dialog-content>
-      <p>Users: {{ total_users }}</p>
       <input class="input-field" type="number" #userRating name="rating" />
       /of 5
-      <button class="button">RATE</button>
+      {{ userRating.value }}
+      <button class="button" [mat-dialog-close]="userRating">RATE</button>
     </div>
     <div mat-dialog-actions></div>`,
 })
