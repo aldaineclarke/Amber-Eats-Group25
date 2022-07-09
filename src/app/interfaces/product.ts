@@ -1,8 +1,11 @@
 export interface ProductInterface {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    imageUrl: string;
-    quantity: number
+    id: number,
+    sideId: number,
+    name: string,
+    description: string,
+    price: number,
+    imageUrl: string,
+    quantity: number,
+    totalRatings: number,
+    ratingCount: number
 }

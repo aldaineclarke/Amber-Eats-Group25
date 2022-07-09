@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Order } from './interfaces/orders';
+import { Order } from '../interfaces/orders';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
-  getallorders(): Observable<Order[]>{
+  getAllOrders(): Observable<Order[]>{
     return this.http.get<Order[]>(this.orderEndpoint)
   }
 

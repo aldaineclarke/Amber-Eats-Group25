@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ProductInterface } from 'src/app/interfaces/product';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-details',
@@ -8,9 +9,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
-  products: any = []; //cannot assign number
-  id: any = [];
-  detail: any;
+  product!: ProductInterface ; //cannot assign number
+  id= 0;
 
   constructor(
     private dataService: DataService,
@@ -18,14 +18,15 @@ export class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dataService.sendGetDetails(this.id).subscribe((data: any[]) => {
-      this.products = data[this.detail];
-    });
+
 
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let details = params.get('id');
-      this.detail = details;
-      console.log(this.detail);
+      let details = params.get('id') as string;
+      this.id = parseInt(details);
+      
+      this.dataService.getProductById(this.id).subscribe((data: ProductInterface) => {
+        this.product = data;
+      });
     });
   }
 }

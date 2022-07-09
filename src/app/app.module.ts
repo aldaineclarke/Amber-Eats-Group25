@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './Pages/home/home.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,10 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
-import { MenuComponent } from './Pages/menu/menu.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MenuDetailsComponent } from './Pages/menu-details/menu-details.component';
-import { UpdateMenuComponent } from './Pages/update-menu/update-menu.component';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -42,6 +38,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UserCreationComponent } from './user-creation/user-creation.component';
 // import { FooterComponent } from './footer/footer.component';
 
+import { SliderComponent } from './Components/slider/slider.component';
+import { NextDirective } from './Directives/next.directive';
+import { PreviousDirective } from './Directives/previous.directive';
+import { HomeComponent } from './Pages/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,14 +52,16 @@ import { UserCreationComponent } from './user-creation/user-creation.component';
     ContactComponent,
     RatingComponent,
     OrderCompletedComponent,
-    MenuComponent,
-    MenuDetailsComponent,
-    UpdateMenuComponent,
+    // MenuComponent,
+    // MenuDetailsComponent,
+    // UpdateMenuComponent,
     OrderCheckoutComponent,
     OrderCartComponent,
     OrderPayComponent,
     UserCreationComponent,
-    // FooterComponent,
+    SliderComponent,
+    NextDirective,
+    PreviousDirective,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,4 @@
-
-export interface OrderItem{
-    id: number
-    name: string;
-    description: string;
-    cost: number;
-    quantity: number;
-}
-
+import { OrderItem } from "./orderItem";
 
 export interface Order{
     id:string;

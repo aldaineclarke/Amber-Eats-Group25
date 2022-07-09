@@ -5,9 +5,9 @@ import { AboutComponent } from './Pages/about/about.component';
 import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
-import { MenuComponent } from './Pages/menu/menu.component';
-import { MenuDetailsComponent } from './Pages/menu-details/menu-details.component';
-import { UpdateMenuComponent } from './Pages/update-menu/update-menu.component';
+// import { MenuComponent } from './Pages/menu/menu.component';
+// import { MenuDetailsComponent } from './Pages/menu-details/menu-details.component';
+// import { UpdateMenuComponent } from './Pages/update-menu/update-menu.component';
 import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
 import { OrderCartComponent } from './order-cart/order-cart.component';
@@ -20,9 +20,9 @@ const routes: Routes = [
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'order-completed', component: OrderCompletedComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'menuDetail/:id' , component: MenuDetailsComponent},
-  {path: 'update', component:UpdateMenuComponent},
+  // {path: 'menu', component: MenuComponent},
+  // {path: 'menuDetail/:id' , component: MenuDetailsComponent},
+  // {path: 'update', component:UpdateMenuComponent},
   {path: 'checkout', component: OrderCheckoutComponent},
   {path: 'pay', component: OrderPayComponent},
   {path: 'cart', component: OrderCartComponent},
