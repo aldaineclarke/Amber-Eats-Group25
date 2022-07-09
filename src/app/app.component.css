@@ -5,19 +5,3 @@
 
 }
 
-html {  /**¯\_(ツ)_/¯*/
-  scroll-snap-type: y mandatory;
-}
-
-body {
-  scroll-behavior:smooth;
-  background: #303030;
-  height: max-content;
-}
-
-mat-toolbar{
-  position: sticky;
-  top: 0%;
-  z-index: 100;
-}
-
