@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductInterface } from 'src/app/ratings.service';
@@ -6,7 +6,8 @@ import { RatingsService } from 'src/app/ratings.service';
 import { Injectable } from '@angular/core';
 import { ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { RatingDialogComponent } from '../rating-dialog/rating-dialog.component';
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
@@ -15,15 +16,23 @@ import { FormsModule } from '@angular/forms';
 export class RatingComponent implements OnInit {
   @Input() meal!: ProductInterface;
   @ViewChild('addMenuForm') creationForm!: ElementRef;
+  myVar!: boolean;
 
   constructor(
     private ratingsService: RatingsService,
     private activatedroute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
-  avgReviews = 0;
+  openDialog() {
+    this.dialog.open(RatingDialogComponent, {
+      data: { total_users: this.total_users },
+    });
+  }
+  stars: star[] = [];
   total_users = 0;
+  avgReviews = 0;
   ratingsProduct: ProductInterface[] = [];
   ngOnInit(): void {
     // updateproduct(){
@@ -42,13 +51,36 @@ export class RatingComponent implements OnInit {
   }
 
   calculateReviews() {
-    this.avgReviews = Number(
-      (this.meal.totalRatings / this.meal.ratingCount).toFixed(1)
-    );
-    this.total_users = this.meal.ratingCount;
+    // checks to see if there is a rating already present on the product, if there is no rating, then product gets five stars by default.
+    if (this.meal.totalRatings == 0 && this.meal.ratingCount == 0) {
+      this.stars = Array(5).fill({ state: 1 });
+    } else {
+      // The code below will be used to calculate the rating average of the product.
+      // const ratings = (this.meal.totalRatings / this.meal.ratingCount).toFixed(
+      //   1
+      // );
+      const ratings = '4.3';
+      this.avgReviews = Number(ratings);
 
-    console.log(this.total_users);
-    console.log(this.avgReviews);
+      // Checks to see if after calculating, the ratings is still the maximum
+      if (this.avgReviews == 5) {
+        this.stars = Array(5).fill({ state: 1 });
+      } else {
+        // The code below calculates the state of the stars that will be show. it can be 0 which means empty, .5 which means its half or 1 which means its full.
+
+        let full = parseInt(ratings.slice(0, 1));
+        this.stars.push(...Array(full).fill({ state: 1 }));
+        let half = parseInt(ratings.slice(2)) < 5 ? 0 : 1;
+        this.stars.push(...Array(half).fill({ state: 0.5 }));
+        let empty = 5 - (full + half);
+        this.stars.push(...Array(empty).fill({ state: 0 }));
+        this.total_users = this.meal.ratingCount;
+      }
+
+      // console.log(this.total_users);
+      // console.log(this.stars);
+      // console.log(this.avgReviews);
+    }
   }
 
   createRatings(ratingResult: HTMLInputElement) {
@@ -67,11 +99,15 @@ export class RatingComponent implements OnInit {
     this.ratingsService
       .sendGetRequestRatings()
       .subscribe((data: ProductInterface[]) => {
-        console.log(data);
+        // console.log(data);
         this.ratingsProduct = data;
       });
   }
 }
+
+type star = {
+  state: number;
+};
 // <app-rating
 //   [meal]="{ , tot_stars: 256, tot_users: 55 }"
 // ></app-rating>

@@ -26,6 +26,10 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { RatingModule } from 'ng-starrating';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
+
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -40,9 +44,11 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
+    RatingDialogComponent,
   ],
   imports: [
     BrowserModule,
+    RatingModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -56,6 +62,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

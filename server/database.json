@@ -8,8 +8,8 @@
       "price": "130.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=907",
       "quantity": 1566,
-      "totalRatings": 76,
-      "ratingCount": 14
+      "totalRatings": 15,
+      "ratingCount": 15
     },
     {
       "id": 2,
@@ -19,8 +19,8 @@
       "price": "62.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=847",
       "quantity": 66237,
-      "totalRatings": 9,
-      "ratingCount": 3
+      "totalRatings": null,
+      "ratingCount": 2
     },
     {
       "id": 3,
@@ -30,8 +30,8 @@
       "price": "572.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=555",
       "quantity": 98273,
-      "totalRatings": 0,
-      "ratingCount": 0
+      "totalRatings": null,
+      "ratingCount": 2
     },
     {
       "id": 4,
@@ -41,8 +41,8 @@
       "price": "424.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=563",
       "quantity": 75381,
-      "totalRatings": 0,
-      "ratingCount": 0
+      "totalRatings": null,
+      "ratingCount": 1
     },
     {
       "id": 5,
@@ -52,8 +52,8 @@
       "price": "550.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=789",
       "quantity": 4034,
-      "totalRatings": 0,
-      "ratingCount": 0
+      "totalRatings": null,
+      "ratingCount": 2
     },
     {
       "id": 6,
@@ -85,8 +85,8 @@
       "price": "469.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=311",
       "quantity": 36958,
-      "totalRatings": 0,
-      "ratingCount": 0
+      "totalRatings": null,
+      "ratingCount": 1
     },
     {
       "id": 9,
@@ -448,8 +448,8 @@
       "price": "740.00",
       "imageUrl": "https://source.unsplash.com/1600x900/?food=615",
       "quantity": 82303,
-      "totalRatings": 0,
-      "ratingCount": 0
+      "totalRatings": 5,
+      "ratingCount": 1
     },
     {
       "id": 42,

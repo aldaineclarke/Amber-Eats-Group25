@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFooterProducts();
-    console.log(this.footerItems);
+    // console.log(this.footerItems);
   }
 
   public getFooterProducts() {

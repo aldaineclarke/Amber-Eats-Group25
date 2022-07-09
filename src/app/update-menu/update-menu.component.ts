@@ -40,7 +40,7 @@ export class UpdateMenuComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit() {
-    console.log(this.modal);
+    // console.log(this.modal);
   }
 
 //post http request for data inside form
@@ -65,7 +65,7 @@ export class UpdateMenuComponent implements OnInit, AfterViewInit{
   
       //posting information to database from forms
       this.dataservice.postMenuDetails(info).subscribe((result)=>{
-        console.log(info)
+        // console.log(info)
         let currentUrl = this.router.url
         this.router.navigateByUrl("/", {skipLocationChange:true}).then(()=>{
         this.router.navigate([currentUrl]);
@@ -83,7 +83,7 @@ export class UpdateMenuComponent implements OnInit, AfterViewInit{
       this.router.navigateByUrl("/", {skipLocationChange:true}).then(()=>{
         this.router.navigate([currentUrl]);
       });
-      console.log(id)
+      // console.log(id)
     }
     );
   }

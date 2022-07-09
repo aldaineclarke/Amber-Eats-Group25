@@ -28,6 +28,7 @@ export class RatingsService {
 
 }
 export interface ProductInterface{
+  totalRatings: number;
   id:number;
   name: string;
   description:string;
@@ -36,5 +37,4 @@ export interface ProductInterface{
   quantity:number;
   ratingsAvg: number;
   ratingCount: number;
-
 }

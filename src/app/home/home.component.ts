@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.getFooterProducts();
-    console.log(this.footerItems); //--------gallery------
+    // console.log(this.footerItems); //--------gallery------
   }
 
   public getFooterProducts() {    //--------gallery------

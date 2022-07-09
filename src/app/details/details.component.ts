@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {
       let details = params.get('id');
       this.detail = details;
-      console.log(this.detail);
+      // console.log(this.detail);
     });
   }
 }
