@@ -1,9 +1,7 @@
-/* body {
-  background: #fff;
-} */ /*the problem with the background and the sizing of the document is in app.component .css*/
+
 .box {
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   /* border: 5px solid red; */
   display: flex;
   flex-direction: column;

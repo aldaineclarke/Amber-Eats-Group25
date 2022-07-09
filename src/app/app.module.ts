@@ -27,7 +27,6 @@ import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
-import {SideDishesComponent} from './Components/side-dishes/side-dishes.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import {SideDishesComponent} from './Components/side-dishes/side-dishes.componen
     SliderComponent,
     NextDirective,
     PreviousDirective,
-    SideDishesComponent
   ],
   imports: [
     BrowserModule,
