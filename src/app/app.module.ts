@@ -29,6 +29,7 @@ import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 // import { FooterComponent } from './footer/footer.component';
 
@@ -45,6 +46,8 @@ import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.
     NextDirective,
     PreviousDirective,
     RatingDialogComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
