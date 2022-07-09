@@ -27,6 +27,10 @@ import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
+
+// import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +39,12 @@ import { HomeComponent } from './Pages/home/home.component';
     AboutComponent,
     DetailsComponent,
     ContactComponent,
-    // RatingComponent,
+    RatingComponent,
     OrderCompletedComponent,
     SliderComponent,
     NextDirective,
     PreviousDirective,
+    RatingDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +62,7 @@ import { HomeComponent } from './Pages/home/home.component';
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
