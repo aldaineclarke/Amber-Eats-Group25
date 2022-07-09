@@ -44,14 +44,11 @@ import { PreviousDirective } from './previous.directive';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
-<<<<<<< HEAD
     // MapComponent,
-=======
     SliderComponent,
     NextDirective,
     PreviousDirective,
     // FooterComponent,
->>>>>>> e2602ca51a519781461ffb9744626b2efb6f4419
   ],
   imports: [
     BrowserModule,
