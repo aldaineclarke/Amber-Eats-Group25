@@ -27,6 +27,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 // import { MapComponent } from './Components/map/map.component';
+import { SliderComponent } from './slider/slider.component';
+import { NextDirective } from './next.directive';
+import { PreviousDirective } from './previous.directive';
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -41,7 +44,14 @@ import { MatInputModule } from '@angular/material/input';
     MenuComponent,
     MenuDetailsComponent,
     UpdateMenuComponent,
+<<<<<<< HEAD
     // MapComponent,
+=======
+    SliderComponent,
+    NextDirective,
+    PreviousDirective,
+    // FooterComponent,
+>>>>>>> e2602ca51a519781461ffb9744626b2efb6f4419
   ],
   imports: [
     BrowserModule,

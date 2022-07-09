@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="./home.component.css" />
 
+<app-slider
+  [products]="products"
+  [autoSlide]="true"
+  [controls]="true"
+></app-slider>
+
 <!-- slider-------------------------------------------------- -->
 <div class="Marquee">
   <div class="Marquee-content" *ngFor="let product of products.slice(0, 5)">
@@ -14,9 +20,7 @@
     </div>
   </div>
 </div>
-<!-- <app-rating
-  [meal]="{ productName: 'Penny', tot_stars: 256, tot_users: 55 }"
-></app-rating> -->
+
 <!-- section-------------------------------------------------- -->
 <section>
   <h1>

@@ -42,9 +42,9 @@ export class RatingComponent implements OnInit {
   }
 
   calculateReviews() {
-    this.avgReviews =
-      Number();
-      // (this.meal.totalRatings / this.meal.ratingCount).toFixed(1)
+    // this.avgReviews = Number(
+    //   (this.meal.totalRatings / this.meal.ratingCount).toFixed(1)
+    // );
     this.total_users = this.meal.ratingCount;
 
     console.log(this.total_users);
