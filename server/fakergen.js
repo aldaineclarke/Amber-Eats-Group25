@@ -23,10 +23,11 @@ for (var i = 1; i <= 20; i++) {
     })
 }
 
-for (var i = 1; i <= 8; i++) {
+for (var i = 1; i <= 10; i++) {
     database.sideDishes.push({
         id: i,
         name: faker.commerce.productName(),
+        imageUrl: "https://source.unsplash.com/1600x900/?food=" + Math.floor(Math.random() * 1000),
         price: faker.commerce.price(),
     })
 }

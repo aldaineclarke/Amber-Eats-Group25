@@ -9,8 +9,8 @@ import { DataService } from '../data.service'
 export class SideDishesComponent implements OnInit {
 
   sides: any = [];
-  categoryAdd: any = [];
-  
+  sideOrders: any = [];
+
   isVisible: boolean = false;
   editCategoryForm: any;
 
@@ -28,14 +28,14 @@ export class SideDishesComponent implements OnInit {
     this.isVisible = ! this.isVisible;
   }
 
-pushSides(value: any) {
+pushSides(value: any, price:any ) {
   if ((<HTMLInputElement>document.getElementById(value)).checked) {
-      // this.categoryAdd.push(value);
-      this.categoryAdd = this.categoryAdd.concat(value);
-      console.log('item pushed' + " " + this.categoryAdd);
+      // this.sideOrders.push(value);
+      this.sideOrders = this.sideOrders.concat(value, price);
+      console.log('item pushed' + " " + this.sideOrders);
   } else {
-      let indexx = this.categoryAdd.indexOf(value);
-      this.categoryAdd.splice(indexx, 1);
+      let indexx = this.sideOrders.indexOf(value);
+      this.sideOrders.splice(indexx, 1);
       console.log('item removed');
 
   }

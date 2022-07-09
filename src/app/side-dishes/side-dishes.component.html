@@ -1,7 +1,7 @@
 <div class="sides" *ngIf="isVisible">
   <p>Available Sides</p>
   <form action="">
-    <!-- <div class="sidesCon" *ngFor="let side of sides">
+    <div class="sidesCon" *ngFor="let side of sides">
         <div class="">
             <input type="checkbox" name="" id="">
             <label for="{{side.name}}">{{side.name}}</label>
@@ -15,10 +15,10 @@
         <button (click)="toggleShowHide()">Close</button>
     </div>
 
-    <p>{{this.sidesOrder}}</p> -->
+    <p>{{this.sideOrders}}</p>
 
     <!-- <label *ngFor="let side of sides" #checkbox class="mdl-checkbox mdl-js-checkbox">
-        <input type="checkbox" name="hobbies" [value]="side" 
+        <input type="checkbox" name="hobbies" [value]="side"
         (change)="showSelected(side, $any($event.target)?.checked)" class="mdl-checkbox__input">
         <span class="mdl-checkbox__label">{{side.name}}</span>
     </label>
@@ -30,18 +30,18 @@
 
     <!-- <input (change)="termsChange($event)" value="terms" type="checkbox" /> Terms -->
 
-    <div *ngFor="let side of sides">
+    <!-- <div class="sidesCon"*ngFor="let side of sides">
       <input
         type="checkbox"
         value="{{side.name}}"
-        (change)="pushSides(side.name)"
+        (change)="pushSides(side.name, side.price)"
         id="{{side.name}}"
       />
       {{ side.name }} {{ side.price }}
     </div>
 
-    <div *ngIf="categoryAdd.length != 0">
-    <p style="border: 5px solid yellow; padding: 10px; font-size: 30px;">{{this.categoryAdd}}hello world</p>
-    </div>
+    <div *ngIf="sideOrders.length != 0">
+    <p style="border: 5px solid yellow; padding: 10px; font-size: 30px;">{{this.sideOrders}}</p>
+    </div> -->
   </form>
 </div>

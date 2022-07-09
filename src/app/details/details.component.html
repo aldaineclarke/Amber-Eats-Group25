@@ -1,39 +1,95 @@
-<link rel="stylesheet" href="./details.component.css" />
+<!-- <link rel="stylesheet" href="./details.component.css" /> -->
+<div class="box">
 
 <div class="card_container">
     <!-- <mat-spinner *ngIf="products.length === 0"></mat-spinner> -->
-  <mat-card>
-    
+  <div class="mat-cards">
+
     <mat-card-content>
       <img
         src="{{ products.imageUrl }}"
         alt=""
       />
     </mat-card-content>
-    
-    <mat-card-header>
-        <mat-card-title>{{ products.name }}</mat-card-title>
-            <br>
-        <p>{{ products.description }}</p>
-            <br>
-        <mat-card-subtitle> 
-            $/{{ products.price }} {{ products.quantity }}
-        </mat-card-subtitle>
-        <br>
-      <mat-card-actions>
-        <button mat-stroked-button color="accent" routerLink="/order-completed">Order Now</button> 
-        <button mat-stroked-button color="accent"(click)="toggleShowHide()">Add Side</button> 
-      </mat-card-actions> 
-    </mat-card-header>
 
-  </mat-card>
+    <div class="content">
+          <mat-card-header>
+            <div class="title">
+              <div class="mat-card-title">{{ products.name }}</div>
+              <p class="dets">{{ products.description }}</p>
+              <div class="default">
+                <p>Complimentary Side: </p>
+                <p>DB Default</p>
+            </div>
+
+              <mat-card-subtitle style="color: #000">
+                <p> $/{{ products.price }} </p>
+                 <!-- <p><button (click)="subtracting()"> - </button> {{ this.i }} <button (click)="adding()"> + </button></p> -->
+                <label>Quantity: <input type="number" [(ngModel)]="selectedQuant" value="1" id="selectedQuant"> </label>
+              </mat-card-subtitle>
+              </div>
+
+              <div class="selectedItems" *ngIf="sideOrders.length != 0">
+                <!-- <p style="color: black; border: 5px solid yellow; padding: 10px; font-size: 15px;">{{this.confirmed}}</p> -->
+                <p class="head">Additional Sides Orders</p>
+                <div class="scrollCon">
+                  <div class="s_Ord" *ngFor="let sideId of sideOrders">
+                    <div class="imgAndTitle">
+                      <img src="{{sides[sideId].imageUrl}}" alt="">
+                      <p>{{sides[sideId].name}}</p>
+                    </div>
+                    <div class="cost">
+                      <p>$ {{sides[sideId].price}}</p>
+
+                    </div>
+                  </div>
+              </div>
+                </div>
+
+              <div class="mat-card-action">
+              <button mat-stroked-button color="accent" routerLink="/order-completed" (click)="addToCart()">Order Now</button>
+              <button mat-stroked-button color="accent"(click)="toggleShowHide()">Add Side</button>
+            </div>
+
+
+          </mat-card-header>
+    </div>
+  </div>
 </div>
-<div class="sides" *ngIf="isVisible">
-  <app-side-dishes></app-side-dishes>,
-</div>
-<!-- to push selected side dishes
-<div *ngIf="categoryAdd.length != 0" style="background-color: red;">
-  <p style="border: 5px solid yellow; padding: 10px; font-size: 30px;">{{this.categoryAdd}}hello world</p>
-  </div> -->
+
+  <div class="sides slideIn" *ngIf="isVisible">
+  <!-- <div class="sides"> -->
+
+    <p>Available Sides</p>
+    <hr>
+
+    <div class="sideOrderCon">
+      <div *ngFor="let side of sides" class="sidesList">
+          <div class="cbox">
+            <input type="checkbox" value="{{side.name}}" (change)="pushSides(side.id, side.name)" id="{{side.name}}"/>
+            <img src="{{side.imageUrl}}"> {{ side.name }}
+          </div>
+          <div class="price">
+            $ {{ side.price }}
+          </div>
+      </div>
+  </div>
+      <div class="btns">
+        <button (click)="confirmedSides()">Confirm</button>
+        <button (click)="toggleShowHide()">Close</button>
+    </div>
+
+  </div>
+
+  <form action="">
+    <input type="hidden" value ="{{products.imageUrl}}" id="imgUrl" name="name">
+    <input type="hidden" value ="{{products.name}}" id="name" name="name">
+    <input type="hidden" value ="{{products.description}}" id="desc" name="name">
+    <input type="hidden" value ="{{products.price}}" id="price" name="name">
+    <!-- <input type="hidden" id="itemsOrdered" name="name"> {{selectedQuant}} -->
+    <input type="hidden" value ="{{sideOrders}}" id="sideSelected" name="name">
+  </form>
+  </div>
+
 
 
