@@ -21,7 +21,7 @@ export class MealsCatalogueComponent implements OnInit {
   ngOnInit(): void {
 
     this.dataService.getAllProducts().subscribe((data: any[]) => {
-      this.products = data;
+      this.products = data.slice(0,20);
       this.length = data.length
     });
   }

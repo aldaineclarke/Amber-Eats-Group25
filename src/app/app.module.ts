@@ -33,6 +33,7 @@ import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.
 import { FooterComponent } from './Components/footer/footer.component';
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
 
+
 // import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
