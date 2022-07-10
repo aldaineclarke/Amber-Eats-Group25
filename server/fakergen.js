@@ -41,4 +41,5 @@ for (var i = 1; i <= 10; i++) {
 
 
 
+
 console.log(JSON.stringify(database)); //db variable from line 3

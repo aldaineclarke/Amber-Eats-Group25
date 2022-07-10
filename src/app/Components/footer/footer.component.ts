@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../data.service';
+import { ProductInterface } from 'src/app/interfaces/product';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +8,7 @@ import { DataService } from '../../data.service';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  footerItems: any[] = [];
+  footerItems: ProductInterface[] = [];
   
   constructor(private dataService: DataService) {}
 
@@ -17,31 +18,31 @@ export class FooterComponent implements OnInit {
   }
 
   public getFooterProducts() {
-    this.dataService.sendGetDetails(5).subscribe((data: any[]) => {
+    this.dataService.getProductById(5).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(17).subscribe((data: any[]) => {
+    this.dataService.getProductById(17).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(3).subscribe((data: any[]) => {
+    this.dataService.getProductById(3).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(38).subscribe((data: any[]) => {
+    this.dataService.getProductById(38).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(10).subscribe((data: any[]) => {
+    this.dataService.getProductById(10).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(5).subscribe((data: any[]) => {
+    this.dataService.getProductById(5).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(42).subscribe((data: any[]) => {
+    this.dataService.getProductById(42).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(33).subscribe((data: any[]) => {
+    this.dataService.getProductById(33).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(30).subscribe((data: any[]) => {
+    this.dataService.getProductById(30).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
   }

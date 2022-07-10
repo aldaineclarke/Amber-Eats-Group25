@@ -2,6 +2,7 @@
   /* border: 1px solid black; */
   box-sizing: border-box;
 }
+
 .button {
   color: #f1f1f1;
   background-color: purple;
@@ -19,19 +20,15 @@
   background-color: rgb(255, 3, 255);
 }
 
-body {
+/* body {
   font-family: Arial;
   margin: 0 auto;
   max-width: 800px;
   padding: 20px;
-}
-p {
-  color: white;
-}
 
-.heading {
-  font-size: 25px;
-  margin-right: 25px;
+  position: relative;
+} */
+p {
   color: white;
 }
 
@@ -40,24 +37,35 @@ p {
   cursor: pointer;
 }
 
+/*  */
+
+.review-count {
+  font-size: 25px;
+  font-weight:500;
+  display:flex;
+  align-items: flex-end;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  /* background-color: #424242; This is the color of the card */
+  /* align-content: center; */
+}
+.reviewers{
+  font-size: .7rem;
+  align-self:flex-end;
+  line-height: 10px;
+}
+
+.modal {
+  cursor: pointer;
+}
+
 .checked {
   color: orange;
-}
-
-.side {
-  float: left;
-  width: 15%;
-  margin-top: 10px;
-}
-
-.middle {
-  float: left;
-  width: 70%;
-  margin-top: 10px;
-}
-
-.right {
-  text-align: right;
 }
 
 input[type="radio"] {
@@ -71,9 +79,10 @@ input[type="radio"] {
 
 .rated-rapper {
   position: relative;
+  color: goldenrod;
 }
 
-.rated-rapper:hover  {
+.rated-rapper:hover {
   color: #ff9800;
 }
 .row:after {
@@ -88,7 +97,10 @@ input[type="radio"] {
   text-align: center;
   color: white;
 }
-
+mat-card-actions{
+  display:flex;
+  justify-content: space-between;
+}
 .bar-5 {
   width: 60%;
   height: 18px;
@@ -114,6 +126,7 @@ input[type="radio"] {
   height: 18px;
   background-color: #f44336;
 }
+
 
 @media (max-width: 400px) {
   .side,

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 .cart-btn {
@@ -23,4 +24,7 @@
   width: 1.2rem;
   height: 1.2rem;
   text-align: center;
+}
+app-footer{
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
 }
