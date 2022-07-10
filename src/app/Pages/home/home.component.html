@@ -2,22 +2,6 @@
 
 <app-slider [products]="products" [autoSlide]="true" [controls]="true"></app-slider>
 
-<!-- slider-------------------------------------------------- -->
-<div class="Marquee">
-  <div class="Marquee-content" *ngFor="let product of products.slice(0, 5)">
-    <div class="Marquee-tag">
-      <a routerLink="/details/{{ product.id }}">
-        <img
-          style="height: 61vh; width: 32vw"
-          src="{{ product.imageUrl }}"
-          alt=""
-        />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- section-------------------------------------------------- -->
 <section>
   <h1>
     What would you like to eat? <br /><br />
@@ -44,6 +28,7 @@
     </mat-card-header>
 
     <mat-card-actions>
+      <app-rating class="ratings" [meal]="product"> </app-rating>
       <button
         mat-stroked-button
         color="accent"
