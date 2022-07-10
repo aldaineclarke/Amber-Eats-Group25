@@ -2,6 +2,7 @@ import { RatingComponent } from './Components/rating/rating.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,7 @@ import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +27,11 @@ import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
+import { FooterComponent } from './Components/footer/footer.component';
+
+// import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,9 @@ import { HomeComponent } from './Pages/home/home.component';
     SliderComponent,
     NextDirective,
     PreviousDirective,
+    RatingDialogComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,9 +61,11 @@ import { HomeComponent } from './Pages/home/home.component';
     MatProgressSpinnerModule,
     MatGridListModule,
     FormsModule,
+    ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

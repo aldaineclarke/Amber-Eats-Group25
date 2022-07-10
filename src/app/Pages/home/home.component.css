@@ -137,3 +137,13 @@ mat-card-content img {
 .title {
   color: grey;
 }
+
+mat-card-actions{
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+app-rating{
+  display:flex;
+  align-self:center;
+}
