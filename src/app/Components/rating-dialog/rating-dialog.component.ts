@@ -6,5 +6,5 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class RatingDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
-  total_users = this.data.total_users;
+  productName = this.data.productName;
 }
