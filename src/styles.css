@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* @import"~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
-@import"~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+:root{
+  --light-theme-font: #333;
+  --light-theme-background: white;
+  --dark-theme-font: white;
+  --dark-theme-background: #303030;
+  --primary: #3f51b5;
+  --secondary: #ff4081;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -12,14 +20,27 @@ html {  /**¯\_(ツ)_/¯*/
   
   body {
     scroll-behavior:smooth;
-    background: #303030;
+    background: var(--light-theme-background);
+    color: var(--light-theme-color);
     height: max-content;
   }
+
+  mat-card-header div.mat-card-header-text{
+    margin:0;
+}
   
   mat-toolbar{
     position: sticky;
     top: 0%;
     z-index: 100;
   }
+
+.pink{
+  background-color: rgb(255 226 220 / 27%);
+  color: var(--secondary)
+}
+.primary{
+  color: var(--primary);
+}
   
   
