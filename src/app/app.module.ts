@@ -28,8 +28,10 @@ import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
 
 // import { FooterComponent } from './footer/footer.component';
 
@@ -47,6 +49,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     PreviousDirective,
     RatingDialogComponent,
     FooterComponent,
+    MealsCatalogueComponent,
 
   ],
   imports: [
@@ -66,6 +69,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     MatTableModule,
     MatSortModule,
     MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
