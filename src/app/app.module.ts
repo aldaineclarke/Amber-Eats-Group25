@@ -30,8 +30,12 @@ import { HomeComponent } from './Pages/home/home.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { InventoryComponent } from './Pages/inventory/inventory.component';
+import { AddProductsComponent } from './Components/add-products/add-products.component';
+import { AddSidesComponent } from './Components/add-sides/add-sides.component';
+import { EditProductsComponent } from './Components/edit-products/edit-products.component';
+import { EditSidesComponent } from './Components/edit-sides/edit-sides.component';
 
-// import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,11 @@ import { FooterComponent } from './Components/footer/footer.component';
     PreviousDirective,
     RatingDialogComponent,
     FooterComponent,
+    InventoryComponent,
+    AddProductsComponent,
+    AddSidesComponent,
+    EditProductsComponent,
+    EditSidesComponent,
 
   ],
   imports: [
