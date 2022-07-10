@@ -41,6 +41,7 @@ p {
 
 .review-count {
   font-size: 25px;
+  font-weight:500;
   display:flex;
   align-items: flex-end;
 }
@@ -50,7 +51,7 @@ p {
   align-items: center;
   justify-content: flex-end;
   gap: 3px;
-  background-color: #424242; /*This is the color of the card*/
+  /* background-color: #424242; This is the color of the card */
   /* align-content: center; */
 }
 .reviewers{
@@ -125,6 +126,7 @@ mat-card-actions{
   height: 18px;
   background-color: #f44336;
 }
+
 
 @media (max-width: 400px) {
   .side,
