@@ -4,3 +4,23 @@
   box-sizing: border-box;
 }
 
+.cart-btn {
+  position: relative;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  padding: 2px 3px;
+  border-radius: 100%;
+  background-color: #00a6ff;
+  color: #fff;
+  font-size: 12px;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+}
