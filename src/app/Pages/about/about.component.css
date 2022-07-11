@@ -27,7 +27,7 @@
 .top-section .top-section-content .contents{
     display: flex;
     grid-column: 1/3;
-    gap: 10px;
+    gap: 20px;
 }
 
 
@@ -41,6 +41,7 @@
 .top-section .top-section-image{
     width: 100%;
     height: 100%;
+    background-size:contain ;
 }
 
 .top-section .top-section-image img{
@@ -109,7 +110,7 @@
 
 
 .middle-quote-section{
-    margin: 14em 10em 10em 10em;
+    margin: 14em 10em 0em 10em;
 }
 
 .middle-quote-section p{
@@ -123,7 +124,7 @@
 .quote-manager{
     display: flex;
     justify-content: center;
-    margin: 20px auto;
+    margin: 20px auto 0px auto;
     align-items: center;
 }
 
@@ -156,3 +157,4 @@
     font-weight: 400;
     font-size: 15px;
 }
+
