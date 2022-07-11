@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>{{productName}}</h1>
 <div mat-dialog-content>
-    <input class="input-field" type="number" #userRating name="rating" />
+    <input class="input-field" type="number" #userRating name="rating" max="5" min="1"/>
     /of 5
     <button class="button" [mat-dialog-close]="userRating">RATE</button>
 </div>
