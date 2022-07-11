@@ -1,46 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Great+Vibes&family=Gulzar&family=Poppins:wght@100;300&display=swap');
 
-.container{
-    /* border: 1px solid red; */
-    padding: 4% 2%;
-    /* background-color: #303030; */
+
+.top-section{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 3.2rem;
 }
 
-.container>h1{
-    border-bottom: 1px solid grey;
-    font-size: 50px;
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    padding: 1%;
-}
-.container>h2{
-    text-align: center;
-    font-weight: bold;
+.top-section .top-section-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    position: relative;
 }
 
-.container>p{
-    padding: 0 10%;
-    text-align: center;
+.top-section .top-section-content .heading{
+    grid-column: 1/3;
 }
 
+.top-section .top-section-content  .heading h1{
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    font-weight: 700;
+}
 
-section{
-    /* border: 1px solid red; */
+.top-section .top-section-content .contents{
     display: flex;
-    justify-content: space-evenly;
+    grid-column: 1/3;
+    gap: 10px;
+}
+
+
+
+.top-sectin .top-section-content .contents > section p{
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+
+.top-section .top-section-image{
+    width: 100%;
+    height: 100%;
+}
+
+.top-section .top-section-image img{
+    width: 100%;
+    height: 100%;
+}
+
+/* middle section deign */
+.middle-section{
+    position: relative;
+    margin: 4rem 4rem;
+    height: 400px;
+}
+
+.middle-section > div {
+    position: absolute;
+    
+}
+
+.middle-section > div img{
+    width: 100%;
+    height: 100%;
+}
+
+.middle-section .first-image{
+    z-index: 10;
+    left: 0;
+}
+
+.middle-section .second-image{
+    z-index: 20;
+    width: 400px;
+    height: 200px;
+    right: -20px;
+}
+
+.middle-section .third-image{
+    width: 400px;
+    height: 300px;
+    z-index: 40;
+    right: 15%;
+    top: 180px;
+}
+
+.button{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 40;
+    right: 27%;
+    top: 70px;
+    color: #848484;
+    background-color: #F5F5F5;
+    padding: .6rem .8rem;
+    border: 2px solid #848484;
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover{
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transition: .2s;
+}
+
+
+.middle-quote-section{
+    margin: 14em 10em 10em 10em;
+}
+
+.middle-quote-section p{
+    text-align: center;
+    line-height: 45.07px;
+    font-weight: 400;
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+}
+
+.quote-manager{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
     align-items: center;
+}
+
+.quote-manager .manager-img{
+    width: 64px;
+    height: 64px;
+}
+
+.quote-manager .manager-img img{
+    height: 100%;
     width: 100%;
 }
 
-section img{
-    width: 50%;
+.quote-manager .manager-name{
+    margin: 20px 0px 0px 10px;
 }
 
-.info{
-    padding-left: 3%;
+.quote-manager .manager-name h2{
+    font-family: 'Poppins', sans-serif;
+    line-height: 20px;
 }
-.info h1{
-    font-size: 35px;
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
+
+.quote-manager .manager-name .title{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.quote-manager .manager-name .name{
+    font-weight: 400;
+    font-size: 15px;
 }
