@@ -2,47 +2,20 @@
     <mat-spinner></mat-spinner>
 </div>
 <ng-template #homepage>
+   <div style="display:flex; gap: 5rem; ">
+    
+    
+
+   </div>
     <section class="home">
         <div class="section-header pink">
             <h1 class="">View All Meals</h1>
 
         </div>
         <div class="container-1240">
-            <!-- <div class="filter-form">
-                <form style="font-size: 12px">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Filter</mat-label>
-                        <input matInput>
-                      </mat-form-field>
-                      <button mat-button color="accent">Filter</button>
-                </form>
-            </div> -->
             <div class="card-grid" >
     
-                <mat-card *ngFor="let product of products">
-                    
-                    <img class="card-img" mat-card-image src=
-                    {{product.imageUrl}} alt="Photo of a Shiba Inu">
-                    <mat-card-header>
-                        <mat-card-title>{{(product.name.length > 27) ?product.name.slice(0, 27) + " ...": product.name}}</mat-card-title>
-                        
-                    </mat-card-header>
-                    <mat-card-content class="desc" >
-                        <p class="card-price">$ {{product.price}}</p>
-                        <p>{{(product.description.length > 120) ?product.description.slice(0, 100) + "...": product.description}}</p>
-                        
-                    </mat-card-content>
-                    <mat-card-actions class="flex button">
-                        <app-rating class="ratings" [meal]="product"> </app-rating>
-                        <button
-                          mat-stroked-button
-                          color="accent"
-                          routerLink="/details/{{ product.id }}"
-                        >
-                          View Meal
-                        </button>
-                    </mat-card-actions>
-                </mat-card>
+                <app-card [product]="product" *ngFor="let product of products"></app-card>
             </div>
 
             <mat-paginator [length]="length"
