@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsComponent } from './Pages/details/details.component';
@@ -44,6 +44,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
+import { CardComponent } from './Components/card/card.component';
 
 
 // import { FooterComponent } from './footer/footer.component';
@@ -67,6 +68,7 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     RatingDialogComponent,
     FooterComponent,
     MealsCatalogueComponent,
+    CardComponent,
 
   ],
   imports: [

@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="image-wrapper">
+        <img [src]="product.imageUrl" alt=" Image of {{product.imageUrl}}">
+    </div>
+
+    <div class="card-body">
+        <p class="card-name">{{(product.name.length > 20) ? product.name.slice(0, 20) + " ...": product.name}}</p>
+        <p class="card-desc">{{(product.description.length > 40) ?product.description.slice(0, 100) + "...": product.description}}</p>
+        <div class="card-flex">
+            <p class="card-price">{{product.price | currency}}</p>
+            <app-rating [meal]="product"></app-rating>
+        </div>
+    </div>
+</div>
