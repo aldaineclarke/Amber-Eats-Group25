@@ -1,8 +1,12 @@
 nav {
+  position: absolute;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 5rem;
+  width: 88.2vw;
+  background: transparent;
 }
 
 .logo{
