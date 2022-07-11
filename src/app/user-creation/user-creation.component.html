@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="close">
+    <button mat-button matDialogClose><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="dialog">
+    <div class="header">
+      <h1 matDialogTitle>Order Type Selection</h1>
+      <h4>Please Select <strong>One (1)</strong> option below</h4>
+    </div>
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="show()">Sign Up</button>
+      <button mat-raised-button matDialogClose routerLink="/checkout">
+        CheckOut without Account
+      </button>
+    </mat-dialog-actions>
+
+    <!-- Create User Account -->
+    <mat-dialog-content class="dialog-content" *ngIf="create">
+      <mat-card>
+        <mat-card-title>Create Account</mat-card-title>
+        <mat-card-subtitle>End</mat-card-subtitle>
+        <mat-card-content>
+          <form
+            #createForm="ngForm"
+            name="createForm"
+            (ngSubmit)="getUserInformation(createForm.value)"
+          >
+            <table cellspacing="0" class="flexTable">
+              <tr>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput type="text" name="firstName" ngModel />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" name="lastName" ngModel />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+            <table cellspacing="0" class="flexTable">
+              <tr>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Address 1</mat-label>
+                    <input matInput type="text" placeholder="Ex. 100 Main St" />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Parish</mat-label>
+                    <input matInput type="text" placeholder="Kingston" />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field appearance="fill" style="width: 58vw">
+                    <mat-label>Email</mat-label>
+                    <input
+                      matInput
+                      type="email"
+                      name="email"
+                      placeholder="name@mail.com"
+                      ngModel
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+            <table>
+                <tr>
+                  <th>Card Information</th>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field appearance="fill" style="width: 58vw">
+                      <mat-label>Card Holder's Name</mat-label>
+                      <input
+                        matInput
+                        type="text"
+                        name="name"
+                        placeholder="eg: John Doe"
+                        ngModel
+                      />
+                    </mat-form-field>
+                  </td>
+                </tr>
+            </table>
+            <table cellspacing="0" class="flexTable">
+              <tr>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Card Number</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      name="cardNumber"
+                      placeholder="eg: **** **** **** ****"
+                      ngModel
+                    />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Expiration Date</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      name="expiryDate"
+                      placeholder="eg: 00/0000"
+                      ngModel
+                    />
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+            <mat-card-actions align="end">
+              <input type="submit" mat-raised-button matDialogClose value="Create Account" />
+            </mat-card-actions>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-dialog-content>
+  </div>
+</div>

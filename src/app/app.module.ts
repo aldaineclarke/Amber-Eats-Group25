@@ -23,11 +23,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
+import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { OrderCartComponent } from './order-cart/order-cart.component';
+import { OrderPayComponent } from './order-pay/order-pay.component';
+import {MatSliderModule} from '@angular/material/slider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserCreationComponent } from './user-creation/user-creation.component';
+// import { FooterComponent } from './footer/footer.component';
+
 import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
 import { HomeComponent } from './Pages/home/home.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -45,6 +59,13 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     ContactComponent,
     RatingComponent,
     OrderCompletedComponent,
+    // MenuComponent,
+    // MenuDetailsComponent,
+    // UpdateMenuComponent,
+    OrderCheckoutComponent,
+    OrderCartComponent,
+    OrderPayComponent,
+    UserCreationComponent,
     SliderComponent,
     NextDirective,
     PreviousDirective,
@@ -70,7 +91,17 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     MatTableModule,
     MatSortModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    MatExpansionModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

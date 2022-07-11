@@ -1,0 +1,112 @@
+.flex {
+  display: flex;
+}
+
+.container {
+  color: #fff;
+  margin: 20px;
+}
+
+.billing-header,
+.container-left,
+.address-details,
+.payment-methods {
+  width: 50%;
+}
+
+.back-link,
+.billing-header,
+.address-details,
+.payment-methods {
+  padding: 15px;
+}
+
+.address-details {
+  margin-top: 25px;
+}
+
+.payment-methods {
+  padding-top: 65px;
+}
+
+.mat-expansion-panel {
+  margin: 21px;
+}
+
+.exp {
+  margin-right: 70px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 0.7rem;
+}
+
+.top {
+  width: 40rem;
+}
+
+.icon {
+    border: none;
+    background-color: #64EFAB;
+    border-radius: 50%;
+    padding: 0.7rem;
+}
+
+.heading {
+  width: 20rem;
+}
+
+.heading h3 {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  position: absolute;
+  top: 9rem;
+  right: 31.7rem
+}
+
+.right-side {
+  /* width: 36%; */
+  position: relative;
+  top: 13rem;
+  left: 7rem;
+  color: #fff;
+}
+
+/* .order {
+  position: relative;
+  left: -28rem;
+  width: 25rem;
+} */
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.btn {
+  padding: 8px;
+  width: 28.7rem;
+  margin-top: 32px;
+}
+
+
+
+
+

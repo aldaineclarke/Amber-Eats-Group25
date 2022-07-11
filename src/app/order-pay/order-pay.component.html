@@ -1,0 +1,162 @@
+<div class="flex">
+  <div class="container">
+    <div class="back-link">
+      <div class="link">
+        <mat-icon class="icon">chevron_left</mat-icon>
+        <a href="#">Back to Checkout Page</a>
+      </div>
+    </div>
+    <!--------------------------------- billing information section start --------------------------------------->
+    <div class="billing-header">
+      <div class="heading">
+        <h3>Billing Address</h3>
+      </div>
+      <div class="billing-info">
+        <p>
+          Please make sure the billing address you enter below matches the name
+          and <br />
+          address associated with the credit card you are using for this purchase.
+        </p>
+      </div>
+    </div>
+    <!--------------------------------- billing information section end --------------------------------------->
+
+    <div class="container-left">
+      <mat-divider class="top"></mat-divider>
+    </div>
+    <!--------------------------------- address section start --------------------------------------->
+    <div class="address-details">
+      <div class="info">
+        <div class="name">
+          <p>name to go here</p>
+          <p>Number to go here</p>
+        </div>
+        <div class="address">
+          <p>address 1</p>
+          <p>address 2</p>
+        </div>
+        <div class="edit-link">
+          <a href="#">Edit</a>
+        </div>
+      </div>
+    </div>
+    <!--------------------------------- address section end --------------------------------------->
+
+    <!--------------------------------- payment methods start --------------------------------------->
+    <div class="payment-methods">
+      <div class="heading">
+        <h3>Pay with</h3>
+      </div>
+      <form class="form" action="" method="post">
+      <mat-accordion>
+        <mat-expansion-panel style="width: 34rem" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-radio-button type="submit">Add a new card</mat-radio-button>
+            </mat-panel-title>
+            <mat-panel-description>
+              Visa and Master Cards accepted
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="card-info">
+            <div class="card-details">
+              <mat-form-field appearance="outline">
+                <mat-label>Card Number</mat-label>
+                <input matInput placeholder="xxxx-xxxx-xxxx-xxxx" />
+              </mat-form-field>
+            </div>
+            <div class="exp-date">
+              <mat-form-field class="exp" appearance="outline">
+                <mat-label>Expiration Date</mat-label>
+                <input matInput placeholder="MM/YY"/>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Security Code</mat-label>
+                <input matInput placeholder="CVV/CVC/CID"/>
+              </mat-form-field>
+            </div>
+            <section class="example-section">
+              <mat-checkbox class="example-margin">Remember this card for later use</mat-checkbox>
+            </section>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <div class="cash">
+        <mat-accordion>
+        <mat-expansion-panel style="width: 34rem" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-radio-button type="submit">Cash on Delivery</mat-radio-button>
+            </mat-panel-title>
+            <mat-panel-description>
+              Pay with cash on delivery
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+      </div>
+
+      <div class="lynk">
+        <mat-accordion>
+          <mat-expansion-panel style="width: 34rem" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-radio-button type="submit">Lynk</mat-radio-button>
+              </mat-panel-title>
+              <mat-panel-description>
+                Pay using your lynk account
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="card-info">
+              <div class="card-details">
+                <mat-form-field appearance="outline">
+                  <mat-label>Your Link Name</mat-label>
+                  <input matInput placeholder="Your Lynk Name" />
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </form>
+      <!--------------------------------- payment methods end --------------------------------------->
+    </div>
+  </div>
+
+    <div class="container-right">
+      <mat-divider class="center" vertical style="height: 40rem;"></mat-divider>
+    </div>
+
+    <div class="right-side">
+        <div class="heading">
+          <h3>Order Summary</h3>
+        </div>
+
+        <div class="order-info">
+          <div class="left-info">
+            <p>Order NO.</p>
+            <p>Subtotal:</p>
+            <p>Delivery fee:</p>
+            <p>Sales Tax</p>
+            <p>Grand Total:</p>
+          </div>
+          <div class="right-info">
+            <p>(order.num)</p>
+            <p>(order.sub)</p>
+            <p>(order.delivery)</p>
+            <p>(order.tax)</p>
+            <p>(order.total)</p>
+          </div>
+        </div>
+        <button mat-raised-button class="btn" color="accent" type="submit">Pay Now</button>
+    </div>
+</div>
+
+
+
+
+
