@@ -6,4 +6,5 @@ export interface Order{
     totalPrice:number;
     name: string;
     deliveryOption: string;
+    tenderType: string;
   }
