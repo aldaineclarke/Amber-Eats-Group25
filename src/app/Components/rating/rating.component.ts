@@ -65,10 +65,9 @@ export class RatingComponent implements OnInit {
       this.avgReviews = 5;
     } else {
       // The code below will be used to calculate the rating average of the product.
-      // const ratings = (this.meal.totalRatings / this.meal.ratingCount).toFixed(
-      //   1
-      // );
-      const ratings = '4.3';
+      const ratings = (this.meal.totalRatings / this.meal.ratingCount).toFixed(
+        1
+      );
       this.avgReviews = Number(ratings);
 
       // Checks to see if after calculating, the ratings is still the maximum
