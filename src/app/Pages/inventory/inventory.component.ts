@@ -23,6 +23,7 @@ export class InventoryComponent implements OnInit {
 
   ngOnInit() {
     this.getInventoryInfo()
+    this.getSidesInfo()
   }
 
   getInventoryInfo() {
@@ -38,18 +39,24 @@ export class InventoryComponent implements OnInit {
       }
     });
 
-    this.dataservice.getAllSides().subscribe({
-      next: (res) => {
-        console.log(res)
-        this.dataSource = new MatTableDataSource(res);
-        this.dataSource.paginator = this.paginator
-        this.dataSource.sort = this.sort
-      },
-      error: (err) => {
-        alert("Error while fetching the records")
-      }  
-    })
   }
+
+
+    getSidesInfo(){
+      this.dataservice.getAllSides().subscribe({
+        next: (res) => {
+          console.log(res)
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator
+          this.dataSource.sort = this.sort
+        },
+        error: (err) => {
+          alert("Error while fetching the records")
+        }  
+      })
+    }
+    
+   
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -65,3 +72,5 @@ export class InventoryComponent implements OnInit {
     }
   }
 }
+
+
