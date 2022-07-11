@@ -3,9 +3,7 @@
   padding-top: 4%;
   /* background-color: #303030; */
 }
-* {
-  color: white;
-}
+
 
 /* form--------------------------------- */
 mat-card {
@@ -19,8 +17,9 @@ form input {
   height: 30px;
   color: black;
   letter-spacing: 1px;
-  outline: none;
+  /* outline: none; */
   padding: 0% 1%;
+  border: 1px solid #333;
   /* caret-color: #7b1fa2; */
   caret-color: #429a70;
 }
@@ -31,6 +30,8 @@ form textarea {
   color: black;
   letter-spacing: 1px;
   padding: 1%;
+  border: 1px solid #333;
+
   caret-color: #69f0ae;
 }
 

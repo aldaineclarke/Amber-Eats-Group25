@@ -89,4 +89,31 @@ export class CartService {
     updateCart(cart: CartItem[]): void {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
+
+    getCartCount():number{
+        return this.getCart().length ?? 0
+    }
+
+    updateCartItemQuantity(cartID:number, value:number){
+        const cartItems = this.getCart();
+        cartItems.forEach(item =>{
+            if(item.id == cartID) {
+                item.quantity = value;
+            }
+        });
+        this.updateCart(cartItems);
+
+    }
+
+    // getCartTotal(){
+    //     let subTotals = 0;
+    //     const cart = this.getCart()
+
+    //     cart.forEach((product)=>{
+    //         subTotals += parseInt(product.price) * parseInt(product.amount)
+    //     })
+
+    //     return subTotals
+    // }
+
 }
