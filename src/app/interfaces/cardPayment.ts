@@ -1,8 +1,8 @@
 export interface cardPayment {
-  id: number;
+  // id: number;
   cardNumber: number;
   name: string;
   expiryDate: string;
-  CVV: number;
+  // CVV: number;
 }
   

@@ -1,28 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DataService } from '../Services/data.service';
 import { UserCreationComponent } from '../user-creation/user-creation.component';
 import { UserService } from '../Services/user.service';
+import { CartService } from '../Services/cart.service';
+import { CartItem } from '../interfaces/cartItem';
 
 @Component({
   selector: 'app-order-cart',
   templateUrl: './order-cart.component.html',
-  styleUrls: ['./order-cart.component.css']
+  styleUrls: ['./order-cart.component.css'],
 })
 export class OrderCartComponent implements OnInit {
+  cartItems: any = this.cartService.getCart();
 
-  // value:any = 0;
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private dataService: DataService,
+    private userService: UserService,
+    private cartService: CartService
+  ) {}
 
-
-  constructor(private router: Router, public dialog: MatDialog, private userService: UserService) { }
-
-  next() { 
-    this.router.navigate(['/', 'checkout'])
-      .then(nav => {
+  next() {
+    this.router.navigate(['/', 'checkout']).then(
+      (nav) => {
         console.log(nav); // true if navigation is successful
-      }, err => {
-        console.log(err) // when there's an error
-      });
+      },
+      (err) => {
+        console.log(err); // when there's an error
+      }
+    );
   }
 
   formatLabel(value: number) {
@@ -35,29 +44,29 @@ export class OrderCartComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(UserCreationComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  checkUser(email:HTMLInputElement) {
-    let userEmail = email.value
+  ngOnInit() {
+  }
 
-    this.userService.findEmail(userEmail).subscribe(result => {
+  checkUser(email: HTMLInputElement) {
+    let userEmail = email.value;
+
+    this.userService.findEmail(userEmail).subscribe((result) => {
       if (result == false) {
-        console.log(result)
-        this.openDialog()
+        console.log(result);
+        this.openDialog();
       } else {
-        this.next()
+        this.next();
       }
-    })
-  }
-  
-  
-
-  ngOnInit(): void {
+    });
   }
 
+  // Clear Cart
+  clearItems() {
+    this.cartService.clearCart();
+  }
 }
-
-

@@ -24,12 +24,18 @@
     padding: 3vw;
 }
 
-form table {
+form .flexTable {
     width: 100%;
     display: flex;
     justify-content: space-around;
     /* border: 1px solid red; */
 
+}
+
+table th {
+    font-size: 2.5vw;
+    text-decoration: underline;
+    padding: 0.5vw;
 }
 
 .mat-form-field {
