@@ -94,6 +94,17 @@ export class CartService {
         return this.getCart().length ?? 0
     }
 
+    updateCartItemQuantity(cartID:number, value:number){
+        const cartItems = this.getCart();
+        cartItems.forEach(item =>{
+            if(item.id == cartID) {
+                item.quantity = value;
+            }
+        });
+        this.updateCart(cartItems);
+
+    }
+
     // getCartTotal(){
     //     let subTotals = 0;
     //     const cart = this.getCart()

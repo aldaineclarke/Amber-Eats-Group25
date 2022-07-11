@@ -40,7 +40,7 @@ export class DetailsComponent implements OnInit {
 
   getSide(id:number){
    const side = this.sides.find((side)=>side.id == id);
-   return side?.name
+   return side?.name || "Side Missing"
   }
 
   ngOnInit() {
@@ -134,7 +134,7 @@ export class DetailsComponent implements OnInit {
       //   }
 
       {
-        "id" : 1,
+        "id" : this.cartService.getCartCount() + 1,
       "product": this.product,
       "quantity" : parseInt((<HTMLInputElement>document.getElementById("selectedQuant")).value),
       "sides" : this.sideOrders
