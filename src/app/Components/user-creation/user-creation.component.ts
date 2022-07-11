@@ -32,10 +32,6 @@ export class UserCreationComponent implements OnInit {
 
   }
 
-  // createPayment(data){
-    
-  // }
-
   // Post User Information
   getUserInformation(value:any) { 
 
@@ -48,22 +44,25 @@ export class UserCreationComponent implements OnInit {
 
     // Object that stores information to be added
     const userInformation = {
-      id: '',
+      id: '2',
       firstName: value.firstName,
       lastName: value.lastName,
       email: value.email,
+      address: value.adLine1,
       paymentMethod: this.paymentMethod
     }
 
+
     // Posting Information to database
     this.creationService.saveUser(userInformation).subscribe((result) => {
-      console.log(userInformation)
       this.router.navigateByUrl("/", {skipLocationChange:true})
       .then(nav => {
+        console.log(userInformation)
         this.router.navigate(["/", "checkout"])
         // this.orderCart.openDialog()
       }, err => {
-        console.log(err) // when there's an error
+        console.log(err) // when there's an error,
+        console.log(userInformation) 
       });
     })
   }

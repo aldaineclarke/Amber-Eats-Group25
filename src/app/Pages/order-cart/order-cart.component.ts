@@ -14,6 +14,8 @@ import { CartItem } from '../../interfaces/cartItem';
 })
 export class OrderCartComponent implements OnInit {
   cartItems: CartItem[] = this.cartService.getCart();
+
+  
   
   constructor(
     private router: Router,
