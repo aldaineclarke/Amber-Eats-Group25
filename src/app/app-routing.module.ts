@@ -8,7 +8,7 @@ import { OrderCompletedComponent } from './Pages/order-completed/order-completed
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
 import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
-import { OrderCartComponent } from './order-cart/order-cart.component';
+import { OrderCartComponent } from './Pages/order-cart/order-cart.component';
 
 //Routing Setup -----------------------------------------
 const routes: Routes = [
