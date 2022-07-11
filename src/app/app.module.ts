@@ -26,7 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { OrderCheckoutComponent } from './order-checkout/order-checkout.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { OrderCartComponent } from './order-cart/order-cart.component';
+import { OrderCartComponent } from './Pages/order-cart/order-cart.component';
 import { OrderPayComponent } from './order-pay/order-pay.component';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -35,9 +35,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
-import { UserCreationComponent } from './user-creation/user-creation.component';
-// import { FooterComponent } from './footer/footer.component';
-
+import { UserCreationComponent } from './Components/user-creation/user-creation.component';
 import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
 import { PreviousDirective } from './Directives/previous.directive';
@@ -59,9 +57,6 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     ContactComponent,
     RatingComponent,
     OrderCompletedComponent,
-    // MenuComponent,
-    // MenuDetailsComponent,
-    // UpdateMenuComponent,
     OrderCheckoutComponent,
     OrderCartComponent,
     OrderPayComponent,
