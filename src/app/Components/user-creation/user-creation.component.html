@@ -3,22 +3,22 @@
     <button mat-button matDialogClose><mat-icon>close</mat-icon></button>
   </div>
   <div class="dialog">
-    <div class="header">
+    <div class="header" *ngIf="!create">
       <h1 matDialogTitle>Order Type Selection</h1>
       <h4>Please Select <strong>One (1)</strong> option below</h4>
+      <mat-dialog-actions>
+        <button mat-raised-button (click)="show()">Sign Up</button>
+        <button mat-raised-button matDialogClose routerLink="/checkout">
+          CheckOut without Account
+        </button>
+      </mat-dialog-actions>
     </div>
-    <mat-dialog-actions>
-      <button mat-raised-button (click)="show()">Sign Up</button>
-      <button mat-raised-button matDialogClose routerLink="/checkout">
-        CheckOut without Account
-      </button>
-    </mat-dialog-actions>
+    
 
     <!-- Create User Account -->
     <mat-dialog-content class="dialog-content" *ngIf="create">
       <mat-card>
         <mat-card-title>Create Account</mat-card-title>
-        <mat-card-subtitle>End</mat-card-subtitle>
         <mat-card-content>
           <form
             #createForm="ngForm"
@@ -123,7 +123,7 @@
               </tr>
             </table>
             <mat-card-actions align="end">
-              <input type="submit" mat-raised-button matDialogClose value="Create Account" />
+              <button type="submit" color="primary" mat-flat-button matDialogClose value="Create Account">Create User</button>
             </mat-card-actions>
           </form>
         </mat-card-content>

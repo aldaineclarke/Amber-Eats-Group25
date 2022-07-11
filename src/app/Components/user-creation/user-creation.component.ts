@@ -1,10 +1,10 @@
 import { Component, OnInit, AfterViewInit, ViewChild , ElementRef } from '@angular/core';
-import { UserService } from '../Services/user.service';
-import { User } from '../interfaces/users';
+import { UserService } from '../../Services/user.service';
+import { User } from '../../interfaces/users';
 import { ActivatedRoute, Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { cardPayment } from '../interfaces/cardPayment';
-import { OrderCartComponent } from '../order-cart/order-cart.component';
+import { cardPayment } from '../../interfaces/cardPayment';
+import { OrderCartComponent } from '../../Pages/order-cart/order-cart.component';
 
 @Component({
   selector: 'app-user-creation',
@@ -21,7 +21,7 @@ export class UserCreationComponent implements OnInit {
   //variable for storing information added to form
   @ViewChild('createForm') form!: NgForm;
 
-  constructor(private creationService:UserService , private router:Router, private orderCart: OrderCartComponent) { }
+  constructor(private creationService:UserService , private router:Router) { }
   
   // Show Create Account
   show() {
@@ -60,8 +60,8 @@ export class UserCreationComponent implements OnInit {
       console.log(userInformation)
       this.router.navigateByUrl("/", {skipLocationChange:true})
       .then(nav => {
-        this.router.navigate(["/", "checkout"]),
-        this.orderCart.openDialog()
+        this.router.navigate(["/", "checkout"])
+        // this.orderCart.openDialog()
       }, err => {
         console.log(err) // when there's an error
       });

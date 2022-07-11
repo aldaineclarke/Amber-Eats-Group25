@@ -34,7 +34,7 @@
             </div>
             <!-- Start of Cart Listing -->
             <div class="cart-summary">
-                <h4>Cart Summary(put amount of items in cart!!!)</h4>
+                <h4>Cart Summary</h4>
                 <div class="cart-summary-content">
                     <table>
                         <thead>
@@ -49,25 +49,27 @@
                         <tbody>
                             <!-- <tr *ngFor="let order of "> -->
                             <br>
-                            <tr>
-                                <td><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt="Meal Image" width="130vw" height="100vw"></td>
-                                <td>(order.name)</td>
+                            <tr *ngFor="let cartItem of cartItems">
+                                <td><img [src]="cartItem.product.imageUrl" alt="image of {{cartItem.product.name}}" width="130vw" height="100vw"></td>
+                                <td>{{cartItem.product.name}}</td>
                                 <td>
                                     <form action="" method="post">
-                                        <label class="example-value-label">(order.quantity)</label><br>
+                                        <label class="example-value-label">{{cartItem.quantity}}</label><br>
                                         <mat-slider
-                                            [disabled]="true"
+                                            (change)="updateQuantity(cartItem.id, quantity.value)"
                                             thumbLabel
                                             [displayWith]="formatLabel"
-                                            value="5"
+                                            value="{{cartItem.quantity}}"
                                             tickInterval="7"
                                             step="1"
                                             min="1"
-                                            max="7">
+                                            max="7"
+                                            #quantity
+                                            >
                                         </mat-slider>
                                     </form>
                                 </td>
-                                <td>(order.price)</td>
+                                <td>{{cartItem.product.price | currency}}</td>
                                 <td ><button mat-button>Remove</button></td>
                                 <br>
                             </tr>
@@ -89,16 +91,16 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>Item</th>
                             <th>Price</th>
-                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         <br>
                         <!-- <tr *ngFor="let order of "> -->
-                        <tr>
-                            <td>(order.name)</td>
-                            <td>(order.total)</td>
+                        <tr *ngFor="let item of cartItems">
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price | currency}}</td>
                             <br>
                         </tr>
                     </tbody>

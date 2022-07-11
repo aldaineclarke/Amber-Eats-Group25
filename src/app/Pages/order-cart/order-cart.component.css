@@ -54,7 +54,7 @@
 }
 
 .sections {
-    color: white;
+    color: #333;
     font-size: 1.8vw;
 }
 
@@ -114,8 +114,8 @@ tbody {
 }
 
 thead {
-    font-size: 1.4vw;
-    color: #333;
+    font-size: 1vw;
+    color: var(--primary);
 }
 
 .cart-right-sections {
@@ -126,9 +126,10 @@ thead {
 .total-header h4,
 .payment-header h4{
     padding: 0.6vw;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid lightgrey;
     font-size: x-large;
-    color: white;
+    color: var(--primary);
+    font-weight:500;
 }
 
 .check-email {

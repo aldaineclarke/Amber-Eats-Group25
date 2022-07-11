@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { DataService } from '../Services/data.service';
-import { UserCreationComponent } from '../user-creation/user-creation.component';
-import { UserService } from '../Services/user.service';
-import { CartService } from '../Services/cart.service';
-import { CartItem } from '../interfaces/cartItem';
+import { DataService } from '../../Services/data.service';
+import { UserCreationComponent } from '../../Components/user-creation/user-creation.component';
+import { UserService } from '../../Services/user.service';
+import { CartService } from '../../Services/cart.service';
+import { CartItem } from '../../interfaces/cartItem';
 
 @Component({
   selector: 'app-order-cart',
@@ -13,8 +13,8 @@ import { CartItem } from '../interfaces/cartItem';
   styleUrls: ['./order-cart.component.css'],
 })
 export class OrderCartComponent implements OnInit {
-  cartItems: any = this.cartService.getCart();
-
+  cartItems: CartItem[] = this.cartService.getCart();
+  
   constructor(
     private router: Router,
     public dialog: MatDialog,
@@ -34,6 +34,13 @@ export class OrderCartComponent implements OnInit {
     );
   }
 
+  updateQuantity(cartID:number, value:number){
+    this.cartService.updateCartItemQuantity(cartID, value);
+    // console.log(cartID);
+    // console.log(value);
+    this.cartItems = this.cartService.getCart();
+
+  }
   formatLabel(value: number) {
     if (value >= 8) {
       return Math.round(value / 7);
@@ -50,6 +57,7 @@ export class OrderCartComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.cartItems)
   }
 
   checkUser(email: HTMLInputElement) {
