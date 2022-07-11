@@ -35,6 +35,7 @@ import { AddProductsComponent } from './Components/add-products/add-products.com
 import { AddSidesComponent } from './Components/add-sides/add-sides.component';
 import { EditProductsComponent } from './Components/edit-products/edit-products.component';
 import { EditSidesComponent } from './Components/edit-sides/edit-sides.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { EditSidesComponent } from './Components/edit-sides/edit-sides.component
     MatTableModule,
     MatSortModule,
     MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

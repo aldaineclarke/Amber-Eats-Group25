@@ -5,6 +5,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { DetailsComponent } from './Pages/details/details.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { OrderCompletedComponent } from './Pages/order-completed/order-completed.component';
+import { InventoryComponent } from './Pages/inventory/inventory.component';
 
 
 //Routing Setup -----------------------------------------
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent }, //path to 'about'
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
-  {path: 'order-completed', component: OrderCompletedComponent},
+  { path: 'order-completed', component: OrderCompletedComponent},
+  { path: 'inventory', component: InventoryComponent},
 ];
 
 @NgModule({
