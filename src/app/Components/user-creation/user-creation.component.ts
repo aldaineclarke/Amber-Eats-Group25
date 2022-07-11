@@ -32,10 +32,6 @@ export class UserCreationComponent implements OnInit {
 
   }
 
-  // createPayment(data){
-    
-  // }
-
   // Post User Information
   getUserInformation(value:any) { 
 
@@ -61,7 +57,6 @@ export class UserCreationComponent implements OnInit {
       this.router.navigateByUrl("/", {skipLocationChange:true})
       .then(nav => {
         this.router.navigate(["/", "checkout"])
-        // this.orderCart.openDialog()
       }, err => {
         console.log(err) // when there's an error
       });

@@ -5,7 +5,7 @@
 
 :root{
   --light-theme-font: #333;
-  --light-theme-background: white;
+  --light-theme-background: whitesmoke;
   --dark-theme-font: white;
   --dark-theme-background: #303030;
   --primary: #3f51b5;
@@ -13,7 +13,7 @@
   --secondary-fade:rgb(255 226 220 / 27%);
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color:#333 }
 
 .cart-active {
     color: var(--secondary);
