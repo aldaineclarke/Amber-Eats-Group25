@@ -4,20 +4,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  padding: 0rem 2rem;
   width: 88.2vw;
   background: transparent;
 }
 
-.logo{
-  color: white;
-  font-size: 2rem;
+img {
+  height: 8rem;
+  width: 15rem;
 }
 
-.logo:hover {
-  color: aqua;
-  transition: .3s;
-}
 
 .menu{
   display: flex;
