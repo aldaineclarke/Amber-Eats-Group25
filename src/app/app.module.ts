@@ -46,7 +46,6 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
 import { CardComponent } from './Components/card/card.component';
 import { HomeNavComponent } from './Components/home-nav/home-nav.component';
-import { MainNavComponent } from './Components/main-nav/main-nav.component';
 
 
 // import { FooterComponent } from './footer/footer.component';
@@ -72,7 +71,6 @@ import { MainNavComponent } from './Components/main-nav/main-nav.component';
     MealsCatalogueComponent,
     CardComponent,
     HomeNavComponent,
-    MainNavComponent,
 
   ],
   imports: [

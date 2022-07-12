@@ -8,6 +8,12 @@ nav {
   width: 88.2vw;
   background: transparent;
 }
+nav.transparent a{
+  color: white;
+}
+nav.solid a{
+  color: black;
+}
 
 img {
   height: 8rem;
@@ -26,6 +32,7 @@ a {
 text-transform: uppercase;
 letter-spacing: 2px;
 color: white;
+display:inline-block;
 }
 
 a:hover {
@@ -70,4 +77,16 @@ button .cart-badge {
   width: 1rem;
   height: 1rem;
   text-align: center;
+}
+.solid button{
+  color:black;
+}
+.transparent button{
+  color:#fff;
+}
+.solid .logo{
+  color: black;
+}
+.transparent .logo{
+  color: white;
 }
