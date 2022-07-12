@@ -1,0 +1,55 @@
+<div class="container">
+    <!-- form fields-->
+    <form [formGroup]="addressForm">
+        <div>
+            <label>Street Address 1</label>
+            <input
+                matInput
+                formControlName="street_address"
+                placeholder="Street address"
+                (input)="updateMap(addressForm)"
+            />
+        </div>
+        
+        <div>
+            <label>Street Address 2</label>
+            <input
+                matInput
+                formControlName="street_address2"
+                placeholder="Street Address 2"
+                (input)="updateMap(addressForm)"
+            />
+        </div>
+      
+        <div>
+            <label>City</label>
+            <input
+                matInput
+                formControlName="city"
+                placeholder="City"
+                (input)="updateMap(addressForm)"
+            />
+            </div>
+        
+            <div>
+                <label>Parish</label>
+                <input
+                    matInput
+                    formControlName="parish"
+                    placeholder="Parish"
+                    (input)="updateMap(addressForm)"
+                />
+            </div>
+        <button (click)="setMapLocation()">CLick</button>
+    </form>
+        
+    <!-- map -->
+    <div class="map-container">
+        <div class="map-frame">
+            <div id="map"></div>
+          </div>
+    </div>
+    
+</div>
+
+

@@ -1,0 +1,33 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container {
+    height: 300px;
+    width: 500px;
+    
+  }
+  
+.map-frame {
+    height: 100%;
+  }
+  
+#map {
+    height: 100%;
+  }
+
+  
+form{
+    height: 300px;
+    width: 500px;
+  }
+
+form input{
+    width: 96%;
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+  }
