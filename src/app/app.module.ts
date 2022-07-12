@@ -44,6 +44,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
+import { HomeNavComponent } from './Components/home-nav/home-nav.component';
+import { MainNavComponent } from './Components/main-nav/main-nav.component';
 
 
 // import { FooterComponent } from './footer/footer.component';
@@ -67,6 +69,8 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     RatingDialogComponent,
     FooterComponent,
     MealsCatalogueComponent,
+    HomeNavComponent,
+    MainNavComponent,
 
   ],
   imports: [
