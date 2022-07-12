@@ -1,0 +1,45 @@
+.container {
+    border-radius: 20px;
+    width: 65vw;
+}
+
+.close {
+    text-align: right; 
+}
+
+.dialog {
+    float: none;
+}
+
+.dialog .header {
+    text-align: center;
+    font-size: 2vw;
+}
+
+.dialog mat-dialog-actions {
+    justify-content: center;
+}
+
+.dialog-content {
+    padding: 3vw;
+}
+
+form .flexTable {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+
+}
+
+table th {
+    font-size: 2.5vw;
+    text-decoration: underline;
+    padding: 0.5vw;
+}
+
+.mat-form-field {
+    
+    width: 28.8vw;
+}
+
