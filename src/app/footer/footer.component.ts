@@ -29,20 +29,5 @@ export class FooterComponent implements OnInit {
     this.dataService.sendGetDetails(38).subscribe((data: any[]) => {
       this.footerItems.push(data);
     });
-    this.dataService.sendGetDetails(10).subscribe((data: any[]) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.sendGetDetails(5).subscribe((data: any[]) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.sendGetDetails(42).subscribe((data: any[]) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.sendGetDetails(33).subscribe((data: any[]) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.sendGetDetails(30).subscribe((data: any[]) => {
-      this.footerItems.push(data);
-    });
   }
 }
