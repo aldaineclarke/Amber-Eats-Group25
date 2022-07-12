@@ -1,0 +1,171 @@
+.cart-container {
+    padding: 0.5% 3%;
+}
+
+.cart-container a {
+    text-decoration: none;
+}
+
+/* Secure Cart Header */
+.cart-header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem;  
+    border-bottom: 1px lightgrey solid; 
+}
+
+.cart-header h3 {
+    height: 96%;
+}
+
+.header-left,
+.header-right{
+    display: flex;
+    width: 16.5vw;
+}
+
+.cart-header span, 
+.cart-header h3 {
+    display: flex;
+    align-items: center;
+}
+
+.cart-header span {
+    border: none;
+    background-color: var(--secondary-fade);
+    color: var(--secondary);
+    border-radius: 50%;
+    padding: 0.7rem;
+}
+
+.cart-header h3 {
+    color: var(--secondary);
+    padding: 0 1vw;
+}
+
+/* Cart BreadCrumbs */
+.cart-track {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 2.3vw; */
+    padding: 3vw 2vw 2.4vw;
+
+}
+
+.sections {
+    color: #333;
+    font-size: 1.8vw;
+}
+
+/* Start of Cart Information */
+
+.cart-left-sections {
+    width: 60vw;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Banner Start */
+
+.delivery-banner,
+.cart-summary,
+.cart-total,
+.accepted-payments {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0,0.1);
+    padding: 1vw;
+    border-radius: 20px;
+    margin: 1.5vw 0;
+    color: #333;
+}
+
+.banner-content {
+    padding: 1% 2%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.banner-content p{
+    font-size: large;
+    color: #333;
+    margin-top: 1.5vw;
+}
+
+.cart-summary-content {
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+table {
+    padding: 2vw;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+tbody {
+    font-size: large;
+    text-align: center;
+}
+
+thead {
+    font-size: 1vw;
+    color: var(--primary);
+}
+
+.cart-right-sections {
+    width: 30vw;
+}
+
+.cart-summary h4,
+.total-header h4,
+.payment-header h4{
+    padding: 0.6vw;
+    border-bottom: 1px solid lightgrey;
+    font-size: x-large;
+    color: var(--primary);
+    font-weight:500;
+}
+
+.check-email {
+    padding: 3vw 0 0;
+}
+.check-email form{
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+
+}
+.check-email input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4vw;
+    margin-left: 0.9vw;
+    /* width: 18vw; */
+    border-radius: 7px
+}
+
+.check-email input[type=email] {
+    /* color: White; */
+}
+
+.email-button button {
+    width: 25vw;
+    margin: 1vw 1vw;
+    border: none;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    font-weight: 700;
+}
+
+.email-button button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+
+}
+

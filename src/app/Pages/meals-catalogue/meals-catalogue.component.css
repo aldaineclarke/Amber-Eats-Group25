@@ -1,0 +1,100 @@
+.card-grid {
+    margin: 4rem 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2rem;
+    row-gap: 3rem;
+}
+mat-card{
+    background-color: white;
+    height: 400px;
+    max-width: 320px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+img.card-img {
+    min-height:50%;
+    object-fit: cover;
+    object-position: center;;
+}
+mat-card-content{
+    margin-bottom: 0;
+}
+p.card-price{
+    text-align: start;
+    font-size: 2rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+mat-card mat-card-title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin:0;
+}
+mat-card > mat-card-actions.button{
+    margin-top: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+mat-card-actions button{
+    border-radius: 1rem;
+    margin: 0
+}
+.container-1240{
+    max-width: 1240px;
+    margin:auto;
+    padding: 1rem;
+
+}
+mat-card-actions.flex{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-right: 0;
+
+}
+app-rating{
+display:flex;
+align-self:center;
+}
+
+section h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+.section-header{
+    height: 40vh;
+    display:grid;
+    place-items:center;
+    text-transform: uppercase;
+}
+  
+mat-paginator{
+    background-color:transparent;
+}
+
+@media (max-width: 1280px) {
+    .card-grid {
+        margin-top: 4rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .card-grid {
+        grid-template-columns: auto auto;
+        gap: 2rem;
+    }
+}
+@media (max-width: 580px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

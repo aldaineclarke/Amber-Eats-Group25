@@ -46,5 +46,12 @@ export class DataService {
     const url = `${this.REST_API_SERVER_SIDES}/${id}`;
     return this.httpClient.patch<SidesInterface>(url, data)
   }
+  // Gets limited products based on the limit and also the page. by default limit is 20.
+  public getLimitedProducts(page= 1, limit = 20):Observable<ProductInterface[]>{
+    return this.httpClient.get<ProductInterface[]>(this.REST_API_SERVER+"?_page="+page +"&_limit="+limit);
+  }
+  
+  // public filterProucts(property:string, value:any):Observable<ProductInterface[]>{
+  // }
 
 }
