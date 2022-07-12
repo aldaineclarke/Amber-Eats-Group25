@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from './Services/cart.service';
 8
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-http-crud1';
-  constructor() {}
+  constructor(public cartService: CartService) {}
 
   ngOnInit() {}
 

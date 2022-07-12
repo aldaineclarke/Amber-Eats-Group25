@@ -1,0 +1,147 @@
+.form_container{
+    padding: 0.5% 3%;
+}
+
+/* sub-header----------------------------------------- */
+.cart-header {
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem;  
+    border-bottom: 1px white solid; 
+}
+
+.cart-header h3 {
+    height: 96%;
+}
+
+.header-left,
+.header-right{
+    display: flex;
+    width: 16.5vw;
+}
+
+.cart-header span, 
+.cart-header h3 {
+    display: flex;
+    align-items: center;
+}
+
+.cart-header span {
+    border: none;
+    background-color: #64EFAB;
+    border-radius: 50%;
+    padding: 0.7rem;
+}
+
+.cart-header h3 {
+    color: #64EFAB;
+    padding: 0 1vw;
+}
+
+/* Process Track----------------------------------------- */
+.cart-track {
+    display: flex;
+    justify-content: center;
+    margin: 2.3vw 0; 
+    
+}
+
+.sections {
+    color: white;
+    font-size: 1.8vw;
+    padding: 1vw;
+}
+
+/* section-------------------------------------- */
+.order_summary{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* left-------------------------------------- */
+.left{
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    background-color: #424242;
+    padding: 3%;
+    width: 68%;
+    color: white;
+}
+
+.left > h2{
+    border-bottom: 1px solid grey;
+}
+
+.left section article:nth-child(1){
+    padding: 1% 3%;
+}
+.edit{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left section article{
+    /* background-color: #303030; */
+    background-color: rgb(24, 21, 21);
+}
+
+/* order summary table-------------------------------------- */
+.left table{
+    /* border: 1px solid red; */
+    width: 140%;
+    border-collapse: collapse;
+}
+
+.left table > h2{
+    width: 100%;
+    border-bottom: 1px solid grey;
+
+}
+
+.sub_btn{
+    text-align: center;
+}
+.sub_btn button{
+    border: none;
+    padding: 2% 15%;
+    border-radius: 30px;
+    outline: none;
+    background-color: #69f0ae;
+    font-weight: bold;
+}
+.sub_btn button:hover{
+    background: #42b87f;
+    cursor: pointer;
+}
+
+/* right-------------------------------------- */
+.right{
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    background-color: #424242;
+    width: 30%;
+    padding: 3%;
+    margin-left: 3%;
+    color: white;
+}
+
+.right > h2{
+    border-bottom: 1px solid grey;
+}
+
+.item{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.item img{
+    width: 50%;
+}
+.info{
+    width: 50%;
+    text-align: center;
+}
