@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="image-wrapper">
+    <div class="image-wrapper" title="View {{product.name}}" routerLink="/details/{{ product.id }}">
         <img [src]="product.imageUrl" alt=" Image of {{product.imageUrl}}">
     </div>
 

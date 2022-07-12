@@ -28,6 +28,8 @@ html {  /**¯\_(ツ)_/¯*/
     scroll-behavior:smooth;
     color: var(--light-theme-color);
     height: max-content;
+    margin: 0;
+    padding: 0;
   }
 
   mat-card-header div.mat-card-header-text{

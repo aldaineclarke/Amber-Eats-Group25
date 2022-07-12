@@ -1,65 +1,94 @@
-.container {
-  /* border: 1px solid red; */
-  padding-top: 4%;
-  /* background-color: #303030; */
-}
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap');
 
-
-/* form--------------------------------- */
-mat-card {
-  width: 50%;
-  margin: auto;
-  padding: 2% 5%;
-}
-
-form input {
+.map-background{
+  background-image: url('/assets/google-maps-content-plugin-joomla-extension-map-demo\ 1.png');
+  background-position: center;
+  background-size: cover;
+  position: relative;
   width: 100%;
-  height: 30px;
-  color: black;
-  letter-spacing: 1px;
-  /* outline: none; */
-  padding: 0% 1%;
-  border: 1px solid #333;
-  /* caret-color: #7b1fa2; */
-  caret-color: #429a70;
+  height: 100vh;
 }
 
-form textarea {
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: url('/assets/Group\ 11.png');
   width: 100%;
-  outline: none;
-  color: black;
-  letter-spacing: 1px;
-  padding: 1%;
-  border: 1px solid #333;
+  height: 100%;
+  overflow: hidden;
 
-  caret-color: #69f0ae;
 }
 
-/* map--------------------------------- */
-.map {
-  /* border: 1px solid red; */
-  width: 80%;
-  text-align: center;
-  margin: 0 auto 5% auto;
-}
-
-/* footer--------------------------------- */
-.footer_container {
-  /* border: 1px solid red; */
-  background: #295e44;
-  padding: 2%;
-}
-
-footer {
+.contact-form{
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  top: 12rem;
   display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
+  border-radius: .4rem;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px 1px rgb(185, 185, 185);
+  margin-bottom: 10rem;
+
 }
 
-footer a {
-  text-decoration: none;
-  padding: 3% 0%;
+.contact-form .form-img img{
+  border-radius: .4rem 0rem 0rem .4rem;
+  width: 25rem;
+  height: 35rem;
+  display: block;
 }
-footer a:hover {
-  text-decoration: underline;
+
+.contact-form form h2{
+  font-size: 30px;
+  margin-bottom: 2rem;
+  color: #777;
+}
+
+.contact-form form{
+  width: 45rem;
+  padding :2rem 0rem 0rem 3rem
+ 
+
+}
+
+.contact-form label{
+  color: #777;
+  font-size: 12px;
+margin-bottom: .8rem;
+  display: block;
+  
+}
+
+.contact-form input{
+  outline: none;
+  border: none;
+  width: 37rem;
+  border-bottom: 2px solid rgb(2, 189, 231);
+  margin-bottom: 1.1rem;
+}
+
+.contact-form textarea{
+  border: none;
+  background-color: rgb(245, 245, 245);
+}
+
+
+.contact-form .contact-btn{
+  margin-top: .8rem;
+  border: none;
+  border: 2px solid #777;
+  background-color: transparent;
+  display: block;
+  padding: 10px;
+  width: 10rem;
+  color: #777;
+  cursor: pointer
+}
+.filler{
+  font-family: "Great Vibes", cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  padding: 4rem 0 0rem;
+  text-align:center;
+  font-size: 2.7rem;
 }
