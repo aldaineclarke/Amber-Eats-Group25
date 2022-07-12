@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap');
+
 .map-background{
   background-image: url('/assets/google-maps-content-plugin-joomla-extension-map-demo\ 1.png');
   background-position: center;
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 55rem;
+  height: 100vh;
 }
 
 .overlay {
@@ -82,4 +84,11 @@ margin-bottom: .8rem;
   width: 10rem;
   color: #777;
   cursor: pointer
+}
+.filler{
+  font-family: "Great Vibes", cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  padding: 4rem 0 0rem;
+  text-align:center;
+  font-size: 2.7rem;
 }

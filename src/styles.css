@@ -26,7 +26,7 @@ html {  /**¯\_(ツ)_/¯*/
   
   body {
     scroll-behavior:smooth;
-    /* background: var(--light-theme-background); */
+    background: var(--light-theme-background);
     color: var(--light-theme-color);
     height: max-content;
     margin: 0;
