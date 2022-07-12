@@ -1,20 +1,97 @@
 <link rel="stylesheet" href="./home.component.css" />
 
-<app-slider [products]="products" [autoSlide]="true" [controls]="true"></app-slider>
 
-<section>
+  <app-slider [products]="products" [autoSlide]="true" [controls]="true"></app-slider>
+
+<div class="overlay"></div>
+
+<div class="slider-dscpt">
+  <div class="slider-text">
+    <h1 text-align ='center'>Rise and Shine</h1>
+    <h1>It's time to Dine</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+  <div class="btn-row">
+    <button mat-flat-button color="accent">Order now</button>
+    <button mat-button >Get the food</button>
+  </div>
+</div>
+
+<div class="quips-container">
+  <div class="quips">
+    <h3>Best Offer</h3>
+    <h3>In Town</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
+      quam blanditiis dignissimos.</p>
+  </div>
+  <div class="quips">
+    <h3>So Much to</h3>
+    <h3>Choose From</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
+      quam blanditiis dignissimos.</p>
+  </div>
+  <div class="quips">
+    <h3>Fastest</h3>
+    <h3>Delivery</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
+      quam blanditiis dignissimos.</p>
+  </div>
+
+</div>
+
+<div class="service-offered">
+  <img src="https://images.pexels.com/photos/5713756/pexels-photo-5713756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Goulash">
+  <div class="service-offered-text">
+    <h1>Why You Choose Us?</h1>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
+
+    <h2>Order your food anytime</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
+
+    <h2>The best delivery service</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
+
+    <h2>The best food delivery</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
+  </div>
+</div>
+
+<div class="pop-foods-cont">
+  <div class="pop-food-cont-text">
+      <h1>Popular Food Items Here</h1>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
+        voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</h2>
+  </div>
+
+
+</div>
+
+
+<!-- <section>
   <h1>
     What would you like to eat? <br /><br />
     View our menu below
   </h1>
   <br />
   <a href="#card_container">&dArr;&dArr;</a>
-</section>
+</section> -->
 
 <!-- cards-------------------------------------------------- -->
 <div class="card_container" id="card_container">
   <mat-spinner *ngIf="products.length === 0"></mat-spinner>
-  <mat-card *ngFor="let product of products">
+  <mat-card *ngFor="let product of products.slice(0,3)">
     <mat-card-content>
       <img src="{{ product.imageUrl }}" alt="" />
       <p>{{ product.description }}</p>
@@ -41,8 +118,30 @@
 </div>
 
 
+<div class="customer-review">
+  
+  <div class="reviews">
+    <!-- <mat-card class="customer-review-card"> -->
+      <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>Real Customer</mat-card-title>
+      <!-- <mat-card-subtitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil
+      </p>
+    </mat-card-content>
+    <!-- </mat-card> -->
+  </div>
+
+  <div class="customer-review-img-container">
+    <img src="https://images.pexels.com/photos/5639260/pexels-photo-5639260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Beef Weligton">
+  </div>
+</div>
+
 <!-- gallery------------------------------------------ -->
-<div class="gallery_container" id="card_container">
+<!-- <div class="gallery_container" id="card_container">
     <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
     <h1 style="text-align: center; color: white;">Gallery</h1>
   <div class="content">
@@ -61,4 +160,4 @@
       </mat-card-header>
     </mat-card>
   </div>
-</div>
+</div> -->

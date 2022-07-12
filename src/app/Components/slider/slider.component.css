@@ -1,12 +1,9 @@
 .slider-container {
     position: relative;
-    width: 100%;
-    
-     
+    width: 100%;  
 }
 .slider-container img {
     display: none;
-
 }
 .slider-container img.image-active {
     display: block;
