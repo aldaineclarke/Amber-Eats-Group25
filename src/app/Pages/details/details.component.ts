@@ -102,48 +102,32 @@ export class DetailsComponent implements OnInit {
   //function for confirmation btn
 
   confirmedSides() {
-    // this.confirmed = this.sideOrders;
     this.isVisible = ! this.isVisible;
-    // console.log(this.sideOrders);
   }
 
 
-  //function to decrement quantity
-  // adding() {
-  // if ( this.i <= this.products.quantity) {
-  //  this.i++
-  // }
-  // }
-
-  // //function to increment quantity
-  // subtracting() {
-  //   if ( this.i > 1) {
-  //    this.i--
-  //   }
-  // }
-
   addToCart() {
     this.completedOrder =
-      // {
-      // "imageUrl" : (<HTMLInputElement>document.getElementById("imgUrl")).value,
-      // "name" : (<HTMLInputElement>document.getElementById("name")).value,
-      // "description" : (<HTMLInputElement>document.getElementById("desc")).value,
-      // "price" : (<HTMLInputElement>document.getElementById("price")).value,
-      // "itemsOrdered" : (<HTMLInputElement>document.getElementById("selectedQuant")).value,
-      // "sidesSelected" : (<HTMLInputElement>document.getElementById("sideSelected")).value
-      //   }
-
       {
         "id" : this.cartService.getCartCount() + 1,
-      "product": this.product,
-      "quantity" : parseInt((<HTMLInputElement>document.getElementById("selectedQuant")).value),
-      "sides" : this.sideOrders
-
-       }
+        "product": this.product,
+        "quantity" : parseInt((<HTMLInputElement>document.getElementById("selectedQuant")).value),
+        "sides" : this.sideOrders,
+        "totalPrice": this.calculateTotalPrice(),
+      }
 
       this.cartService.addCartItem(this.completedOrder)
 
-  console.log(this.completedOrder);
-  // console.log(this.cartItems);
+      console.log(this.completedOrder);
+
  }
+//  Calculate the price for all the sides And total for the cartItem
+ calculateTotalPrice():number{
+    let sidesTotal = this.sideOrders.reduce((acc,index)=>{
+      return acc += +this.sides[index].price
+    },0);
+    sidesTotal += Number(this.product.price);
+    return +sidesTotal;
+ }
+
 }
