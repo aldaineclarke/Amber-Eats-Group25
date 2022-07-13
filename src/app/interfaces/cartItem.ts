@@ -4,5 +4,6 @@ export interface CartItem{
     id:number;
     product:ProductInterface,
     sides:number[],
-    quantity:number
+    quantity:number,
+    totalPrice: number,
 }
