@@ -15,6 +15,7 @@ export class CartService {
      */
     getCart(): CartItem[] {
         return JSON.parse(localStorage.getItem('cart') as string);
+        
     }
 
     clearCart(): void {
