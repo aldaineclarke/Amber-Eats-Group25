@@ -14,6 +14,9 @@ export class CartService {
      * @returns {CartItem[]} Cart from local storage as an array
      */
     getCart(): CartItem[] {
+        if(!localStorage.getItem('cart')){
+          localStorage.setItem('cart', JSON.stringify([]));
+        }
         return JSON.parse(localStorage.getItem('cart') as string);
     }
 
