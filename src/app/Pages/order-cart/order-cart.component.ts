@@ -93,6 +93,7 @@ export class OrderCartComponent implements OnInit {
   // }
 
   // logUser(email: HTMLInputElement) {
+  // loginUser(email: HTMLInputElement) {
   //   let userEmail:any = email.value;
 
   //   this.userService.login(userEmail).subscribe((result) => {

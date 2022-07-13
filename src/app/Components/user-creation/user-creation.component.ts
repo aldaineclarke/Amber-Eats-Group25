@@ -59,7 +59,6 @@ export class UserCreationComponent implements OnInit {
       .then(nav => {
         console.log(userInformation)
         this.router.navigate(["/", "checkout"])
-        // this.orderCart.openDialog()
       }, err => {
         console.log(err) // when there's an error,
         console.log(userInformation) 
