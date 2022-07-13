@@ -44,7 +44,7 @@ export class UserCreationComponent implements OnInit {
 
     // Object that stores information to be added
     const userInformation = {
-      id: '2',
+      id: '',
       firstName: value.firstName,
       lastName: value.lastName,
       email: value.email,
