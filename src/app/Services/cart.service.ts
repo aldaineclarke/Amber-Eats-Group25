@@ -14,6 +14,9 @@ export class CartService {
      * @returns {CartItem[]} Cart from local storage as an array
      */
     getCart(): CartItem[] {
+        if(!localStorage.getItem('cart')){
+          localStorage.setItem('cart', JSON.stringify([]));
+        }
         return JSON.parse(localStorage.getItem('cart') as string);
     }
 
@@ -39,7 +42,7 @@ export class CartService {
 
             // Search for duplicate cart item
             let duplicateCartItem: CartItem|undefined = currentCart.find(
-                (cartItem: any) => cartItem.id == item.id
+                (cartItem: CartItem) => cartItem.product.id == item.product.id
             );
 
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
