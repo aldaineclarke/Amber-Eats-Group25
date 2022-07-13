@@ -19,7 +19,7 @@
               <div class="default">
                 <p>Complimentary Side: </p>
                 <!-- <p>{{sides[defaultSideId].name}}</p> -->
-                <p>{{ getSide(defaultSideId) }}</p>
+                <p class= "sideNm">{{ getSide(defaultSideId) }}</p>
             </div>
 
               <mat-card-subtitle style="color: #000">
@@ -28,6 +28,7 @@
                 <label>Quantity: <input type="number" [(ngModel)]="selectedQuant" value="1" id="selectedQuant"> </label>
               </mat-card-subtitle>
               </div>
+              <div class="selectedItemsCon">
 
               <div class="selectedItems" *ngIf="sideOrders.length != 0">
                 <!-- <p style="color: black; border: 5px solid yellow; padding: 10px; font-size: 15px;">{{this.confirmed}}</p> -->
@@ -44,6 +45,8 @@
                     </div>
                   </div>
               </div>
+                </div>
+
                 </div>
 
               <div class="mat-card-action">
@@ -93,8 +96,6 @@
   </form>
    -->
   </div>
-<div class="filler">
-<!--do not remove this is a filler div to cover the dark background left by the universal style sheet-->
-  </div>
+
 
 
