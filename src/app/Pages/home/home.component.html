@@ -15,6 +15,7 @@
   
 </div>
 
+<!-- second container displaying popular menus -->
 <div class="second-container">
   <h1 class="second-heading">Popular Products</h1>
   <p class="second-paragraph">
@@ -30,18 +31,32 @@
     </div>
 </div>
 
+<!-- details  of popular meals showcasing three product items -->
 <div class="display-products"> 
     <div class="product" *ngFor="let product of products.slice(0,3)">
         <div class="product-img">
           <img src={{product.imageUrl}} alt="">
         </div>
-       
-          <h1 class="product-title">{{product.name}}</h1>
-          <h2 class="product-description">{{product.description}}</h2>
-          <div class="price-rating">
-            <h2 class="product-price">{{product.price}}</h2>
+
+        <div class="product-info">
+         
+          <img src="/assets/homeImages/product-info.png" alt="">
+          <div class="info">
+            <h1 class="product-title">{{product.name}}</h1>
+            <h2 class="product-description">{{product.description}}</h2>
+            <div class="price-rating">
+              <div class="product-price">{{product.price | currency}}</div>
+              <app-rating class="ratings" [meal]="product"> </app-rating> 
+            </div>
           </div>
+        </div>
+          
     </div>
+</div>
+
+<!-- section displaying additional menus -->
+<div class="second-menu-section">
+  <h1 class="menu-heading">SECTION OF THE MENU</h1>
 </div>
 
 

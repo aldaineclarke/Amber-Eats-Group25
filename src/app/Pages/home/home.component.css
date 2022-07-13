@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Great+Vibes&family=Gulzar&family=Poppins:wght@100;300&display=swap');
 
-*{
+/* *{
   border: 1px solid;
-}
+} */
 
+/* top container section*/
 .top-container{
   background-image: url('/assets/homeImages/top-image.jpg');
   /* background-color: #ffffffc7; */
@@ -19,6 +20,7 @@
   /* background-color: rgba(255, 255, 255, 0.247); */
 }
 
+/* contianer within top container */
 .heading-container{
   text-align: center;
   width: 60%;
@@ -39,7 +41,7 @@
 }
 
 .sub-head-paragraph{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -65,7 +67,7 @@
   width: 100%;
 }
 
-
+/* section section design with popular menus */
 .second-container{
   height: 969px;
   /* background-image: url('/assets/homeImages/second-img.png'); */
@@ -85,15 +87,13 @@
 }
 
 .second-paragraph{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  /* color: #FFFFFF; */
   color: red;
-  /* float: left; */
-  width: 600px;
+  width: 44%;
   margin-left: 6em;
 }
 
@@ -116,23 +116,17 @@
   top: 24%;
 }
 
-.veg-img img{
-  width: 100%;
-  height: 100%;
-}
-
-.plate-img img{
+.veg-img img, .plate-img img{
   width: 100%;
   height: 100%;
 }
 
 .display-products{
   display:grid;
-  grid-template-columns: repeat(3,auto);
- 
-  /* flex-direction: row; */
+  grid-template-columns: repeat(3, 1fr);
 }
 
+/* popular products design */
 .product{
   margin: 0 auto;
 
@@ -140,7 +134,7 @@
 .product-img{
   width: 295px;
   height: 296px;
-
+  margin: 0 auto;
 }
 
 .product-img img{
@@ -151,51 +145,94 @@
 }
 
 .product-info{
-  background-image: url('/assets/homeImages/product-info.png');
-  background-size: cover;
+  /* background-image: url('/assets/homeImages/product-info.png'); */
+  /* background-size: cover; */
+  /* background-size: cover;
+  background-position:bottom;
+  width: 400px;
   width: 433px;
-  height: 216px;
-  bottom: 0;
+  height: 216px; */
+  /* bottom: 0;
+  position: relative; */
+  /* bottom: 20%;
+  right: 20%; */
+  width: 433px;
   position: relative;
-  bottom: 20%;
-  right: 20%;
-  background-color: red;
+  bottom: 26%;
+  right: 4%;
+}
+
+.info{
+  position: absolute;
+  top: 26%;
+  /* height: -40px; */
+  width: 100%;
+}
+
+.product-info img{
+  width: 100%;
+  height: 100%;
 }
 
 .product-title{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 275;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
   color: #fff;
-  color: red;
-  border-bottom: 1px solid green;
+  text-transform: uppercase;  
 }
 
 .product-description{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 8px;
   line-height: 12px;
   text-align: center;
-  color: red;
+  color: #fff;
 }
 
 .product-price{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 11px;
-  line-height: 16px;
   text-align: center;
   color: red;
+
 }
 
+.price-rating{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
 
+.second-menu-section{
+  background-image: url('/assets/homeImages/section-menu.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 1235px;
+  height: 209px;
+  background-position: bottom;
+  margin-top: 10%;
+}
 
+.second-menu-section .menu-heading{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  padding-top:4.5%;
+}
 
 /* lower section design */
 .middle-quote-section{
@@ -245,4 +282,17 @@
 .quote-manager .manager-name .name{
   font-weight: 400;
   font-size: 15px;
+}
+
+
+@media only screen and (max-width: 1070px) {
+  .heading{
+    font-size: 100px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .heading{
+    font-size: 60px;
+  }
 }
