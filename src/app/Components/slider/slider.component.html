@@ -7,30 +7,10 @@
         </a>
     </span>
     
-    <div *ngIf="indicators" class="slider-circle-container">
+    <!-- <div *ngIf="indicators" class="slider-circle-container">
         <span *ngFor="let circle of products; let i=index" class="circle" [ngClass]="{'active': selectedIndex === i}"
         (click)="selectImage(i)">
         </span>
-    </div>
-    <button *ngIf="controls" class="btn-slider btn-previous" (click)="onPreviousClick()">
-        <i class="fas fa-arrow-circle-left icon-slider icon-previous" ></i>
-    </button>
-    <button *ngIf="controls" class="btn-slider btn-next" (click)="onNextClick()">
-        <i class="fas fa-arrow-circle-right icon-slider icon-next"></i>
-    </button>
+    </div> -->
+    
 </div>
-
-
-<!-- <div class="Marquee">
-    <div class="Marquee-content" *ngFor="let product of products.slice(0, 5)">
-      <div class="Marquee-tag">
-        <a routerLink="/details/{{ product.id }}">
-          <img
-            style="height: 61vh; width: 32vw"
-            src="{{ product.imageUrl }}"
-            alt=""
-          />
-        </a>
-      </div>
-    </div>
-  </div> -->

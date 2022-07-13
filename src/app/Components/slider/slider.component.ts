@@ -27,13 +27,14 @@ export class SliderComponent implements OnInit {
   selectedIndex = 0;
 
 
-  ngOnInit(): void { 
+  ngOnInit(): void { // happens on window load automatically
     if(this.autoSlide) {
       this.autoSlideImages();
     }
 
-    this.dataservice.getAllProducts().subscribe((data: any[]) => {
-      this.products = data;
+    this.dataservice.getAllProducts().subscribe((data: any[])  => {
+      this.products = data.slice(0,5);
+      // this.products = this.products.slice(0,5);
     });
 
   }
