@@ -77,8 +77,6 @@ export class OrderCartComponent implements OnInit {
     
   }
 
-
-
   // loginUser(email: HTMLInputElement) {
   //   let userEmail:any = email.value;
 
