@@ -47,13 +47,13 @@
                 <td>
                   <mat-form-field appearance="fill">
                     <mat-label>Address 1</mat-label>
-                    <input matInput type="text" placeholder="Ex. 100 Main St" />
+                    <input matInput type="text" name="adLine1" placeholder="Ex. 100 Main St" ngModel/>
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field appearance="fill">
                     <mat-label>Parish</mat-label>
-                    <input matInput type="text" placeholder="Kingston" />
+                    <input matInput type="text" name="parish" placeholder="Kingston" ngModel/>
                   </mat-form-field>
                 </td>
               </tr>
@@ -86,7 +86,7 @@
                       <input
                         matInput
                         type="text"
-                        name="name"
+                        name="cardHolder"
                         placeholder="eg: John Doe"
                         ngModel
                       />
