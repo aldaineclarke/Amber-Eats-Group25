@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 /* slider-------------------------------------------- */
+
 .Marquee {
   /* border: 1px solid red; */
   background: linear-gradient(-135deg, #008ed9, #8b00db);
@@ -46,6 +49,165 @@
   }
 }
 
+/* slider text--------------------------------------- */
+.overlay{
+  position:absolute;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  background:#ff408070;
+  height: 88.6vh;
+}
+.slider-dscpt {
+  width: 500px;
+  position: absolute;
+  left: 130px;
+  top: 200px;
+  z-index: 1;
+}
+
+.slider-text{
+  padding-bottom: 15px;
+}
+
+.slider-text h1{
+  font-weight: 800;
+  font-size: 350%;
+  padding-left: 10px;
+  padding-bottom: 15px;
+}
+.slider-text p{
+  font-size: 150%;
+  padding-left: 10px;
+}
+
+/* Quips--------------------------------------- */
+
+.quips-container {
+  display: flex;
+  text-align:center;
+  column-gap: 60px;
+  justify-content: center;
+  width: auto;
+  padding-top: 11em;
+  padding-bottom: 11em;
+}
+
+.quips{
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+}
+
+.quips h3{
+  font-size:30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.quips p{
+  padding-top: 10px;
+  font-family: 'Inter', sans-serif;
+}
+
+.quips:nth-child(2) {
+  border: 2px solid #cdf5d2;
+  border-radius: 25px;
+}
+
+
+
+/* service-offered-------------------------------------------- */
+.service-offered{
+  width: 100%;
+  display: flex;
+  background-color: #ff408070;
+}
+
+.service-offered img{
+  max-width: 700px;
+  flex: 70%;
+  padding: 30px;
+}
+
+.service-offered-text{
+  max-width: 700px;
+}
+
+.service-offered-text *{
+  padding-top: 15px;
+}
+
+.service-offered-text h1{
+  font-weight: bold;
+  font-size: 280%;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+.service-offered-text h2{
+  font-size: 200%;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+/* pop-foods-cont-------------------------------------------- */
+.pop-food-cont-text{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  padding-top: 5em;
+  /* max-width: 300px; */
+}
+
+.pop-food-cont-text h1{
+  font-weight: bold;
+  font-size: 280%;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+.pop-food-cont-text h2{
+  font-size: 130%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* reviews-------------------------------------------- */
+.customer-review{
+  /* padding-top:30em; */
+  display: flex;
+  padding: 25px;
+  background-color: #ff408070;
+}
+
+.reviews{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* column-gap: 25px; */
+}
+
+.reviews p{
+  padding-top: 25px;
+}
+
+.customer-review-card {
+  max-width: 700px;
+  }
+
+.header-image {
+  background-image: url('https://images.pexels.com/photos/4992382/pexels-photo-4992382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+}
+
+.customer-review-img-container{
+  max-width: 700px;
+}
+
+.customer-review-img-container img{
+  width: 100%;
+}
+
 /* section-------------------------------------------- */
 section {
   /* border: 1px solid red; */
@@ -71,6 +233,7 @@ section a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 13px;
+  padding-bottom:10em;
 }
 
 mat-card {
