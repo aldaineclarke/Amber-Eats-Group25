@@ -59,6 +59,7 @@
   font-size:12px;
   font-weight: 600;
   margin: .8em 0 0 0;
+  cursor: pointer;
 }
 
 .top-image-rugged{
@@ -70,10 +71,27 @@
 /* section section design with popular menus */
 .second-container{
   height: 969px;
-  /* background-image: url('/assets/homeImages/second-img.png'); */
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
+  background-color: #fff;
+  background-position: left;
+}
+
+
+.stroke-background{
+  position: absolute;
+  /* width: 200%; */
+  width: 90%;
+  height: 1000px;
+  left: -80%;
+  top: -30%;
+  z-index: 1;
+}
+
+.stroke-background img{
+  width: 200%;
+  height: 100%;
 }
 
 .second-heading{
@@ -82,8 +100,10 @@
   font-weight: 700;
   font-size: 100px;
   line-height: 126px;
-  color: #000000;
+  color: #fff;
   margin-left: 2.6em;
+  position: relative;
+  z-index: 3;
 }
 
 .second-paragraph{
@@ -92,9 +112,12 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: red;
+  color: #fff;
   width: 44%;
-  margin-left: 6em;
+  /* margin-left: 6em; */
+  margin: 6em 0 0 4em;
+  position: relative;
+  z-index: 3;
 }
 
 
@@ -108,12 +131,12 @@
 }
 
 .plate-img{
-  width: 700px;
+  width: 650px;
   height: 652px;
   position: absolute;
   z-index: 20;
-  right: 8%;
-  top: 24%;
+  right: 12%;
+  top: 14%;
 }
 
 .veg-img img, .plate-img img{
@@ -124,6 +147,7 @@
 .display-products{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
 }
 
 /* popular products design */
@@ -145,21 +169,13 @@
 }
 
 .product-info{
-  /* background-image: url('/assets/homeImages/product-info.png'); */
-  /* background-size: cover; */
-  /* background-size: cover;
-  background-position:bottom;
-  width: 400px;
-  width: 433px;
-  height: 216px; */
-  /* bottom: 0;
-  position: relative; */
-  /* bottom: 20%;
-  right: 20%; */
-  width: 433px;
+  min-width: 200px;
   position: relative;
   bottom: 26%;
   right: 4%;
+  height: 250px;
+  padding: none;
+  margin: 0 auto;
 }
 
 .info{
@@ -183,6 +199,10 @@
   text-align: center;
   color: #fff;
   text-transform: uppercase;  
+  position: absolute;
+  top: 0;
+  left: 54%;
+  transform: translate(-50%);
 }
 
 .product-description{
@@ -193,6 +213,11 @@
   line-height: 12px;
   text-align: center;
   color: #fff;
+  position: absolute;
+  top: 10px;
+  transform: translateY(50%);
+  margin: 0px 120px;
+  left:30px;
 }
 
 .product-price{
@@ -201,8 +226,10 @@
   font-weight: 700;
   font-size: 11px;
   text-align: center;
-  color: red;
-
+  color: #fff;
+  position: absolute;
+  top: 100px;
+  left: 34%;
 }
 
 .price-rating{
@@ -210,9 +237,23 @@
   justify-content: space-around;
   align-items: center;
   padding: 0;
+  bottom: 2%;
 }
 
-.second-menu-section{
+.ratings{
+  position: absolute;
+  top: 92px;
+  right: 26%;
+  color: white;
+  font-size: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.menu-heading-container{
   background-image: url('/assets/homeImages/section-menu.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -220,10 +261,11 @@
   width: 1235px;
   height: 209px;
   background-position: bottom;
-  margin-top: 10%;
+  margin: 0 auto;
 }
 
-.second-menu-section .menu-heading{
+
+.menu-heading{
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 300;
@@ -234,9 +276,51 @@
   padding-top:4.5%;
 }
 
+.second-menu-section{
+  background-color: #fff;
+}
+
+.second-menu-items{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 4.4em;
+}
+
+.items{
+  margin: 0 auto;
+}
+
+.icons{
+  text-align: center;
+  height: 97.31px;
+  margin-bottom: 8px;
+
+}
+
+.icons img{
+  width: 66.96px;
+  left: 699.74px;
+  border-bottom: 5px solid #6D6D6D;
+  height: 97px;
+}
+
+.items p{
+width: 190px;
+height: 112px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 15px;
+text-align: center;
+color: #6D6D6D;
+}
+
 /* lower section design */
 .middle-quote-section{
-  margin: 14em 10em 0em 10em;
+  /* margin: 14em 10em 0em 10em; */
+  background-color: #fff;
+  padding:14em 10em 0em 10em;
 }
 
 .middle-quote-section p{
@@ -250,7 +334,7 @@
 .quote-manager{
   display: flex;
   justify-content: center;
-  margin: 20px auto 0px auto;
+  /* margin: 20px auto 0px auto; */
   align-items: center;
 }
 
@@ -265,7 +349,14 @@
 }
 
 .quote-manager .manager-name{
-  margin: 20px 0px 0px 10px;
+  position: relative;
+  top: 20px;
+  left: 8px;
+}
+
+.rates-below div{
+  margin: 0;
+  padding: 0;
 }
 
 .quote-manager .manager-name h2{
@@ -278,6 +369,14 @@
   font-size: 20px;
 }
 
+/* .star-rating{
+
+} */
+
+.star-rating img{
+  width: 38px;
+  height: 45px;
+}
 
 .quote-manager .manager-name .name{
   font-weight: 400;
