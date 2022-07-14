@@ -2,7 +2,7 @@
   
 
 <mat-stepper linear #stepper class="Iputthishere">
-  <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
+  <!-- <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
 
     <form class="custom-b" [formGroup]="searchUserForm">
       <ng-template matStepLabel>Find User</ng-template>
@@ -25,18 +25,14 @@
           <div class="cards">
             <h3>Select Your Payment Type: </h3>
             <div class="flex-col no-gap">
-              <mat-radio-group formControlName="selectedCard" *ngIf="(currentUser$ | async)">
+              <mat-radio-group formControlName="selectedCard" *ngIf="(currentUser$ | async)" class="payment-cards">
                 <mat-card *ngFor="let card of (currentUser$ | async)?.paymentMethod">
                   <mat-radio-button type="submit"  value="7464" >Ending with {{card.cardNumber}}</mat-radio-button>
-                </mat-card>
-                <mat-card>
-                  <mat-radio-button type="submit"  value="directPay" >Direct Pay</mat-radio-button>
-                </mat-card>
-                 
+                </mat-card>                 
                 
               </mat-radio-group>
               <mat-radio-group formControlName="selectedCard" *ngIf="!(currentUser$ | async)">
-                <mat-card>
+                <mat-card  class="directpay">
                   <mat-radio-button type="submit"  value="directPay" >Direct Pay</mat-radio-button>
                 </mat-card>
               </mat-radio-group>
@@ -61,7 +57,7 @@
                 <div class="card-details">
                   <div class="form-flex">
                     <label>
-                      <input type="text" formControlName="cardholderName" placeholder="John Doe">
+                      <input type="text" formControlName="cardholder" placeholder="John Doe">
                       <span>Cardholder Name</span>
                     </label>
                     <label>
@@ -71,8 +67,8 @@
                   </div>
                   <div class="form-flex">
                     <label>
-                      <input type="text" formControlName="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx">
-                      <span>Card Number</span>
+                      <input type="text" formControlName="expiryDate" placeholder="4/23">
+                      <span>Expiry Date</span>
                     </label>
                     <label>
                       <mat-radio-group formControlName="cardType">
@@ -86,7 +82,7 @@
                 </div>
 
                 <section class="example-section">
-                  <button class="add-card" mat-flat-button color="accent">Save Card</button>
+                  <button class="add-card" mat-flat-button color="accent" (click)="addCard()">Save Card</button>
                 </section>
               </div>
             </mat-expansion-panel>
@@ -111,14 +107,49 @@
         <button mat-button matStepperNext>Next</button>
       </div>
     </form>
-  </mat-step>
+  </mat-step> -->
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
+    <ng-template matStepLabel>Confirm Payment</ng-template>
+      <div class="orderDetails">
+        <div class="info">
+            <h2>Thank You User! </h2>
+            <p>You are almost There.</p>
+            <p>We just need you to confirm your order before we can go ahead and place it. Ensure that you have the correct items and quantity.</p>
+            <p>An email will be sent containing information about your purchase. If you have any questions about your purchase, email us at <a href="#"> admin@ambereats25.com</a></p>
+
+            <hr>
+             
+            <button mat-button>Continue Shopping</button>
+        </div>
+        <div class="order-confirmation">
+            <h2>Order Summary</h2>
+            <div class="order-summary">
+              <table class="items">
+                <tbody>
+                  <tr *ngFor="let item of cartItems">
+                    <td>
+                      <div class="cartItem">
+                        <p>{{item.quantity}}x {{item.product.name}}</p>
+                        <ul *ngIf="item.sides.length > 0">
+                          <li *ngFor="let side of item.sides">{{(side) ? sides[side].name : " " }}</li>
+                        </ul>
+
+                      </div>
+                    </td>
+                    <td  class="itemPrice"><p>
+                      {{item.totalPrice | currency}}
+                    </p></td>
+                  </tr>
+                  <tr>
+                    <td class="total">Order Total: </td>
+                    <td>{{889|currency}}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+        </div>
+      </div>
   </mat-step>
 </mat-stepper>
 {{paymentForm.value | json}}
