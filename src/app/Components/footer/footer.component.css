@@ -1,6 +1,6 @@
 .card_container {
     background-image: url('src/assets/Jagged-footer-bg.png');
-    height: 50vh;
+    min-height: 50vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -83,9 +83,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content;
 }
-.grid-gallery{
-    
-}
+
 .row {
     padding: 20px;
     display:flex;

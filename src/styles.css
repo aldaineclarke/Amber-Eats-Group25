@@ -45,4 +45,8 @@ html {  /**¯\_(ツ)_/¯*/
   color: var(--primary);
 }
   
+.context{
+  width: 1240px;
+  margin: auto;
+}
   

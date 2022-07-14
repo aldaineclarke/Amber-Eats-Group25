@@ -1,162 +1,124 @@
-<link rel="stylesheet" href="./home.component.css" />
+<!-- top section -->
+<div class="top-container">
 
+  <div class="heading-container">
+    <h1 class="heading">FAST AND TASTY </h1>
 
-<app-slider [products]="products" [autoSlide]="true" [controls]="true" [indicators]="true"></app-slider>
-
-<div class="overlay"></div>
-
-<div class="slider-dscpt">
-  <div class="slider-text">
-    <h1 text-align ='center'>Rise and Shine</h1>
-    <h1>It's time to Dine</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <p class="sub-head-paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
+
+    <button class="heading-button" routerLink="/menu">View full menu</button>
   </div>
-  <div class="btn-row">
-    <button mat-flat-button color="accent">Order now</button>
-    <button mat-button >Get the food</button>
-  </div>
-</div>
-
-<div class="quips-container">
-  <div class="quips">
-    <h3>Best Offer</h3>
-    <h3>In Town</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
-      quam blanditiis dignissimos.</p>
-  </div>
-  <div class="quips">
-    <h3>So Much to</h3>
-    <h3>Choose From</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
-      quam blanditiis dignissimos.</p>
-  </div>
-  <div class="quips">
-    <h3>Fastest</h3>
-    <h3>Delivery</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio
-      quam blanditiis dignissimos.</p>
-  </div>
-
-</div>
-
-<div class="service-offered">
-  <img src="https://images.pexels.com/photos/5713756/pexels-photo-5713756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Goulash">
-  <div class="service-offered-text">
-    <h1>Why You Choose Us?</h1>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
-
-    <h2>Order your food anytime</h2>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
-
-    <h2>The best delivery service</h2>
-
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
-
-    <h2>The best food delivery</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-      voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</p>
-  </div>
-</div>
-
-<div class="pop-foods-cont">
-  <div class="pop-food-cont-text">
-      <h1>Popular Food Items Here</h1>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora,
-        voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</h2>
-  </div>
-
-
-</div>
-
-
-<!-- <section>
-  <h1>
-    What would you like to eat? <br /><br />
-    View our menu below
-  </h1>
-  <br />
-  <a href="#card_container">&dArr;&dArr;</a>
-</section> -->
-
-<!-- cards-------------------------------------------------- -->
-<div class="card_container" id="card_container">
-  <mat-spinner *ngIf="products.length === 0"></mat-spinner>
-  <mat-card *ngFor="let product of products.slice(0,3)">
-    <mat-card-content>
-      <img src="{{ product.imageUrl }}" alt="" />
-      <p>{{ product.description }}</p>
-    </mat-card-content>
-
-    <mat-card-header>
-      <mat-card-title>{{ product.name }}</mat-card-title>
-      <mat-card-subtitle>
-        $/{{ product.price }} {{ product.quantity }}
-      </mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-actions>
-      <button
-        mat-stroked-button
-        color="accent"
-        routerLink="/details/{{ product.id }}"
-      >
-        Buy Meal
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-
-
-<div class="customer-review">
   
-  <div class="reviews">
-    <!-- <mat-card class="customer-review-card"> -->
-      <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>Real Customer</mat-card-title>
-      <!-- <mat-card-subtitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo.</mat-card-subtitle> -->
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil
-      </p>
-    </mat-card-content>
-    <!-- </mat-card> -->
+    <img src="/assets/homeImages/top-rugged-img2.png" alt="" class="top-image-rugged">
+  
+</div>
+
+<!-- second container displaying popular menus -->
+<div class="second-container">
+  <div class="stroke-background">  
+   <div class="context">
+    <h1 class="second-heading ">Popular Products</h1>
+    <p class="second-paragraph">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+   </div>
   </div>
 
-  <div class="customer-review-img-container">
-    <img src="https://images.pexels.com/photos/5639260/pexels-photo-5639260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Beef Weligton">
+  
+
+    <div class="veg-img">
+      <img src="/assets/homeImages/veg.png" alt="">
+    </div>
+  
+    <div class="plate-img">
+      <img src="/assets/homeImages/plate-food.png" alt="">
+    </div>
+</div>
+
+<!-- details  of popular meals showcasing three product items -->
+<div class="display-products context"> 
+  <app-card [product]="product" *ngFor="let product of products.slice(0,3)" class="product"></app-card>
+</div>
+
+<!-- section displaying additional menus -->
+
+<div class="second-menu-section context">
+  <div class="menu-heading-container">
+    <h1 class="menu-heading">SECTION OF THE MENU</h1>
+  </div>
+
+  <div class="second-menu-items">
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/bakery.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/bowl.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/cupcake.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/fast-food.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/hotdog.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/cupcake.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+   
   </div>
 </div>
 
-<!-- gallery------------------------------------------ -->
-<!-- <div class="gallery_container" id="card_container">
-    <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-    <h1 style="text-align: center; color: white;">Gallery</h1>
-  <div class="content">
-    <mat-card
-      style="background: #424242;"
-      *ngFor="let product of footerItems"
-      routerLink="/details/{{ product.id }}"
-      class="card"
-    >
-      <mat-card-content class="contentImg">
-        <img src="{{ product.imageUrl }}" alt="" />
-      </mat-card-content>
 
-      <mat-card-header>
-        <mat-card-title class="title">{{ product.name }}</mat-card-title>
-      </mat-card-header>
-    </mat-card>
+<!-- lower section with quote -->
+<section class="middle-quote-section context">
+  <p><img src="/assets/aboutImages/open-quotation.png" alt="" style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. This is very important <img src="/assets/aboutImages/close-quotation.png" alt="" style="float:right"></p>
+
+  <div class="quote-manager">
+    <div class="manager-img">
+      <img src="/assets/aboutImages/ellipse.png" alt="">
+    </div>
+
+    <div class="rates-below">
+      <div class="manager-name">
+        <h2 class="title">Executive Manager <br> <span class="name">Executive Manager</span></h2>
+      </div>
+  
+      <div class="star-rating">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+      </div>
+    </div>
+    
   </div>
-</div> -->
+
+</section>
