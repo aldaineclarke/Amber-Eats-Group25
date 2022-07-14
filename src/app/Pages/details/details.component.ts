@@ -67,7 +67,7 @@ export class DetailsComponent implements OnInit {
 
   //function to toggle show and hide component
   toggleShowHide() {
-    this.sideOrders = [];
+    this.sideOrders = []; //removes existing items from array
     this.isVisible = ! this.isVisible;
 
   }
