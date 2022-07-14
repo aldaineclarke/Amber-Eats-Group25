@@ -14,6 +14,8 @@ import { CartItem } from '../../interfaces/cartItem';
 })
 export class OrderCartComponent implements OnInit {
   cartItems: CartItem[] = this.cartService.getCart();
+
+
   
   constructor(
     private router: Router,
@@ -39,6 +41,18 @@ export class OrderCartComponent implements OnInit {
  
   ngOnInit() {
   }
+
+  // loginUser(email: HTMLInputElement) {
+  //   let userEmail:any = email.value;
+
+  // this.userService.login(userEmail).subscribe((result) => {
+  //   console.log(result)
+  //   console.error();
+  //   console.log('worked')
+    
+  // })
+    
+  // }
 
   // Clear Cart
   clearItems() {

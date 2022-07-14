@@ -28,19 +28,41 @@
     <div class="address-details">
       <div class="info">
         <div class="name">
-          <p>name to go here</p>
-          <p>Number to go here</p>
+          <p>(order.name)</p>
+          <p>(order.email)</p>
         </div>
-        <div class="address">
-          <p>address 1</p>
-          <p>address 2</p>
+        <div *ngIf="showAddress" class="address">
+          <p>(order.address)</p>
+          <p>(order.address)</p>
         </div>
         <div class="edit-link">
-          <a href="#">Edit</a>
+          <a mat-button  style="background-color:#3f51b5" href="#">Edit</a>
         </div>
       </div>
     </div>
     <!--------------------------------- address section end --------------------------------------->
+
+    <!--------------------------------- option section start --------------------------------------->
+
+    <div class="options">
+      <h3>Delivery Options</h3>
+        <form action="" method="post">
+          <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select disableRipple>
+              <button class="option" (click)="hide()">
+                <mat-option style="text-align: center;" value="1">Pickup</mat-option>
+              </button>
+              <button class="option" (click)="show()">
+                <mat-option style="text-align: center;" value="2">Delivery</mat-option>
+              </button>
+            </mat-select>
+          </mat-form-field>
+        </form>
+    </div>
+
+    <!--------------------------------- option section end --------------------------------------->
+
 
     <!--------------------------------- payment methods start --------------------------------------->
     <div class="payment-methods">
@@ -138,17 +160,13 @@
 
         <div class="order-info">
           <div class="left-info">
-            <p>Order NO.</p>
             <p>Subtotal:</p>
             <p>Delivery fee:</p>
-            <p>Sales Tax</p>
             <p>Grand Total:</p>
           </div>
-          <div class="right-info">
-            <p>(order.num)</p>
-            <p>(order.sub)</p>
+          <div *ngFor="let cartItem of cartItems" class="right-info">
+            <p>{{cartItem.product.price}}</p>
             <p>(order.delivery)</p>
-            <p>(order.tax)</p>
             <p>(order.total)</p>
           </div>
         </div>

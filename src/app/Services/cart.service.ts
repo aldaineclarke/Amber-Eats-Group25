@@ -15,6 +15,7 @@ export class CartService {
      */
     getCart(): CartItem[] {
         return JSON.parse(localStorage.getItem('cart') as string);
+        
     }
 
     clearCart(): void {
@@ -99,21 +100,19 @@ export class CartService {
         cartItems.forEach(item =>{
             if(item.id == cartID) {
                 item.quantity = value;
+                item.totalPrice *= value;
             }
         });
         this.updateCart(cartItems);
 
     }
 
-    // getCartTotal(){
-    //     let subTotals = 0;
-    //     const cart = this.getCart()
+    getCartTotal(){
+        const cart = this.getCart()
 
-    //     cart.forEach((product)=>{
-    //         subTotals += parseInt(product.price) * parseInt(product.amount)
-    //     })
+        let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice, 0 )
 
-    //     return subTotals
-    // }
+        return subTotal;
+    }
 
 }
