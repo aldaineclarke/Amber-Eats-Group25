@@ -18,6 +18,9 @@ import { User } from 'src/app/interfaces/users';
 export class OrderCartComponent implements OnInit {
   cartItems: CartItem[] = this.cartService.getCart();
   sideItems:SidesInterface[] = [];
+  cartAmount: number = this.cartService.getCartCount();
+  cartTotal: number = this.cartService.getCartTotal();
+
 
   // credentials: User[] = [];
 

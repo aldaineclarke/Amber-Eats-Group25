@@ -34,7 +34,7 @@
             </div>
             <!-- Start of Cart Listing -->
             <div class="cart-summary">
-                <h4>Cart Summary</h4>
+                <h4>Cart Summary({{cartAmount}})</h4>
                 <div class="cart-summary-content">
                     <table>
                         <thead>
@@ -69,7 +69,7 @@
                                         </mat-slider>
                                     </form>
                                 </td>
-                                <td>{{cartItem.product.price | currency}}</td>
+                                <td>{{cartItem.totalPrice | currency}}</td>
                                 <td ><button mat-button (click)="deleteitem(cartItem.id)">Remove</button></td>
                                 <br>
                             </tr>
@@ -82,7 +82,7 @@
             </div>
         </div>
         <!-- Start of right section -->
-        <div class="cart-right-sections">
+        <div class="cart-right-sections" style="text-align: left;">
             <!-- Order Summary -->
             <div class="cart-total">
                 <div class="total-header">
@@ -94,6 +94,10 @@
                             <th>Item</th>
                             <th>Price</th>
                         </tr>
+                        <tr>
+                            <th>Grand Total:</th>
+                            <th>{{cartTotal}}</th>
+                        </tr>
                     </thead>
                     <tbody *ngFor="let cartItems of cartItems" style="text-align: left;">
                         <br>
@@ -101,13 +105,14 @@
                             <td>{{cartItems.product.name}}</td>
                             <td>{{cartItems.product.price | currency}}</td>
                             <br>
-                        </tr>
-                        <tr *ngFor="let sideId of cartItems.sides">
+                        </tr >
+                        <tr *ngFor="let sideId of cartItems.sides" style="border-bottom: 1.5px solid skyblue;">
                             <td>{{sideItems[sideId].name}}</td>
                             <td>{{(sideItems[sideId].price | currency)}}</td>
-                            <!-- <tr>Total : {{cartItems.product.price + }}</tr> -->
+                            <br>
                         </tr>
                     </tbody>
+
                 </table>
                 <!-- Email Validation -->
                 <div class="check-email">
@@ -125,15 +130,15 @@
                     <h4>Payments We Accept</h4>
                 </div>
                 <div class="payment-container">
-                    <mat-grid-list cols="4" rowHeight="2:2" [style.background]="'skyblue'">
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
+                    <mat-grid-list cols="4" rowHeight="2:2" >
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/996947615340056698/kisspng-american-express-credit-card-computer-icons-master-visit-card-5ac504a5205ae3.6001027115228612211325-removebg-preview_1.png" alt="" width="160vw"></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/996947615574933514/visa-logo-11530966316amvzjrobsf-removebg-preview.png" alt="" width="100vw"></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/996947615814000761/mastercard-logo-11530966761nhfzlt6qu8-removebg-preview.png" alt="" width="95vw"></mat-grid-tile>
+                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/996949083627470870/Lynk_logo-03-1024x946.webp?width=624&height=576" alt="" width="85vw"></mat-grid-tile>
                     </mat-grid-list>
                 </div>
             </div>
         </div>
     </div>
-    
+    <!-- [style.background]="'skyblue'" -->
 </div>

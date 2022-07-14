@@ -113,6 +113,10 @@ tbody {
     text-align: center;
 }
 
+tbody tr {
+    padding: 4vw;
+}
+
 thead {
     font-size: 1vw;
     color: var(--primary);
