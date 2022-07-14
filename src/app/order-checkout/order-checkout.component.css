@@ -98,7 +98,7 @@ a{
 /* order summary table-------------------------------------- */
 .left table {
   /* border: 1px solid red; */
-  width: 110%;
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -143,6 +143,10 @@ a{
 .right > h2 {
   border-bottom: 1px solid lightgrey;
   color: var(--primary);
+}
+
+.div{
+  border-bottom: 1px solid grey;
 }
 
 .item {

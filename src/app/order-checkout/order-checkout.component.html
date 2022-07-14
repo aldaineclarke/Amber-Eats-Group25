@@ -5,16 +5,20 @@
   <form action="" method="post">
     <!-- sub-header--------------------- -->
     <div class="cart-header">
-        <div class="header-left">
-            <span class="secure-icon"><mat-icon>lock</mat-icon></span>
-            <h3>Secure Checkout</h3>
-        </div>
-        <div class="header-right">
-            <a routerLink="/home">
-                <h3>Continue Shopping</h3>
-            </a>
-            <a routerLink="/home"><span class="secure-icon"><mat-icon>chevron_right</mat-icon></span></a>
-        </div>
+      <div class="header-left">
+        <span class="secure-icon"><mat-icon>lock</mat-icon></span>
+        <h3>Secure Checkout</h3>
+      </div>
+      <div class="header-right">
+        <a routerLink="/home">
+          <h3>Continue Shopping</h3>
+        </a>
+        <a routerLink="/home"
+          ><span class="secure-icon"
+            ><mat-icon>chevron_right</mat-icon></span
+          ></a
+        >
+      </div>
     </div>
 
     <!-- Process Track--------------------- -->
@@ -51,18 +55,18 @@
           </article>
           <article>
             <div style="width: 100%">
-              <iframe
-                width="100%"
-                height="600"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Gotham+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                ><a href="https://www.gps.ie/farm-gps/"
-                  >gps for tractors</a
-                ></iframe
-              >
+              <div style="width: 100%">
+                <iframe
+                  width="100%"
+                  height="600"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Suite%20B11,%20Pinnacle%20Pointe,%2053%20Lady%20Musgrave%20Rd,%20Kingston+(Amber%20Eateries)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  ><a href="https://www.gps.ie/farm-gps/"></a
+                ></iframe>
+              </div>
             </div>
           </article>
         </section>
@@ -82,7 +86,7 @@
             <tr>
               <td>Grand Total</td>
               <td>
-                <h2>{{cartTotal}}</h2>
+                <h2>{{ cartTotal | currency }}</h2>
               </td>
             </tr>
           </tbody>
@@ -96,33 +100,24 @@
 
       <!-- right--------------------- -->
       <div class="right">
-        <h2>Cart Summary ({{cartAmount}})</h2>
+        <h2>Cart Summary ({{ cartAmount }})</h2>
         <div class="div" *ngFor="let cartItems of cartItems">
-          <div class="item" >
-            <img
-              [src]="cartItems.product.imageUrl"
-              alt=""
-            />
+          <div class="item">
+            <img [src]="cartItems.product.imageUrl" alt="" />
             <div class="info">
-              <p>{{cartItems.product.name}}</p>
-              <p>{{cartItems.quantity}}</p>
-              <h2>{{cartItems.product.price}}</h2>
+              <p>{{ cartItems.product.name }}</p>
+              <p>{{ cartItems.quantity }}</p>
+              <h2>{{ cartItems.product.price | currency }}</h2>
             </div>
           </div>
           <div class="item" *ngFor="let sideId of cartItems.sides">
-            <img *ngIf="sideId"
-              [src]="sideItems[sideId
-              ].imageUrl"
-              alt=""
-            />
+            <img *ngIf="sideId" [src]="sideItems[sideId].imageUrl" alt="" />
             <div class="info">
-              <p>{{sideItems[sideId
-                ].name}}</p>
-              <p>{{cartItems.quantity}}</p>
-              <h2>{{sideItems[sideId
-                ].price}}</h2>
-              </div>
+              <p>{{ sideItems[sideId].name }}</p>
+              <p>{{ cartItems.quantity }}</p>
+              <h2>{{ sideItems[sideId].price | currency }}</h2>
             </div>
+          </div>
         </div>
       </div>
     </div>
