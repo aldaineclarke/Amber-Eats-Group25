@@ -22,7 +22,7 @@ export class OrderCartComponent implements OnInit {
     public dialog: MatDialog,
     private dataService: DataService,
     private userService: UserService,
-    private cartService: CartService
+    public cartService: CartService
   ) {}
 
   updateQuantity(cartID:number, value:number){
@@ -38,21 +38,28 @@ export class OrderCartComponent implements OnInit {
     return value;
   }
 
+  removeItem(id:number){
+    this.cartService.removeCartItem(id);
+    this.cartItems = this.cartService.getCart();
+  }
+
+  increaseQty(item:CartItem){
+      this.cartService.updateCartItemQuantity(item.id,++item.quantity);
+  }
+
+  
+  decreaseQty(item:CartItem){
+    if(--item.quantity == 0){
+      this.removeItem(item.id);
+    }
+    this.cartService.updateCartItemQuantity(item.id,--item.quantity);
+  }
+
  
   ngOnInit() {
   }
 
-  // loginUser(email: HTMLInputElement) {
-  //   let userEmail:any = email.value;
 
-  // this.userService.login(userEmail).subscribe((result) => {
-  //   console.log(result)
-  //   console.error();
-  //   console.log('worked')
-    
-  // })
-    
-  // }
 
   // Clear Cart
   clearItems() {
