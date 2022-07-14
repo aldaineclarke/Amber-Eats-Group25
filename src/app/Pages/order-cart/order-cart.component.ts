@@ -23,21 +23,9 @@ export class OrderCartComponent implements OnInit {
     private cartService: CartService
   ) {}
 
-  next() {
-    this.router.navigate(['/', 'checkout']).then(
-      (nav) => {
-        console.log(nav); // true if navigation is successful
-      },
-      (err) => {
-        console.log(err); // when there's an error
-      }
-    );
-  }
-
   updateQuantity(cartID:number, value:number){
     this.cartService.updateCartItemQuantity(cartID, value);
-    // console.log(cartID);
-    // console.log(value);
+
     this.cartItems = this.cartService.getCart();
 
   }
@@ -48,29 +36,8 @@ export class OrderCartComponent implements OnInit {
     return value;
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(UserCreationComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
+ 
   ngOnInit() {
-    console.log(this.cartItems)
-  }
-
-  checkUser(email: HTMLInputElement) {
-    let userEmail = email.value;
-
-    this.userService.findEmail(userEmail).subscribe((result) => {
-      if (result == false) {
-        console.log(result);
-        this.openDialog();
-      } else {
-        this.next();
-      }
-    });
   }
 
   // Clear Cart
