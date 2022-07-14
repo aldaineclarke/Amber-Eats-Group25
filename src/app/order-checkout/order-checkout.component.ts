@@ -41,9 +41,10 @@ export class OrderCheckoutComponent implements OnInit {
   });
   isEditable = true;
   currentUser$!: Observable<User | null>;
-
+  
   constructor(private _formBuilder: FormBuilder,private userService: UserService,    public dialog: MatDialog,private router: Router, private cartService: CartService, private dataService: DataService) {}
-
+  
+  total = this.cartService.getCartTotal();
 
   openDialog() {
     const dialogRef = this.dialog.open(UserCreationComponent,{

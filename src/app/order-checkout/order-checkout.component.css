@@ -98,3 +98,6 @@ mat-radio-group{
     font-weight: 600;
     font-size: 1.2rem;
 }
+mat-step form, .orderDetails{
+    margin-top: 1rem;
+}

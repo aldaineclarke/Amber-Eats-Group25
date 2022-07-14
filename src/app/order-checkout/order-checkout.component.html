@@ -2,7 +2,7 @@
   
 
 <mat-stepper linear #stepper class="Iputthishere">
-  <!-- <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
+  <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
 
     <form class="custom-b" [formGroup]="searchUserForm">
       <ng-template matStepLabel>Find User</ng-template>
@@ -107,7 +107,7 @@
         <button mat-button matStepperNext>Next</button>
       </div>
     </form>
-  </mat-step> -->
+  </mat-step>
   <mat-step>
     <ng-template matStepLabel>Confirm Payment</ng-template>
       <div class="orderDetails">
@@ -118,8 +118,8 @@
             <p>An email will be sent containing information about your purchase. If you have any questions about your purchase, email us at <a href="#"> admin@ambereats25.com</a></p>
 
             <hr>
-             
-            <button mat-button>Continue Shopping</button>
+             <br>
+            <button mat-raised-button color="secondary">Continue Shopping</button>
         </div>
         <div class="order-confirmation">
             <h2>Order Summary</h2>
@@ -142,15 +142,16 @@
                   </tr>
                   <tr>
                     <td class="total">Order Total: </td>
-                    <td>{{889|currency}}</td>
+                    <td class="itemPrice">{{total |currency}}</td>
                   </tr>
                 </tbody>
               </table>
-
+              <br>
+              <br>
+              <button mat-raised-button color="primary" routerLink="/reciept">Confirm Payment</button>
             </div>
         </div>
       </div>
   </mat-step>
 </mat-stepper>
-{{paymentForm.value | json}}
 </div>
