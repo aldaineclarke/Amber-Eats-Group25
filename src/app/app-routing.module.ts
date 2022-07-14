@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, //default that redirects and empty path to home component
   { path: 'home', component: HomeComponent }, //path to 'home' (these are names, NOT routes)
   { path: 'about', component: AboutComponent }, //path to 'about'
-  { path: 'products', component: MealsCatalogueComponent},
+  { path: 'menus', component: MealsCatalogueComponent},
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'order-completed', component: OrderCompletedComponent},
