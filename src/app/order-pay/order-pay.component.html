@@ -164,10 +164,10 @@
             <p>Delivery fee:</p>
             <p>Grand Total:</p>
           </div>
-          <div *ngFor="let cartItem of cartItems" class="right-info">
-            <p>{{cartItem.product.price}}</p>
-            <p>(order.delivery)</p>
-            <p>(order.total)</p>
+          <div class="right-info">
+            <p>{{cartTotal | currency}}</p>
+            <p>{{500 | currency}}</p>
+            <p>{{cartTotal + 500 | currency}}</p>
           </div>
         </div>
         <button mat-raised-button class="btn" color="accent" type="submit">Pay Now</button>
