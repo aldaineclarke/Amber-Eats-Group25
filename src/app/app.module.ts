@@ -35,6 +35,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { UserCreationComponent } from './Components/user-creation/user-creation.component';
 import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
@@ -71,6 +73,7 @@ import { HomeNavComponent } from './Components/home-nav/home-nav.component';
     MealsCatalogueComponent,
     CardComponent,
     HomeNavComponent,
+    
 
   ],
   imports: [
@@ -100,7 +103,8 @@ import { HomeNavComponent } from './Components/home-nav/home-nav.component';
     MatRadioModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
