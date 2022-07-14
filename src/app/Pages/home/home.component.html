@@ -1,64 +1,120 @@
-<link rel="stylesheet" href="./home.component.css" />
+<!-- top section -->
+<div class="top-container">
 
-<app-slider [products]="products" [autoSlide]="true" [controls]="true"></app-slider>
+  <div class="heading-container">
+    <h1 class="heading">FAST AND TASTY </h1>
 
-<section>
-  <h1>
-    What would you like to eat? <br /><br />
-    View our menu below
-  </h1>
-  <br />
-  <a href="#card_container">&dArr;&dArr;</a>
-</section>
+    <p class="sub-head-paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
 
-<!-- cards-------------------------------------------------- -->
-<div class="card_container" id="card_container">
-  <mat-spinner *ngIf="products.length === 0"></mat-spinner>
-  <mat-card *ngFor="let product of products">
-    <mat-card-content>
-      <img src="{{ product.imageUrl }}" alt="" />
-      <p>{{ product.description }}</p>
-    </mat-card-content>
-
-    <mat-card-header>
-      <mat-card-title>{{ product.name }}</mat-card-title>
-      <mat-card-subtitle>
-        $/{{ product.price }} {{ product.quantity }}
-      </mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-actions>
-      <app-rating class="ratings" [meal]="product"> </app-rating>
-      <button
-        mat-stroked-button
-        color="accent"
-        routerLink="/details/{{ product.id }}"
-      >
-        Buy Meal
-      </button>
-    </mat-card-actions>
-  </mat-card>
+    <button class="heading-button">View full menu</button>
+  </div>
+  
+    <img src="/assets/homeImages/top-rugged-img.png" alt="" class="top-image-rugged">
+  
 </div>
 
+<!-- second container displaying popular menus -->
+<div class="second-container">
+  <div class="stroke-background">  <img src="/assets/homeImages/second-img.png" alt=""></div>
 
-<!-- gallery------------------------------------------ -->
-<div class="gallery_container" id="card_container">
-    <mat-spinner *ngIf="footerItems.length === 0"></mat-spinner>
-    <h1 style="text-align: center; color: white;">Gallery</h1>
-  <div class="content">
-    <mat-card
-      style="background: #424242;"
-      *ngFor="let product of footerItems"
-      routerLink="/details/{{ product.id }}"
-      class="card"
-    >
-      <mat-card-content class="contentImg">
-        <img src="{{ product.imageUrl }}" alt="" />
-      </mat-card-content>
+  <h1 class="second-heading">Popular Products</h1>
+  <p class="second-paragraph">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
 
-      <mat-card-header>
-        <mat-card-title class="title">{{ product.name }}</mat-card-title>
-      </mat-card-header>
-    </mat-card>
+    <div class="veg-img">
+      <img src="/assets/homeImages/veg.png" alt="">
+    </div>
+  
+    <div class="plate-img">
+      <img src="/assets/homeImages/plate-food.png" alt="">
+    </div>
+</div>
+
+<!-- details  of popular meals showcasing three product items -->
+<div class="display-products"> 
+  <app-card [product]="product" *ngFor="let product of products.slice(0,3)" class="product"></app-card>
+</div>
+
+<!-- section displaying additional menus -->
+
+<div class="second-menu-section">
+  <div class="menu-heading-container">
+    <h1 class="menu-heading">SECTION OF THE MENU</h1>
+  </div>
+
+  <div class="second-menu-items">
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/bakery.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/bowl.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/cupcake.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/fast-food.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/hotdog.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+
+    <div class="items">
+      <div class="icons">
+        <img src="/assets/homeImages/cupcake.svg" alt="">
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    </div>
+   
   </div>
 </div>
+
+
+<!-- lower section with quote -->
+<section class="middle-quote-section">
+  <p><img src="/assets/aboutImages/open-quotation.png" alt="" style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. This is very important <img src="/assets/aboutImages/close-quotation.png" alt="" style="float:right"></p>
+
+  <div class="quote-manager">
+    <div class="manager-img">
+      <img src="/assets/aboutImages/ellipse.png" alt="">
+    </div>
+
+    <div class="rates-below">
+      <div class="manager-name">
+        <h2 class="title">Executive Manager <br> <span class="name">Executive Manager</span></h2>
+      </div>
+  
+      <div class="star-rating">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+        <img src="/assets/homeImages/rating.png" alt="">
+      </div>
+    </div>
+    
+  </div>
+
+</section>
