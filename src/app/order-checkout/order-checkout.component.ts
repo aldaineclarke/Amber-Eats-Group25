@@ -34,17 +34,19 @@ export class OrderCheckoutComponent implements OnInit {
     }),
     deliveryChoice: ['',Validators.required],
   });
-  isEditable = false;
+  isEditable = true;
   currentUser$!: Observable<User | null>;
 
   constructor(private _formBuilder: FormBuilder,private userService: UserService,    public dialog: MatDialog,private router: Router) {}
 
 
   openDialog() {
-    const dialogRef = this.dialog.open(UserCreationComponent);
+    const dialogRef = this.dialog.open(UserCreationComponent,{
+      data: {stepper: this.stepper}
+    });
+
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
       if(result){
         let paymentMethod:cardPayment= {
           name: result.cardholder,
@@ -61,12 +63,10 @@ export class OrderCheckoutComponent implements OnInit {
         }
         this.userService.saveUser(newUser).subscribe(()=>{
           this.userService.login(newUser).subscribe();
+          this.stepper.next();
 
         });
-        
       }
-      this.stepper.next();
-      console.log(this.stepper)
     });
   }
 
