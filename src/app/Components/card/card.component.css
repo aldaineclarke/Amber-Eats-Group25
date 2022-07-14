@@ -17,6 +17,7 @@
     width: 100%;
     transform:scale(1);
     object-fit: cover;
+    border-radius: 50%;
     transition: 700ms transform ease-in-out;
 }
 .card .image-wrapper{
