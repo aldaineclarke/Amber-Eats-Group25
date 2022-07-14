@@ -14,6 +14,10 @@ nav.transparent a{
 nav.solid a{
   color: black;
 }
+.transparent a:hover, .solid a:hover{
+    color: aqua;
+    transition: .3s;
+}
 
 img {
   height: 8rem;
@@ -35,10 +39,7 @@ color: white;
 display:inline-block;
 }
 
-a:hover {
-color: aqua;
-transition: .3s;
-}
+
 
 .icons {
   display: flex;

@@ -131,7 +131,7 @@
                       <div class="cartItem">
                         <p>{{item.quantity}}x {{item.product.name}}</p>
                         <ul *ngIf="item.sides.length > 0">
-                          <li *ngFor="let side of item.sides">{{(side) ? sides[side].name : " " }}</li>
+                          <li *ngFor="let side of item.sides">{{(side && sides) ? sides[side].name : " " }}</li>
                         </ul>
 
                       </div>
