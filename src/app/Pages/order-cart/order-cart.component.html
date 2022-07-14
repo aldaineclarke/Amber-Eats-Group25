@@ -70,14 +70,14 @@
                                     </form>
                                 </td>
                                 <td>{{cartItem.product.price | currency}}</td>
-                                <td ><button mat-button>Remove</button></td>
+                                <td ><button mat-button (click)="deleteitem(cartItem.id)">Remove</button></td>
                                 <br>
                             </tr>
                         </tbody>
-                        <div class="clearBtn">
-                            <button (click)="clearItems()">Empty Cart</button>
-                        </div>
                     </table>
+                    <div class="clearBtn" align="right">
+                        <button mat-raised-button (click)="clearItems()" color="primary">Empty Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,13 +95,17 @@
                             <th>Price</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let cartItems of cartItems" style="text-align: left;">
                         <br>
-                        <!-- <tr *ngFor="let order of "> -->
-                        <tr *ngFor="let item of cartItems">
-                            <td>{{item.product.name}}</td>
-                            <td>{{item.product.price | currency}}</td>
+                        <tr>
+                            <td>{{cartItems.product.name}}</td>
+                            <td>{{cartItems.product.price | currency}}</td>
                             <br>
+                        </tr>
+                        <tr *ngFor="let sideId of cartItems.sides">
+                            <td>{{sideItems[sideId].name}}</td>
+                            <td>{{(sideItems[sideId].price | currency)}}</td>
+                            <!-- <tr>Total : {{cartItems.product.price + }}</tr> -->
                         </tr>
                     </tbody>
                 </table>

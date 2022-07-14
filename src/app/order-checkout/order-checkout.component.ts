@@ -15,6 +15,7 @@ export class OrderCheckoutComponent implements OnInit {
 
   cartItems: CartItem[] = this.cartService.getCart();
   sideItems:SidesInterface[] = [];
+  cartAmount: number = this.cartService.getCartCount();
   // total: number = 0;
 
   constructor(private _formBuilder: FormBuilder, private dataService: DataService, private cartService: CartService, private userService: UserService) { }
@@ -24,6 +25,9 @@ export class OrderCheckoutComponent implements OnInit {
       this.sideItems = sides;
     })
   }
+
+  
+  
 
   // ngAfterViewInIt() {
   //   this.totalFunc()

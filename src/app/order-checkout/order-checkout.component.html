@@ -80,24 +80,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>Retail Price</td>
-              <td>US$ 232.00</td>
-            </tr>
-            <tr>
-              <td>Sun Total</td>
-              <td>US$ 229.00</td>
-            </tr>
-            <tr>
-              <td>Delivery Fee</td>
-              <td>US$ 50.00</td>
-            </tr>
-            <tr>
-              <td>Sales Tax</td>
-              <td>US$ 34.80</td>
-            </tr>
-            <tr>
               <td>Grand Total</td>
-              <td><h2>US$ 313.80</h2></td>
+              <td *ngFor="let cartItems of cartItems">
+                <h2>{{cartItems.totalPrice}}</h2>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -110,7 +96,7 @@
 
       <!-- right--------------------- -->
       <div class="right">
-        <h2>Cart Summary (2)</h2>
+        <h2>Cart Summary ({{cartAmount}})</h2>
         <div class="div" *ngFor="let cartItems of cartItems">
           <div class="item" >
             <img
@@ -120,7 +106,7 @@
             <div class="info">
               <p>{{cartItems.product.name}}</p>
               <p>{{cartItems.quantity}}</p>
-              <h2>{{cartItems.product.price * cartItems.quantity}}</h2>
+              <h2>{{cartItems.product.price}}</h2>
             </div>
           </div>
           <div class="item" *ngFor="let sideId of cartItems.sides">
@@ -134,7 +120,7 @@
                 ].name}}</p>
               <p>{{cartItems.quantity}}</p>
               <h2>{{sideItems[sideId
-                ].price * cartItems.quantity}}</h2>
+                ].price}}</h2>
               </div>
             </div>
         </div>

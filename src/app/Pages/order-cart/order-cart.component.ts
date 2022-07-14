@@ -6,6 +6,8 @@ import { UserCreationComponent } from '../../Components/user-creation/user-creat
 import { UserService } from '../../Services/user.service';
 import { CartService } from '../../Services/cart.service';
 import { CartItem } from '../../interfaces/cartItem';
+import { SidesInterface } from 'src/app/interfaces/sides';
+import { ProductInterface } from 'src/app/interfaces/product';
 import { User } from 'src/app/interfaces/users';
 
 @Component({
@@ -15,6 +17,8 @@ import { User } from 'src/app/interfaces/users';
 })
 export class OrderCartComponent implements OnInit {
   cartItems: CartItem[] = this.cartService.getCart();
+  sideItems:SidesInterface[] = [];
+
   // credentials: User[] = [];
 
 
@@ -26,6 +30,12 @@ export class OrderCartComponent implements OnInit {
     private userService: UserService,
     private cartService: CartService
   ) {}
+
+  ngOnInit(): void {
+    this.dataService.getAllSides().subscribe((sides) => {
+      this.sideItems = sides;
+    })
+  }
 
   next() {
     this.router.navigate(['/', 'checkout']).then(
@@ -53,16 +63,13 @@ export class OrderCartComponent implements OnInit {
     return value;
   }
 
+  // Open Create Account Dialog
   openDialog() {
     const dialogRef = this.dialog.open(UserCreationComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
-  }
-
-  ngOnInit() {
-    console.log(this.cartItems)
   }
 
   checkUser(email: HTMLInputElement) {
@@ -78,7 +85,17 @@ export class OrderCartComponent implements OnInit {
     });
   }
 
+  // Delete Item From Cart
+  deleteitem(itemId: number) {
+    this.cartService.removeCartItem(itemId)
+    this.cartItems = this.cartService.getCart();
+  }
 
+  // Clear Cart
+  clearItems() {
+    this.cartService.clearCart();
+    this.cartItems = this.cartService.getCart();
+  }
 
   // loginUser(credentials: User) {
   //   // let userEmail:any = email.value;
@@ -105,8 +122,7 @@ export class OrderCartComponent implements OnInit {
     
   // }
 
-  // Clear Cart
-  clearItems() {
-    this.cartService.clearCart();
-  }
+  
 }
+
+
