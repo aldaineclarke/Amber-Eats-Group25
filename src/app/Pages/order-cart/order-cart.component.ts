@@ -6,6 +6,7 @@ import { UserCreationComponent } from '../../Components/user-creation/user-creat
 import { UserService } from '../../Services/user.service';
 import { CartService } from '../../Services/cart.service';
 import { CartItem } from '../../interfaces/cartItem';
+import { User } from 'src/app/interfaces/users';
 
 @Component({
   selector: 'app-order-cart',
@@ -14,6 +15,7 @@ import { CartItem } from '../../interfaces/cartItem';
 })
 export class OrderCartComponent implements OnInit {
   cartItems: CartItem[] = this.cartService.getCart();
+  // credentials: User[] = [];
 
 
   
@@ -36,6 +38,7 @@ export class OrderCartComponent implements OnInit {
     );
   }
 
+  // Update Cart Item Quantity
   updateQuantity(cartID:number, value:number){
     this.cartService.updateCartItemQuantity(cartID, value);
     // console.log(cartID);
@@ -73,21 +76,32 @@ export class OrderCartComponent implements OnInit {
         this.next();
       }
     });
-
-    
   }
 
 
 
+  // loginUser(credentials: User) {
+  //   // let userEmail:any = email.value;
+
+  //   this.userService.login(credentials).subscribe((result) => {
+  //     console.log(result)
+  //     console.error();
+  //     console.log('worked')
+  //     // this.credentials = result
+  //   })
+    
+  // }
+
+  // logUser(email: HTMLInputElement) {
   // loginUser(email: HTMLInputElement) {
   //   let userEmail:any = email.value;
 
-  // this.userService.login(userEmail).subscribe((result) => {
-  //   console.log(result)
-  //   console.error();
-  //   console.log('worked')
-    
-  // })
+  //   this.userService.login(userEmail).subscribe((result) => {
+  //     console.log(result)
+  //     console.error();
+  //     console.log('worked')
+  //     // this.credentials = result
+  //   })
     
   // }
 

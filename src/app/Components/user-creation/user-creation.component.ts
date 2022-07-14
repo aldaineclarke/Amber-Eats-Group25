@@ -44,7 +44,7 @@ export class UserCreationComponent implements OnInit {
 
     // Object that stores information to be added
     const userInformation = {
-      id: '2',
+      id: '',
       firstName: value.firstName,
       lastName: value.lastName,
       email: value.email,
@@ -59,7 +59,6 @@ export class UserCreationComponent implements OnInit {
       .then(nav => {
         console.log(userInformation)
         this.router.navigate(["/", "checkout"])
-        // this.orderCart.openDialog()
       }, err => {
         console.log(err) // when there's an error,
         console.log(userInformation) 
