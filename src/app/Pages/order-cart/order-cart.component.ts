@@ -37,6 +37,9 @@ export class OrderCartComponent implements OnInit {
     }
     return value;
   }
+  goBack(){
+    window.history.back();
+  }
 
   removeItem(id:number){
     this.cartService.removeCartItem(id);
@@ -47,7 +50,7 @@ export class OrderCartComponent implements OnInit {
       this.cartService.updateCartItemQuantity(item.id,++item.quantity);
   }
 
-  
+
   decreaseQty(item:CartItem){
     if(--item.quantity == 0){
       this.removeItem(item.id);

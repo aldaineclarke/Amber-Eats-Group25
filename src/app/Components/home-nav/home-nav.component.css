@@ -24,7 +24,9 @@ img {
   width: 15rem;
 }
 
-
+nav a.active-link{
+  color: aqua;
+}
 .menu{
   display: flex;
 }
