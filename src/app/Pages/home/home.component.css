@@ -3,25 +3,31 @@
 *{
 box-sizing: border-box;
 }
-
+.home{
+  background-color: white;
+}
 /* top container section*/
 .top-container{
   width: 100%;
-  background-color:#333;
+  background-color: transparent;
   position: relative;
-  background-blend-mode: darken;
   opacity: 100%;
   height: 850px;
 
 }
 app-slider{
   width: 100%;
-  background-blend-mode: darken;
-  opacity: 30%;
+  /* opacity: 30%; */
+  /* position:fixed; */
+
+  z-index: -1;
 }
 
 .hero{
   position:relative;
+}
+.white-bg{
+  background-color:white;
 }
 /* contianer within top container */
 .heading-container{
