@@ -1,157 +1,209 @@
 <div class="container">
-  
-
-<mat-stepper linear #stepper class="Iputthishere">
-  <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
-
-    <form class="custom-b" [formGroup]="searchUserForm">
-      <ng-template matStepLabel>Find User</ng-template>
-      <legend>Search by Email</legend>
+  <mat-stepper linear #stepper class="Iputthishere">
+    <mat-step [stepControl]="searchUserForm" [editable]="isEditable">
+      <form class="custom-b" [formGroup]="searchUserForm">
+        <ng-template matStepLabel>Find User</ng-template>
+        <legend>Search by Email</legend>
         <div class="flex-col">
           <label>
-            <input type="email" formControlName="email" placeholder="johndoe@gmail.com">
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="johndoe@gmail.com"
+            />
+            <span id="req" style="color: red">Your Email is Required</span>
           </label>
           <div class="btn-cta">
-            <button mat-raised-button color="primary" (click)="checkUser()">Get User</button>
+            <button mat-raised-button color="primary" (click)="checkUser()">
+              Get User
+            </button>
           </div>
         </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="paymentForm" [editable]="isEditable">
-    <form [formGroup]="paymentForm" class="custom-b">
-      <ng-template matStepLabel>Choose Payment and Delivery Type</ng-template>
-      <div class="grid-two">
-        <div class="paymentType">
-          <div class="cards">
-            <h3>Select Your Payment Type: </h3>
-            <div class="flex-col no-gap">
-              <mat-radio-group formControlName="selectedCard" *ngIf="(currentUser$ | async)" class="payment-cards">
-                <mat-card *ngFor="let card of (currentUser$ | async)?.paymentMethod">
-                  <mat-radio-button type="submit"  value="7464" >Ending with {{card.cardNumber}}</mat-radio-button>
-                </mat-card>                 
-                
-              </mat-radio-group>
-              <mat-radio-group formControlName="selectedCard" *ngIf="!(currentUser$ | async)">
-                <mat-card  class="directpay">
-                  <mat-radio-button type="submit"  value="directPay" >Direct Pay</mat-radio-button>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="paymentForm" [editable]="isEditable">
+      <form [formGroup]="paymentForm" class="custom-b">
+        <ng-template matStepLabel>Choose Payment and Delivery Type</ng-template>
+        <div class="grid-two">
+          <div class="paymentType">
+            <div class="cards">
+              <h3>Select Your Payment Type:</h3>
+              <div class="flex-col no-gap">
+                <mat-radio-group
+                  formControlName="selectedCard"
+                  *ngIf="currentUser$ | async"
+                  class="payment-cards"
+                >
+                  <mat-card
+                    *ngFor="let card of (currentUser$ | async)?.paymentMethod"
+                  >
+                    <mat-radio-button type="submit" value="7464"
+                      >Ending with {{ card.cardNumber }}</mat-radio-button
+                    >
+                  </mat-card>
+                </mat-radio-group>
+                <mat-radio-group
+                  formControlName="selectedCard"
+                  *ngIf="!(currentUser$ | async)"
+                >
+                  <mat-card class="directpay">
+                    <mat-radio-button type="submit" value="directPay"
+                      >Direct Pay</mat-radio-button
+                    >
+                  </mat-card>
+                </mat-radio-group>
+
+                <br />
+              </div>
+            </div>
+            <div formGroupName="addNewCard" *ngIf="currentUser$ | async">
+              <mat-expansion-panel style="width: 34rem" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span>Add a new card</span>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Visa and Master Cards accepted
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="card-info">
+                  <div class="card-details">
+                    <div class="form-flex">
+                      <label>
+                        <input
+                          type="text"
+                          formControlName="cardholder"
+                          placeholder="John Doe"
+                        />
+                        <span>Cardholder Name</span>
+                      </label>
+                      <label>
+                        <input
+                          type="text"
+                          formControlName="cardNumber"
+                          placeholder="xxxx-xxxx-xxxx-xxxx"
+                        />
+                        <span>Card Number</span>
+                      </label>
+                    </div>
+                    <div class="form-flex">
+                      <label>
+                        <input
+                          type="text"
+                          formControlName="expiryDate"
+                          placeholder="4/23"
+                        />
+                        <span>Expiry Date</span>
+                      </label>
+                      <label>
+                        <mat-radio-group formControlName="cardType">
+                          <mat-radio-button type="submit" value="Mastercard"
+                            >Master Card</mat-radio-button
+                          >
+                          <mat-radio-button type="submit" value="Visa"
+                            >Visa Card</mat-radio-button
+                          >
+                        </mat-radio-group>
+                        <span>Card Type</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <section class="example-section">
+                    <button
+                      class="add-card"
+                      mat-flat-button
+                      color="accent"
+                      (click)="addCard()"
+                    >
+                      Save Card
+                    </button>
+                  </section>
+                </div>
+              </mat-expansion-panel>
+            </div>
+          </div>
+          <div class="deliveryType">
+            <h3>Select Delivery Type</h3>
+            <div class="flex-col">
+              <mat-radio-group formControlName="deliveryChoice">
+                <mat-card>
+                  <mat-radio-button type="submit" value="pickup"
+                    >Pickup</mat-radio-button
+                  >
+                </mat-card>
+                <mat-card>
+                  <mat-radio-button type="submit" value="delivery"
+                    >Delivery</mat-radio-button
+                  >
                 </mat-card>
               </mat-radio-group>
-                            
-              <br>            
             </div>
-    
-    
-          </div>
-          <div formGroupName="addNewCard" *ngIf="(currentUser$ | async)">
-            <mat-expansion-panel style="width: 34rem" hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <span>Add a new card</span>
-                </mat-panel-title>
-                <mat-panel-description>
-                  Visa and Master Cards accepted
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-      
-              <div class="card-info">
-                <div class="card-details">
-                  <div class="form-flex">
-                    <label>
-                      <input type="text" formControlName="cardholder" placeholder="John Doe">
-                      <span>Cardholder Name</span>
-                    </label>
-                    <label>
-                      <input type="text" formControlName="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx">
-                      <span>Card Number</span>
-                    </label>
-                  </div>
-                  <div class="form-flex">
-                    <label>
-                      <input type="text" formControlName="expiryDate" placeholder="4/23">
-                      <span>Expiry Date</span>
-                    </label>
-                    <label>
-                      <mat-radio-group formControlName="cardType">
-                        <mat-radio-button type="submit"  value="Mastercard">Master Card</mat-radio-button>
-                        <mat-radio-button type="submit"  value="Visa">Visa Card</mat-radio-button>
-                      </mat-radio-group>
-                      <span>Card Type</span>
-                    </label>
-                    
-                  </div>
-                </div>
-
-                <section class="example-section">
-                  <button class="add-card" mat-flat-button color="accent" (click)="addCard()">Save Card</button>
-                </section>
-              </div>
-            </mat-expansion-panel>
           </div>
         </div>
-        <div class="deliveryType">
-          <h3>Select Delivery Type</h3>
-          <div class="flex-col">
-            <mat-radio-group formControlName="deliveryChoice">
-              <mat-card>
-                <mat-radio-button type="submit"  value="pickup">Pickup</mat-radio-button>
-              </mat-card> 
-              <mat-card>
-                <mat-radio-button type="submit"  value="delivery">Delivery</mat-radio-button>
-              </mat-card> 
-            </mat-radio-group>
-          </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
         </div>
-      </div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Confirm Payment</ng-template>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirm Payment</ng-template>
       <div class="orderDetails">
         <div class="info">
-            <h2>Thank You User! </h2>
-            <p>You are almost There.</p>
-            <p>We just need you to confirm your order before we can go ahead and place it. Ensure that you have the correct items and quantity.</p>
-            <p>An email will be sent containing information about your purchase. If you have any questions about your purchase, email us at <a href="#"> admin@ambereats25.com</a></p>
+          <h2>Thank You User!</h2>
+          <p>You are almost There.</p>
+          <p>
+            We just need you to confirm your order before we can go ahead and
+            place it. Ensure that you have the correct items and quantity.
+          </p>
+          <p>
+            An email will be sent containing information about your purchase. If
+            you have any questions about your purchase, email us at
+            <a href="#"> admin@ambereats25.com</a>
+          </p>
 
-            <hr>
-             <br>
-            <button mat-raised-button color="secondary">Continue Shopping</button>
+          <hr />
+          <br />
+          <button mat-raised-button color="secondary">Continue Shopping</button>
         </div>
         <div class="order-confirmation">
-            <h2>Order Summary</h2>
-            <div class="order-summary">
-              <table class="items">
-                <tbody>
-                  <tr *ngFor="let item of cartItems">
-                    <td>
-                      <div class="cartItem">
-                        <p>{{item.quantity}}x {{item.product.name}}</p>
-                        <ul *ngIf="item.sides.length > 0">
-                          <li *ngFor="let side of item.sides">{{(side && sides) ? sides[side].name : " " }}</li>
-                        </ul>
-
-                      </div>
-                    </td>
-                    <td  class="itemPrice"><p>
-                      {{item.totalPrice | currency}}
-                    </p></td>
-                  </tr>
-                  <tr>
-                    <td class="total">Order Total: </td>
-                    <td class="itemPrice">{{total |currency}}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <br>
-              <br>
-              <button mat-raised-button color="primary" routerLink="/reciept">Confirm Payment</button>
-            </div>
+          <h2>Order Summary</h2>
+          <div class="order-summary">
+            <table class="items">
+              <tbody>
+                <tr *ngFor="let item of cartItems">
+                  <td>
+                    <div class="cartItem">
+                      <p>{{ item.quantity }}x {{ item.product.name }}</p>
+                      <ul *ngIf="item.sides.length > 0">
+                        <li *ngFor="let side of item.sides">
+                          {{ side && sides ? sides[side].name : " " }}
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td class="itemPrice">
+                    <p>
+                      {{ item.totalPrice | currency }}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="total">Order Total:</td>
+                  <td class="itemPrice">{{ total | currency }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <br />
+            <button mat-raised-button color="primary" routerLink="/reciept">
+              Confirm Payment
+            </button>
+          </div>
         </div>
       </div>
-  </mat-step>
-</mat-stepper>
+    </mat-step>
+  </mat-stepper>
 </div>
