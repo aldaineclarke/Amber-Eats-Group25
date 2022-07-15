@@ -85,10 +85,12 @@ mat-radio-group {
   border-collapse: collapse;
   width: 30vw;
 }
-.orderDetails th,
+
+/* .orderDetails th,
 td {
-  /* border: 1px solid #302424; */
-}
+  border: 1px solid #302424;
+} */
+
 .itemPrice {
   display: flex;
   font-weight: 600;
