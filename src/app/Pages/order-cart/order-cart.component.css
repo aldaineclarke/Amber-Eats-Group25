@@ -123,8 +123,16 @@
     margin: 0;
 }
 .cartItem p.name{
+    position:relative;
     margin-right: auto;
-
+}
+.cartItem .sides{
+    position:absolute;
+    font-size: .6rem;
+    color:#6D6D6D;
+    left: 0;
+    top: 100%;
+    font-weight: 600;
 }
 .increase, .decrease{
     background-color: transparent;

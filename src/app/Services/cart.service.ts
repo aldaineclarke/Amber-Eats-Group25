@@ -54,8 +54,6 @@ export class CartService {
                                 return true;
                             }
                         }
-                        
-                        
                     }
                     return false;
                 }
@@ -64,7 +62,8 @@ export class CartService {
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
             if (duplicateCartItem) {
                 let amt = duplicateCartItem.quantity;
-                duplicateCartItem.quantity = amt += 1;
+                duplicateCartItem.quantity = amt + 1;
+
             } else {
                 // Finding the product being added to the cart
                 // let product: ProductInterface|undefined = products.find(
@@ -118,8 +117,7 @@ export class CartService {
         cartItems.forEach(item =>{
             if(item.id == cartID) {
                 item.quantity = value;
-
-                item.totalPrice = this.getCartItemPrice(item) * item.quantity;;
+                // item.totalPrice = this.getCartItemPrice(item);
             }
         });
         this.updateCart(cartItems);
@@ -129,16 +127,13 @@ export class CartService {
     getCartTotal(){
         const cart = this.getCart()
 
-        let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice, 0 )
+        let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice * item.quantity, 0 )
 
         return subTotal;
     }
     getCartItemPrice(item:CartItem):number{
-            let sidesTotal = item.sides.reduce((acc,index)=>{
-              return acc += +this.sides[index].price
-            },0);
-            sidesTotal += Number(item.product.price);
-            return +sidesTotal;
+            return item.quantity * item.totalPrice;
     }
+
 
 }

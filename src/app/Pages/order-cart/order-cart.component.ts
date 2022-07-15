@@ -6,6 +6,7 @@ import { UserCreationComponent } from '../../Components/user-creation/user-creat
 import { UserService } from '../../Services/user.service';
 import { CartService } from '../../Services/cart.service';
 import { CartItem } from '../../interfaces/cartItem';
+import { SidesInterface } from 'src/app/interfaces/sides';
 
 @Component({
   selector: 'app-order-cart',
@@ -15,7 +16,7 @@ import { CartItem } from '../../interfaces/cartItem';
 export class OrderCartComponent implements OnInit {
    
   cartItems: CartItem[] = [];
-
+  sides: SidesInterface[] = [];
   
   constructor(
     private router: Router,
@@ -61,6 +62,10 @@ export class OrderCartComponent implements OnInit {
  
   ngOnInit() {
     this.cartItems = this.cartService.getCart();
+    this.dataService.getAllSides().subscribe((data)=>{
+      this.sides = data;
+    });
+    this.cartService.updateCart(this.cartItems);
 
   }
 

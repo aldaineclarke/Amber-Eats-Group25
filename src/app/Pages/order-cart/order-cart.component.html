@@ -16,7 +16,14 @@
                                 <path d="M40 4C40 6.20914 41.7909 8 44 8C46.2091 8 48 6.20914 48 4C48 1.79086 46.2091 0 44 0C41.7909 0 40 1.79086 40 4ZM0 4.75H44V3.25H0V4.75Z" fill="#6D6D6D"/>
                                 </svg>
                         </div>
-                        <p class="name">{{item.product.name}}</p>
+                        <p class="name">
+                            {{item.product.name}}
+                            <span class="sides">
+                                <span *ngFor="let side of item.sides" class="side">
+                                    {{(side) ? sides[side].name: ""}}
+                                </span>
+                            </span>
+                        </p>
                        </div>
                         <div class="cartItem-sec2">
                             <div class="quantity">
@@ -40,7 +47,9 @@
                             </div>
                         </div>
                         <div class="cartItem-sec3">
-                            <p>{{ cartService.getCartItemPrice(item) * item.quantity | currency: "JMD "}}</p>
+                            <p>{{ cartService.getCartItemPrice(item) | currency: "JMD "}}
+                               
+                            </p>
                         </div>
                     </div>
                     <div class="closeIcon">
@@ -54,7 +63,7 @@
                 </div>
                 <div class="cartItem-footer">
                     <div class="subtotal">
-                        <p>SubTotal: <span class="bold">{{cartService.getCartTotal() | currency}}</span></p>
+                        <p>SubTotal: <span class="bold">{{cartService.getCartTotal()| currency}}</span></p>
                     </div>
                     <div class="cta">
                         <button class="back" (click)="goBack()">
@@ -93,7 +102,7 @@
                         <tbody>
                             <tr *ngFor="let item of cartItems">
                                 <td>{{item.quantity}}x {{item.product.name}}</td>
-                                <td>{{item.quantity * cartService.getCartItemPrice(item) | currency}}</td>
+                                <td>{{cartService.getCartItemPrice(item) | currency}}</td>
                             </tr>
                         </tbody>                        
                     </table>
