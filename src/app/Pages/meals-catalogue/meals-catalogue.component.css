@@ -69,7 +69,7 @@ section h1{
 }
 .section-header{
     
-    height: 70vh;
+    height: 82vh;
     display:grid;
     place-items:center;
     /* text-transform: uppercase; */
