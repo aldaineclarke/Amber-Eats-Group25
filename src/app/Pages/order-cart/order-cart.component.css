@@ -32,6 +32,7 @@
 .sharp-bx, .cartItem{
     font-family: "Poppins", sans-serif;
     width: 100%;
+    border-radius: 5px;
     box-shadow: 5px 4px 12px rgb(0, 56, 255, 27%);
 }
 .cartSummary-grid.sharp-bx{
@@ -54,6 +55,8 @@
     padding: 0 1rem;
     text-align:start;
     width: 100%;
+    padding-bottom: 1rem;
+
 
 }
 .sharp-bx table thead{
@@ -96,10 +99,20 @@
 }
 .cartItem{
     padding: 10px;
+    display:grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    padding-left: 1rem;
+    padding-right: 3rem;
+    gap: 1rem;
+}
+.cartItem [class^="cartItem-sec"]{
     display:flex;
-    align-items: center;
-    justify-content:space-between;
-
+    align-items:center;
+}
+.cartItem .cartItem-sec2{
+    justify-content:center;
+}
+.cartItem .cartItem-sec1{
     gap: 1rem;
 }
 .cartImg{
@@ -125,7 +138,6 @@
     display:flex;
     align-items:center;
     gap:5px;
-    margin-right:auto;
 }
 .qantity-ctrls{
     display:flex;

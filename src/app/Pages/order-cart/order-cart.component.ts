@@ -52,8 +52,8 @@ export class OrderCartComponent implements OnInit {
 
 
   decreaseQty(item:CartItem){
-    if(--item.quantity == 0){
-      this.removeItem(item.id);
+    if(item.quantity-1 == 0){
+      return this.removeItem(item.id);
     }
     this.cartService.updateCartItemQuantity(item.id,--item.quantity);
   }
