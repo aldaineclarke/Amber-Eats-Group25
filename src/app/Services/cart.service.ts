@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
+import { shareReplay } from 'rxjs';
 import { CartItem } from '../interfaces/cartItem';
 import { ProductInterface } from '../interfaces/product';
+import { SidesInterface } from '../interfaces/sides';
 import { DataService } from './data.service';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CartService {
-    constructor(private api: DataService) {}
+    sides:SidesInterface[] = []
+    constructor(private api: DataService, private dataService: DataService) {
+        this.dataService.getAllSides().pipe(shareReplay()).subscribe((data)=>{
+            this.sides = data;
+        })
+    }
 
     /**
      * Converts the cart in `localStorage` to an array
@@ -40,7 +47,18 @@ export class CartService {
 
             // Search for duplicate cart item
             let duplicateCartItem: CartItem|undefined = currentCart.find(
-                (cartItem: any) => cartItem.id == item.id
+                (cartItem: CartItem) => {
+                    if(cartItem.product.id == item.product.id){
+                        if(cartItem.sides.length == item.sides.length){
+                            if(cartItem.sides.every((element) => item.sides.includes(element))){
+                                return true;
+                            }
+                        }
+                        
+                        
+                    }
+                    return false;
+                }
             );
 
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
@@ -100,7 +118,8 @@ export class CartService {
         cartItems.forEach(item =>{
             if(item.id == cartID) {
                 item.quantity = value;
-                item.totalPrice *= value;
+
+                item.totalPrice = this.getCartItemPrice(item) * item.quantity;;
             }
         });
         this.updateCart(cartItems);
@@ -113,6 +132,13 @@ export class CartService {
         let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice, 0 )
 
         return subTotal;
+    }
+    getCartItemPrice(item:CartItem):number{
+            let sidesTotal = item.sides.reduce((acc,index)=>{
+              return acc += +this.sides[index].price
+            },0);
+            sidesTotal += Number(item.product.price);
+            return +sidesTotal;
     }
 
 }

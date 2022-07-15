@@ -13,8 +13,8 @@ import { CartItem } from '../../interfaces/cartItem';
   styleUrls: ['./order-cart.component.css'],
 })
 export class OrderCartComponent implements OnInit {
-  cartItems: CartItem[] = this.cartService.getCart();
-
+   
+  cartItems: CartItem[] = [];
 
   
   constructor(
@@ -60,6 +60,8 @@ export class OrderCartComponent implements OnInit {
 
  
   ngOnInit() {
+    this.cartItems = this.cartService.getCart();
+
   }
 
 
