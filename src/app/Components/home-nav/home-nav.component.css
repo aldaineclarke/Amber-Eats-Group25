@@ -70,6 +70,9 @@ button.cart-btn {
 
 button .cart-badge {
   position: absolute;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   right: 0px;
   padding: 2px;
