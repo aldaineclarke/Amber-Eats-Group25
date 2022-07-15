@@ -1,103 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+.form_container {
+  padding: 0.5% 3%;
+}
+* {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+.container {
+  padding-top: 10rem;
+  min-height: 70vh;
+  width: 1240px;
+  margin: auto;
+}
+form > * {
+  box-sizing: border-box;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form legend {
+  color: #302424;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-.form_container{
-    padding: 0.5% 3%;
+  font-size: 2rem;
+  margin: 10px 0 1rem;
 }
-*{
-    font-family:"Poppins", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.form-flex {
+  display: flex;
+  gap: 3rem;
 }
-.container{
-    padding-top: 10rem;
-    min-height: 70vh;
-    width: 1240px;
-    margin:auto;
+.custom-b label {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-form > *{
-    box-sizing: border-box;
+.custom-b label span {
+  font-size: 0.7rem;
 }
-form{
-    display:flex;
-    flex-direction: column;
-    gap: 1rem;
+.custom-b label input {
+  width: 100%;
+  height: 2.1rem;
+  border: none;
+  border-bottom: 2px solid #00ffff;
+}
+.custom-b label input:focus {
+  outline: none;
+  border-bottom-color: #00bbbb;
+}
+.custom-b label input.ng-invalid.ng-touched {
+  border-bottom-color: red;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.grid-two {
+  display: grid;
+  width: 80%;
+  gap: 4rem;
+  grid-template-columns: auto auto;
+}
+mat-radio-group {
+  flex-grow: 1;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.no-gap {
+  gap: 0rem;
+}
+.directpay {
+  flex-grow: 1;
+}
+.orderDetails {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.orderDetails table {
+  border-collapse: collapse;
+  width: 30vw;
+}
+.orderDetails th,
+td {
+  /* border: 1px solid #302424; */
+}
+.itemPrice {
+  display: flex;
+  font-weight: 600;
+}
+.total {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+mat-step form,
+.orderDetails {
+  margin-top: 1rem;
+}
 
-}
-form legend{
-    color: #302424;
-
-    font-size: 2rem;
-    margin: 10px 0 1rem;
-}
-.form-flex{
-    display:flex;
-    gap: 3rem;
-}
-.custom-b label{
-    display:flex;
-    flex-direction:column;
-    flex-grow: 1;
-
-}
-.custom-b label span{
-    font-size: .7rem;
-
-}
-.custom-b label input{
-    width: 100%;
-    height: 2.1rem;
-    border:none;
-    border-bottom: 2px solid #00FFFF;
-}
-.custom-b label input:focus{
-    outline:none;
-    border-bottom-color: #00bbbb;
-}
-.custom-b label input.ng-invalid.ng-touched{
-    border-bottom-color:red;
-}
-.flex-col{
-    display:flex;
-    flex-direction:column;
-    gap: 1rem;
-}
-.grid-two{
-    display:grid;
-    width: 80%;
-    gap: 4rem;
-    grid-template-columns: auto auto;;
-}
-mat-radio-group{
-    flex-grow: 1;
-    display:flex;
-    gap: 1rem;
-    align-items: center;
-}
-.no-gap{
-    gap: 0rem;
-}
-.directpay{
-    flex-grow: 1;
-}
-.orderDetails{
-    display:flex;
-    width: 90%;
-    justify-content:space-between;
-    gap: 3rem;
-}
-.orderDetails table{
-    border-collapse: collapse;
-    width: 30vw;
-}
-.orderDetails th,td{
-    /* border: 1px solid #302424; */
-}
-.itemPrice{
-    display:flex;
-    font-weight: 600;
-}
-.total{
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-mat-step form, .orderDetails{
-    margin-top: 1rem;
+/* <------------error message-----------> */
+.errors {
+  color: red;
 }

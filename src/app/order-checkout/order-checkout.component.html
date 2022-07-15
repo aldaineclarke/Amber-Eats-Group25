@@ -5,16 +5,33 @@
         <ng-template matStepLabel>Find User</ng-template>
         <legend>Search by Email</legend>
         <div class="flex-col">
-          <label>
+          <label id="mail">
             <input
               type="email"
               formControlName="email"
               placeholder="johndoe@gmail.com"
+              id="email_addr"
+              onkeydown="validation()"
             />
-            <span id="req" style="color: red">Your Email is Required</span>
+
+            <!-- <------------error message----------->
+            <div class="errors" *ngIf="email?.invalid && email?.touched">
+              <span id="req1" *ngIf="email?.errors?.['required']"
+                >Your Email is Required
+              </span>
+
+              <span id="req2" *ngIf="email?.errors?.['pattern']"
+                >Enter a Valid Email</span
+              >
+            </div>
           </label>
           <div class="btn-cta">
-            <button mat-raised-button color="primary" (click)="checkUser()">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="checkUser()"
+              [disabled]="searchUserForm.invalid"
+            >
               Get User
             </button>
           </div>
@@ -207,3 +224,24 @@
     </mat-step>
   </mat-stepper>
 </div>
+
+<!-- <script type="text/javascript">
+  function validation() {
+    var mail = document.getElementById("mail");
+    var email = document.getElementById("email_addr").value;
+    var req = document.getElementById("req");
+    var pattern = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
+
+    if (email.match(pattern)) {
+      mail.classList.add("valid");
+      mail.classList.remove("invalid");
+      req.innerHTML = "Email Valid";
+      req.style.color = "green";
+    } else {
+      mail.classList.remove("valid");
+      mail.classList.add("invalid");
+      req.innerHTML = "Your Email is Required";
+      req.style.color = "red";
+    }
+  }
+</script> -->
