@@ -6,17 +6,23 @@ box-sizing: border-box;
 
 /* top container section*/
 .top-container{
-  background-image: url('/assets/homeImages/top-image.jpg');
   width: 100%;
-  height: 855px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: cover;
+  background-color:#333;
   position: relative;
   background-blend-mode: darken;
-  opacity: 70%;
+  opacity: 100%;
+  height: 850px;
+
+}
+app-slider{
+  width: 100%;
+  background-blend-mode: darken;
+  opacity: 30%;
 }
 
+.hero{
+  position:relative;
+}
 /* contianer within top container */
 .heading-container{
   text-align: center;
