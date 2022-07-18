@@ -21,10 +21,7 @@ export class OrderCartComponent implements OnInit {
   cartAmount: number = this.cartService.getCartCount();
   cartTotal: number = this.cartService.getCartTotal();
 
-
   // credentials: User[] = [];
-
-
   
   constructor(
     private router: Router,
@@ -99,33 +96,6 @@ export class OrderCartComponent implements OnInit {
     this.cartService.clearCart();
     this.cartItems = this.cartService.getCart();
   }
-
-  // loginUser(credentials: User) {
-  //   // let userEmail:any = email.value;
-
-  //   this.userService.login(credentials).subscribe((result) => {
-  //     console.log(result)
-  //     console.error();
-  //     console.log('worked')
-  //     // this.credentials = result
-  //   })
-    
-  // }
-
-  // logUser(email: HTMLInputElement) {
-  // loginUser(email: HTMLInputElement) {
-  //   let userEmail:any = email.value;
-
-  //   this.userService.login(userEmail).subscribe((result) => {
-  //     console.log(result)
-  //     console.error();
-  //     console.log('worked')
-  //     // this.credentials = result
-  //   })
-    
-  // }
-
-  
 }
 
 

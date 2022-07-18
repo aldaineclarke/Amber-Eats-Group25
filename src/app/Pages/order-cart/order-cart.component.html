@@ -96,14 +96,14 @@
                         </tr>
                         <tr>
                             <th>Grand Total:</th>
-                            <th>{{cartTotal}}</th>
+                            <th>{{cartTotal | currency}}</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let cartItems of cartItems" style="text-align: left;">
                         <br>
                         <tr>
                             <td>{{cartItems.product.name}}</td>
-                            <td>{{cartItems.product.price | currency}}</td>
+                            <td>{{cartItems.product.price * cartItems.quantity | currency}}</td>
                             <br>
                         </tr >
                         <tr *ngFor="let sideId of cartItems.sides" style="border-bottom: 1.5px solid skyblue;">
