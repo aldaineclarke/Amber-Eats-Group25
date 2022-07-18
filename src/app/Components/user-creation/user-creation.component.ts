@@ -1,10 +1,12 @@
-import { Component, OnInit, AfterViewInit, ViewChild , ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild , ElementRef, Output, EventEmitter, Inject } from '@angular/core';
 import { UserService } from '../../Services/user.service';
 import { User } from '../../interfaces/users';
 import { ActivatedRoute, Router} from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { cardPayment } from '../../interfaces/cardPayment';
 import { OrderCartComponent } from '../../Pages/order-cart/order-cart.component';
+import { MatStepper } from '@angular/material/stepper';
+import { MAT_DIALOG_DATA, MatDialogRef,MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-creation',
@@ -16,53 +18,36 @@ export class UserCreationComponent implements OnInit {
 
   rows:any = 1
   create:boolean = false
-  paymentMethod:cardPayment[] = []
+  paymentMethod:cardPayment[] = [];
+  currentUID = 0;
+
 
   //variable for storing information added to form
   @ViewChild('createForm') form!: NgForm;
+  @Output() goForward = new EventEmitter<boolean>();
 
-  constructor(private creationService:UserService , private router:Router) { }
+  constructor(private userService:UserService , private router:Router, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data:{stepper:MatStepper}, private dialogRef: MatDialogRef<UserCreationComponent>) { }
   
+  creationFormGroup = this.fb.group({
+    fname: ['', Validators.required],
+    lname: ['', Validators.required],
+    address1: ['', Validators.required],
+    parish: ['', Validators.required],
+    email: ['', Validators.required],
+    cardholder: ['', Validators.required],
+    cardNumber: ['', Validators.required],
+    expiryDate: ['', Validators.required],
+  })
   // Show Create Account
   show() {
     this.create = !this.create;
   }
+  
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-
-  }
-
-  // Post User Information
-  getUserInformation(value:any) { 
-
-    // Array For PaymentMethod 
-    this.paymentMethod = [{
-      cardNumber: value.cardNumber,
-      expiryDate: value.expiryDate,
-      name: value.cardHolder,
-    }]
-
-    // Object that stores information to be added
-    const userInformation = {
-      id: '2',
-      firstName: value.firstName,
-      lastName: value.lastName,
-      email: value.email,
-      address: value.adLine1,
-      paymentMethod: this.paymentMethod
-    }
-
-
-    // Posting Information to database
-    this.creationService.saveUser(userInformation).subscribe((result) => {
-      this.router.navigateByUrl("/", {skipLocationChange:true})
-      .then(nav => {
-        console.log(userInformation)
-        this.router.navigate(["/", "checkout"])
-      }, err => {
-        console.log(err) // when there's an error,
-        console.log(userInformation) 
-      });
-    })
+  nextStep(): void{
+    this.data.stepper.next();
+    console.log(this.data.stepper)
+    this.dialogRef.close();
   }
 }

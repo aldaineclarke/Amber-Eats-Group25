@@ -6,6 +6,7 @@ import { UserCreationComponent } from '../../Components/user-creation/user-creat
 import { UserService } from '../../Services/user.service';
 import { CartService } from '../../Services/cart.service';
 import { CartItem } from '../../interfaces/cartItem';
+import { SidesInterface } from 'src/app/interfaces/sides';
 
 @Component({
   selector: 'app-order-cart',
@@ -13,33 +14,21 @@ import { CartItem } from '../../interfaces/cartItem';
   styleUrls: ['./order-cart.component.css'],
 })
 export class OrderCartComponent implements OnInit {
-  cartItems: CartItem[] = this.cartService.getCart();
-
-
+   
+  cartItems: CartItem[] = [];
+  sides: SidesInterface[] = [];
   
   constructor(
     private router: Router,
     public dialog: MatDialog,
     private dataService: DataService,
     private userService: UserService,
-    private cartService: CartService
+    public cartService: CartService
   ) {}
-
-  next() {
-    this.router.navigate(['/', 'checkout']).then(
-      (nav) => {
-        console.log(nav); // true if navigation is successful
-      },
-      (err) => {
-        console.log(err); // when there's an error
-      }
-    );
-  }
 
   updateQuantity(cartID:number, value:number){
     this.cartService.updateCartItemQuantity(cartID, value);
-    // console.log(cartID);
-    // console.log(value);
+
     this.cartItems = this.cartService.getCart();
 
   }
@@ -49,45 +38,38 @@ export class OrderCartComponent implements OnInit {
     }
     return value;
   }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(UserCreationComponent);
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  goBack(){
+    window.history.back();
   }
 
+  removeItem(id:number){
+    this.cartService.removeCartItem(id);
+    this.cartItems = this.cartService.getCart();
+  }
+
+  increaseQty(item:CartItem){
+      this.cartService.updateCartItemQuantity(item.id,++item.quantity);
+  }
+
+
+  decreaseQty(item:CartItem){
+    if(item.quantity-1 == 0){
+      return this.removeItem(item.id);
+    }
+    this.cartService.updateCartItemQuantity(item.id,--item.quantity);
+  }
+
+ 
   ngOnInit() {
-    console.log(this.cartItems)
-  }
-
-  checkUser(email: HTMLInputElement) {
-    let userEmail = email.value;
-
-    this.userService.findEmail(userEmail).subscribe((result) => {
-      if (result == false) {
-        console.log(result);
-        this.openDialog();
-      } else {
-        this.next();
-      }
+    this.cartItems = this.cartService.getCart();
+    this.dataService.getAllSides().subscribe((data)=>{
+      this.sides = data;
     });
+    this.cartService.updateCart(this.cartItems);
 
-    
   }
 
-  // loginUser(email: HTMLInputElement) {
-  //   let userEmail:any = email.value;
 
-  // this.userService.login(userEmail).subscribe((result) => {
-  //   console.log(result)
-  //   console.error();
-  //   console.log('worked')
-    
-  // })
-    
-  // }
 
   // Clear Cart
   clearItems() {

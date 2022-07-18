@@ -1,46 +1,200 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Great+Vibes&family=Gulzar&family=Poppins:wght@100;300&display=swap');
 
 .container{
-    /* border: 1px solid red; */
-    padding: 4% 2%;
-    /* background-color: #303030; */
+    background-color: white;
 }
 
-.container>h1{
-    border-bottom: 1px solid grey;
-    font-size: 50px;
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    padding: 1%;
-}
-.container>h2{
-    text-align: center;
-    font-weight: bold;
+.top-section{
+    padding-top: 10rem;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 3.2rem;
 }
 
-.container>p{
-    padding: 0 10%;
-    text-align: center;
+.top-section .top-section-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    position: relative;
 }
 
+.top-section .top-section-content .heading{
+    grid-column: 1/3;
+}
 
-section{
-    /* border: 1px solid red; */
+.top-section .top-section-content  .heading h1{
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 70.1px;
+}
+
+.top-section .top-section-content .contents{
     display: flex;
-    justify-content: space-evenly;
+    grid-column: 1/3;
+    gap: 12px;
+   
+}
+
+.top-section .top-section-content .contents section{
+    width: 50%;
+    height: 52%;
+}
+
+
+
+.top-section .top-section-content .contents section p{
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    font-size: 11px;
+    line-height: 16.5px;
+    font-weight: 300
+}
+
+
+.top-section .top-section-image{
+    width: 100%;
+    height: 100%;
+    background-size:contain ;
+}
+
+.top-section .top-section-image img{
+    width: 100%;
+    height: 100%;
+}
+
+/* middle section deign */
+.middle-section{
+    position: relative;
+    margin-top: 4rem;
+    height: 400px;
+}
+
+.middle-section > div {
+    position: absolute;
+    
+}
+
+.middle-section > div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.middle-section .first-image{
+    z-index: 10;
+    /* left: 0; */
+    /* width: 708px;
+    height: 425px; */
+    width: 56%;
+    height: 425px;
+    left: 6%;
+}
+
+.middle-section .second-image{
+    z-index: 20;
+    /* width: 400px;
+    height: 200px;
+    right: -20px; */
+    /* width: 504px; */
+    width: 38%;
+    height: 329px;
+    left: 60%;
+}
+
+.middle-section .third-image{
+    /* width: 400px;
+    height: 300px; */
+    z-index: 40;
+    /* width: 358px; */
+    width: 30%;
+    height: 60%;
+    left: 50%;
+    top: 300px;
+    vertical-align: middle;
+}
+
+.button{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 7;
+    right: 27%;
+    top: 70px;
+    color: #000;
+    background-color: #fff;
+    padding: .4rem .6rem;
+    border: 2px solid #848484;
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.button:hover{
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em;
+    transition: .2s;
+}
+
+
+.middle-quote-section{
+    margin: 14em 10em 0em 10em;
+}
+
+.middle-quote-section p{
+    text-align: center;
+    line-height: 45px;
+    font-weight: 400;
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+}
+
+.quote-manager{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0px auto;
     align-items: center;
+}
+
+.quote-manager .manager-img{
+    width: 64px;
+    height: 64px;
+}
+
+.quote-manager .manager-img img{
+    height: 100%;
     width: 100%;
 }
 
-section img{
-    width: 50%;
+.quote-manager .manager-name{
+    margin: 20px 0px 0px 10px;
 }
 
-.info{
-    padding-left: 3%;
+.quote-manager .manager-name h2{
+    font-family: 'Poppins', sans-serif;
+    line-height: 20px;
 }
-.info h1{
-    font-size: 35px;
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
+
+.quote-manager .manager-name .title{
+    font-weight: 700;
+    font-size: 20px;
 }
+
+
+.quote-manager .manager-name .name{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 1040px) {
+    .button{
+        /* padding: .2rem .4rem; */
+        font-size: 12px;
+    
+    }
+  }

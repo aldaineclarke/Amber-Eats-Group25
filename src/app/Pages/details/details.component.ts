@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CartItem } from 'src/app/interfaces/cartItem';
 import { ProductInterface } from 'src/app/interfaces/product';
@@ -34,7 +35,9 @@ export class DetailsComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private _notification: MatSnackBar
+
   ) {}
 
 
@@ -67,7 +70,7 @@ export class DetailsComponent implements OnInit {
 
   //function to toggle show and hide component
   toggleShowHide() {
-    this.sideOrders = [];
+    this.sideOrders = []; //removes existing items from array
     this.isVisible = ! this.isVisible;
 
   }
@@ -118,7 +121,9 @@ export class DetailsComponent implements OnInit {
 
       this.cartService.addCartItem(this.completedOrder)
 
-      console.log(this.completedOrder);
+      this._notification.open("Item was added to cart","",{
+        duration: 2000,
+      })
 
  }
 //  Calculate the price for all the sides And total for the cartItem

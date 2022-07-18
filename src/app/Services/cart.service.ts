@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
+import { shareReplay } from 'rxjs';
 import { CartItem } from '../interfaces/cartItem';
 import { ProductInterface } from '../interfaces/product';
+import { SidesInterface } from '../interfaces/sides';
 import { DataService } from './data.service';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CartService {
-    constructor(private api: DataService) {}
+    sides:SidesInterface[] = []
+    constructor(private api: DataService, private dataService: DataService) {
+        this.dataService.getAllSides().pipe(shareReplay()).subscribe((data)=>{
+            this.sides = data;
+        })
+    }
 
     /**
      * Converts the cart in `localStorage` to an array
@@ -43,13 +50,23 @@ export class CartService {
 
             // Search for duplicate cart item
             let duplicateCartItem: CartItem|undefined = currentCart.find(
-                (cartItem: CartItem) => cartItem.product.id == item.product.id
+                (cartItem: CartItem) => {
+                    if(cartItem.product.id == item.product.id){
+                        if(cartItem.sides.length == item.sides.length){
+                            if(cartItem.sides.every((element) => item.sides.includes(element))){
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                }
             );
 
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
             if (duplicateCartItem) {
                 let amt = duplicateCartItem.quantity;
-                duplicateCartItem.quantity = amt += 1;
+                duplicateCartItem.quantity = amt + 1;
+
             } else {
                 // Finding the product being added to the cart
                 // let product: ProductInterface|undefined = products.find(
@@ -103,7 +120,7 @@ export class CartService {
         cartItems.forEach(item =>{
             if(item.id == cartID) {
                 item.quantity = value;
-                item.totalPrice *= value;
+                // item.totalPrice = this.getCartItemPrice(item);
             }
         });
         this.updateCart(cartItems);
@@ -113,9 +130,13 @@ export class CartService {
     getCartTotal(){
         const cart = this.getCart()
 
-        let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice, 0 )
+        let subTotal = cart.reduce((accumulator, item)=> accumulator += item.totalPrice * item.quantity, 0 )
 
         return subTotal;
     }
+    getCartItemPrice(item:CartItem):number{
+            return item.quantity * item.totalPrice;
+    }
+
 
 }
