@@ -1,134 +1,121 @@
 <div class="cart-container">
-    <div class="cart-header">
-        <div class="header-left">
-            <span class="secure-icon"><mat-icon>lock</mat-icon></span>
-            <h3>Secure Checkout</h3>
+    <div class="context">
+        <div class="cart-title">
+            <img src="/assets/cartSummary.svg" alt="shows image which tells the title of the page">
         </div>
-        <div class="header-right">
-            <a routerLink="/home">
-                <h3>Continue Shopping</h3>
-            </a>
-            <a routerLink="/home"><span class="secure-icon"><mat-icon>chevron_right</mat-icon></span></a>
-        </div>
-    </div>
-    <!-- Start of Process Track -->
-    <div class="cart-track">
-        <div class="sections">
-            <span class='cart-active'>Cart</span>
-            >
-            <span>Place Order</span>
-            >
-            <span>Pay</span>
-            >
-            <span>Order Complete</span>
-        </div>
-    </div>
-    <!-- Start of Site Body -->
-    <div class="content">
-        <div class="cart-left-sections">
-            <!-- Delivery Banner -->
-            <div class="delivery-banner">
-                <div class="banner-content">
-                    <p>Spend JMD $1200 or more for <span>free delivery</span>!! (Coming Soon)</p>
+        <div class="cart-grid">
+            <div class="cartItem-grid">
+                <div class="cartItem-wrapper" *ngFor="let item of cartItems">
+                    <div class="cartItem">
+                       <div class="cartItem-sec1">
+                         <div class="cartImg">
+                            <div class="cartItem-img-wrapper">
+                                <img src="{{item.product.imageUrl}}" alt="Image of item">
+                            </div>
+                            <svg width="48" height="8" viewBox="0 0 48 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 4C40 6.20914 41.7909 8 44 8C46.2091 8 48 6.20914 48 4C48 1.79086 46.2091 0 44 0C41.7909 0 40 1.79086 40 4ZM0 4.75H44V3.25H0V4.75Z" fill="#6D6D6D"/>
+                                </svg>
+                        </div>
+                        <p class="name">
+                            {{item.product.name}}
+                            <span class="sides">
+                                <span *ngFor="let side of item.sides" class="side">
+                                    {{(side) ? sides[side].name: ""}}
+                                </span>
+                            </span>
+                        </p>
+                       </div>
+                        <div class="cartItem-sec2">
+                            <div class="quantity">
+                                <span class="count">{{item.quantity}}</span>
+                                <div class="qantity-ctrls">
+                                    <button class="increase" (click)="increaseQty(item)">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="9.5" cy="9.5" r="9.5" fill="#6D6D6D"/>
+                                            <path d="M3.12983 9.17016L14.8745 9.17018" stroke="white" stroke-width="2"/>
+                                            <path d="M9.05299 3.35418L9.05302 15.0453" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                    </button>
+                                    <button class="decrease" (click)="decreaseQty(item)">
+                                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="9.5" cy="10.1998" r="9.5" fill="#6D6D6D"/>
+                                            <path d="M3.12983 9.86999L14.8745 9.87001" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                            
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cartItem-sec3">
+                            <p>{{ cartService.getCartItemPrice(item) | currency: "JMD "}}
+                               
+                            </p>
+                        </div>
+                    </div>
+                    <div class="closeIcon">
+                        <button (click)="removeItem(item.id)">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.828959 1L17.171 17.3421" stroke="#6D6D6D" stroke-width="2"/>
+                                <path d="M17.1632 1.14907L0.89565 17.4167" stroke="#6D6D6D" stroke-width="2"/>
+                                </svg>
+                        </button>
+                    </div>
                 </div>
+                <div class="cartItem-footer">
+                    <div class="subtotal">
+                        <p>SubTotal: <span class="bold">{{cartService.getCartTotal()| currency}}</span></p>
+                    </div>
+                    <div class="cta">
+                        <button class="back" (click)="goBack()">
+                            <span>
+                                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_307_209)">
+                                    <path d="M31.4286 17.1414L32.3586 17.1414C32.7114 17.1414 33 16.8528 33 16.5C33 16.1472 32.7114 15.8586 32.3586 15.8586L31.4286 15.8586C31.0758 15.8586 30.7872 16.1472 30.7872 16.5C30.7872 16.8528 31.0758 17.1414 31.4286 17.1414Z" fill="black"/>
+                                    <path d="M0.192336 16.949L12.6996 29.4563C12.9562 29.7128 13.341 29.7128 13.5976 29.4563C13.8541 29.1997 13.8541 28.8149 13.5976 28.5583L2.18068 17.1414L28.5422 17.1414C28.895 17.1414 29.1836 16.8528 29.1836 16.5C29.1836 16.1472 28.895 15.8586 28.5422 15.8586L2.18068 15.8586L13.5976 4.44169C13.8541 4.18513 13.8541 3.80029 13.5976 3.54373C13.4693 3.41545 13.309 3.35131 13.1486 3.35131C12.9883 3.35131 12.8279 3.41545 12.6996 3.54373L0.192336 16.051C-0.0642231 16.3076 -0.0642231 16.6924 0.192336 16.949Z" fill="black"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_307_209">
+                                    <rect width="33" height="33" fill="white" transform="translate(33 33) rotate(-180)"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                            </span>
+                            <span>Go Back</span>
+                        </button>
+                        <button class="checkout" routerLink="/checkout">
+                            checkout
+                        </button>
+                    </div>
+                </div>
+
             </div>
-            <!-- Start of Cart Listing -->
-            <div class="cart-summary">
-                <h4>Cart Summary</h4>
-                <div class="cart-summary-content">
-                    <table>
+            <div class="cartInfo-grid">
+                <div class="cartSummary-grid sharp-bx">
+                    <h2 class="title">Order Summary</h2>
+                    <table class="items">
                         <thead>
                             <tr>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
+                                <th>Items</th>
                                 <th>Price</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- <tr *ngFor="let order of "> -->
-                            <br>
-                            <tr *ngFor="let cartItem of cartItems">
-                                <td><img [src]="cartItem.product.imageUrl" alt="image of {{cartItem.product.name}}" width="130vw" height="100vw"></td>
-                                <td>{{cartItem.product.name}}</td>
-                                <td>
-                                    <form action="" method="post">
-                                        <label class="example-value-label">{{cartItem.quantity}}</label><br>
-                                        <mat-slider
-                                            (change)="updateQuantity(cartItem.id, quantity.value)"
-                                            thumbLabel
-                                            [displayWith]="formatLabel"
-                                            value="{{cartItem.quantity}}"
-                                            tickInterval="7"
-                                            step="1"
-                                            min="1"
-                                            max="7"
-                                            #quantity
-                                            >
-                                        </mat-slider>
-                                    </form>
-                                </td>
-                                <td>{{cartItem.product.price | currency}}</td>
-                                <td ><button mat-button>Remove</button></td>
-                                <br>
+                            <tr *ngFor="let item of cartItems">
+                                <td>{{item.quantity}}x {{item.product.name}}</td>
+                                <td>{{cartService.getCartItemPrice(item) | currency}}</td>
                             </tr>
-                        </tbody>
-                        <div class="clearBtn">
-                            <button (click)="clearItems()">Empty Cart</button>
-                        </div>
+                        </tbody>                        
                     </table>
+
+                </div>
+                <div class="paymentInfo-grid sharp-bx">
+                    <h2 class="title">Payments We Accept</h2>
+                    <div class="payMethods">
+                        <img src="/assets/35-351793_credit-or-debit-card-mastercard-logo-visa-card 1.png" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Start of right section -->
-        <div class="cart-right-sections">
-            <!-- Order Summary -->
-            <div class="cart-total">
-                <div class="total-header">
-                    <h4>Order Summary</h4>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <br>
-                        <!-- <tr *ngFor="let order of "> -->
-                        <tr *ngFor="let item of cartItems">
-                            <td>{{item.product.name}}</td>
-                            <td>{{item.product.price | currency}}</td>
-                            <br>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- Email Validation -->
-                <div class="check-email">
-                    <form action="" method="post" (submit)="checkUser(email)">
-                        <input type="email" name="email" id="checkEmail" #email placeholder="email@email.com">
-                        <div class="email-button">
-                            <button type="submit" mat-flat-button color="primary">CheckOut Securely</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- Start of Accepted Payments Info -->
-            <div class="accepted-payments">
-                <div class="payment-header">
-                    <h4>Payments We Accept</h4>
-                </div>
-                <div class="payment-container">
-                    <mat-grid-list cols="4" rowHeight="2:2" [style.background]="'skyblue'">
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                        <mat-grid-tile><img src="https://media.discordapp.net/attachments/889362805713678407/994509030804435015/proxy.jpg?width=384&height=576" alt=""></mat-grid-tile>
-                    </mat-grid-list>
-                </div>
-            </div>
+
         </div>
     </div>
     

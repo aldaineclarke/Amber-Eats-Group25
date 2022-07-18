@@ -13,15 +13,15 @@ export class MealsCatalogueComponent implements OnInit {
   products:ProductInterface[] = [];
    // Paginator Event
    pageEvent !: PageEvent;
-   pageSizeOptions = [8, 16,20, 40];
-   pageSize = 20;
+   pageSizeOptions = [9, 18,27, 54];
+   pageSize = 9;
    length = 100;
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
 
     this.dataService.getAllProducts().subscribe((data: any[]) => {
-      this.products = data.slice(0,20);
+      this.products = data.slice(0,9);
       this.length = data.length
     });
   }

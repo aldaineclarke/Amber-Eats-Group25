@@ -18,14 +18,14 @@ p {
 }
 
 .fa {
-  font-size: 25px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 /*  */
 
 .review-count {
-  font-size: 25px;
+  font-size: 16px;
   font-weight:500;
   display:flex;
   align-items: flex-end;
@@ -85,7 +85,6 @@ input[type="radio"] {
 mat-card-actions{
   display:flex;
   justify-content: space-between;
-  margin-right: 0;
 }
 
 

@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular Materials
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardContent, MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DetailsComponent } from './Pages/details/details.component';
@@ -35,6 +35,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { UserCreationComponent } from './Components/user-creation/user-creation.component';
 import { SliderComponent } from './Components/slider/slider.component';
 import { NextDirective } from './Directives/next.directive';
@@ -44,6 +46,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { RatingDialogComponent } from './Components/rating-dialog/rating-dialog.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue.component';
+import { CardComponent } from './Components/card/card.component';
+import { HomeNavComponent } from './Components/home-nav/home-nav.component';
+import { LoadingComponent } from './Components/loading/loading.component';
 
 
 // import { FooterComponent } from './footer/footer.component';
@@ -67,6 +72,10 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     RatingDialogComponent,
     FooterComponent,
     MealsCatalogueComponent,
+    CardComponent,
+    HomeNavComponent,
+    LoadingComponent,
+    
 
   ],
   imports: [
@@ -96,7 +105,8 @@ import { MealsCatalogueComponent } from './Pages/meals-catalogue/meals-catalogue
     MatRadioModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

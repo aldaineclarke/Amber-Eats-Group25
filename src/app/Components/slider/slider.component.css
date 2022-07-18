@@ -1,14 +1,18 @@
 .slider-container {
-    position: relative;
+    position:fixed;
+    z-index:-1;
     width: 100%;  
+    background-color: #777;
 }
 .slider-container img {
     display: none;
 }
 .slider-container img.image-active {
     display: block;
+    mix-blend-mode: multiply;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
+    /* opacity: 30%; */
 }
 
 

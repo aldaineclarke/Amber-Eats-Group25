@@ -17,6 +17,10 @@ export class UserService {
   isLoggedIn$: Observable<boolean>;
   isLoggedOut$: Observable<boolean>;
 
+
+  get lastUserId():Observable<number> {
+    return this.getAllUsers().pipe(map((users)=> users.length))
+  }
   constructor(private http: HttpClient) {
     this.isLoggedIn$ = this.user$.pipe(map((user) => !!user));
     this.isLoggedOut$ = this.isLoggedIn$.pipe(map((loggedIn) => !loggedIn));
@@ -52,7 +56,7 @@ export class UserService {
   }
 
   login(credentials: User): Observable<User> {
-    return this.http.post<User>(this.userEndpoint, credentials).pipe(
+    return this.http.get<User>(this.userEndpoint+"/"+ credentials.id).pipe(
       tap((user) => {
         this.subject.next(user);
         localStorage.setItem(AUTH_DATA, JSON.stringify(user));

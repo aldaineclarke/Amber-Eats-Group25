@@ -30,20 +30,7 @@ export class FooterComponent implements OnInit {
     this.dataService.getProductById(38).subscribe((data: ProductInterface) => {
       this.footerItems.push(data);
     });
-    this.dataService.getProductById(10).subscribe((data: ProductInterface) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.getProductById(5).subscribe((data: ProductInterface) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.getProductById(42).subscribe((data: ProductInterface) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.getProductById(33).subscribe((data: ProductInterface) => {
-      this.footerItems.push(data);
-    });
-    this.dataService.getProductById(30).subscribe((data: ProductInterface) => {
-      this.footerItems.push(data);
-    });
+
+
   }
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component'; //import created components\/
 import { AboutComponent } from './Pages/about/about.component';
 import { DetailsComponent } from './Pages/details/details.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, //default that redirects and empty path to home component
   { path: 'home', component: HomeComponent }, //path to 'home' (these are names, NOT routes)
   { path: 'about', component: AboutComponent }, //path to 'about'
-  { path: 'products', component: MealsCatalogueComponent},
+  { path: 'menus', component: MealsCatalogueComponent},
   { path: 'details/:id', component: DetailsComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'order-completed', component: OrderCompletedComponent},
@@ -28,4 +28,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  constructor(router:Router){
+    router.events.subscribe(()=>{
+      window.scrollTo(0,0);
+    })
+  }
+}

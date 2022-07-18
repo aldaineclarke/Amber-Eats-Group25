@@ -26,9 +26,11 @@ html {  /**¯\_(ツ)_/¯*/
   
   body {
     scroll-behavior:smooth;
-    background: var(--light-theme-background);
     color: var(--light-theme-color);
     height: max-content;
+    margin: 0;
+    padding: 0;
+    background-color: white;
   }
 
   mat-card-header div.mat-card-header-text{
@@ -40,13 +42,12 @@ html {  /**¯\_(ツ)_/¯*/
     top: 0%;
     z-index: 100;
   }
-
-.pink{
-  background-color: rgb(255 226 220 / 27%);
-  color: var(--secondary)
-}
 .primary{
   color: var(--primary);
 }
   
+.context{
+  width: 1240px;
+  margin: auto;
+}
   
