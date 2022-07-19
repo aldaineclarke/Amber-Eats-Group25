@@ -49,8 +49,7 @@ export class CartService {
             }
 
             // Search for duplicate cart item
-            let duplicateCartItem: CartItem|undefined = currentCart.find(
-                (cartItem: CartItem) => {
+            let duplicateCartItem: CartItem|undefined = currentCart.find((cartItem: CartItem) => {
                     if(cartItem.product.id == item.product.id){
                         if(cartItem.sides.length == item.sides.length){
                             if(cartItem.sides.every((element) => item.sides.includes(element))){
