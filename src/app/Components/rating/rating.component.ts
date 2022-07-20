@@ -23,16 +23,16 @@ export class RatingComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
-  openDialog(name: string) {
+  openDialog(name: string, avgReviews:number) {
     const dialogRef = this.dialog.open(RatingDialogComponent, {
-      data: { productName: name  },
+      data: { productName: name, avgReviews },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (result.value) {
+      if (result) {
         this.meal.ratingCount++;
-        this.meal.totalRatings += parseInt(result.value);
-        const rating = parseInt(result.value);
+        this.meal.totalRatings += parseInt(result);
+        const rating = parseInt(result);
         this.createRatings(rating);
       }
     });
