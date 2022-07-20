@@ -1,0 +1,22 @@
+div.stars{
+    display:flex;
+    gap: 5px;
+    margin-top: 1rem;
+}
+.stars svg{
+    height: 70px;
+    width: 70px;
+}
+span.filled-star svg {
+    fill:#FFA500;
+}
+span.filled-star svg path{
+    fill:#FFA500;
+}
+
+span.no-fill svg{
+    fill:white;
+}
+span.no-fill svg path{
+    fill:white;
+}
